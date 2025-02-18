@@ -110,40 +110,46 @@ const Hero = ({
   );
 
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      setHeadline((current) => {
-        if (
-          typeof current === "string" &&
-          current ===
-            "On-demand Technical Team for SaaS Products and Midsize Businesses"
-        ) {
-          return (
-            <>
-              Not just a Vendor.{" "}
-              <span className="relative">
-                <span className="text-yellow-400">Your Partner</span>
-                <svg
-                  className="absolute w-full -bottom-6 left-0"
-                  viewBox="0 0 100 12"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0,12 Q50,0 100,12"
-                    stroke="rgba(252, 211, 77, 0.5)"
-                    strokeWidth="3"
-                    fill="none"
-                  />
-                </svg>
-              </span>
-            </>
-          );
-        }
-        return "On-demand Technical Team for SaaS Products and Midsize Businesses";
-      });
-    }, 3000);
+    // Only run the headline animation on the home page
+    if (
+      initialHeadline ===
+      "Enterprise Data & AI Solutions for Digital Transformation"
+    ) {
+      const interval = setInterval(() => {
+        setHeadline((current) => {
+          if (
+            typeof current === "string" &&
+            current ===
+              "On-demand Technical Team for SaaS Products and Midsize Businesses"
+          ) {
+            return (
+              <>
+                Not just a Vendor.{" "}
+                <span className="relative">
+                  <span className="text-yellow-400">Your Partner</span>
+                  <svg
+                    className="absolute w-full -bottom-6 left-0"
+                    viewBox="0 0 100 12"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M0,12 Q50,0 100,12"
+                      stroke="rgba(252, 211, 77, 0.5)"
+                      strokeWidth="3"
+                      fill="none"
+                    />
+                  </svg>
+                </span>
+              </>
+            );
+          }
+          return "On-demand Technical Team for SaaS Products and Midsize Businesses";
+        });
+      }, 3000);
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [initialHeadline]);
 
   return (
     <div className="relative w-full h-[800px] bg-black overflow-hidden pt-24">
