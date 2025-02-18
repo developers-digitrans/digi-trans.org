@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import GridBackground from "./components/GridBackground";
 import PromoBanner from "./components/PromoBanner";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
@@ -37,6 +38,7 @@ import KozmoAI from "./components/pages/products/KozmoAI";
 function App() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
+      <GridBackground />
       <PromoBanner />
       {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
       <Routes>
