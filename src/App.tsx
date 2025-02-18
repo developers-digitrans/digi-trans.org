@@ -12,6 +12,7 @@ import Locations from "./components/pages/Locations";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import BigDataAnalytics from "./components/pages/BigDataAnalytics";
+import CeoProfile from "./components/pages/CeoProfile";
 import AiSolutions from "./components/pages/AiSolutions";
 import CloudComputing from "./components/pages/CloudComputing";
 import DigitalTransformation from "./components/pages/DigitalTransformation";
@@ -21,6 +22,10 @@ import Fortune500 from "./components/pages/clients/Fortune500";
 import GovAgencies from "./components/pages/clients/GovAgencies";
 import TechStartups from "./components/pages/clients/TechStartups";
 import routes from "tempo-routes";
+import Privacy from "./components/pages/legal/Privacy";
+import Terms from "./components/pages/legal/Terms";
+import Cookies from "./components/pages/legal/Cookies";
+import Security from "./components/pages/legal/Security";
 import Ledger from "./components/pages/products/Ledger";
 import UTrack from "./components/pages/products/uTrack";
 import Ember from "./components/pages/products/Ember";
@@ -44,6 +49,7 @@ function App() {
         <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/ceo-profile" element={<CeoProfile />} />
         <Route
           path="/services/big-data-analytics"
           element={<BigDataAnalytics />}
@@ -68,6 +74,10 @@ function App() {
         <Route path="/products/godash" element={<GoDash />} />
         <Route path="/products/bigbytes" element={<BigBytes />} />
         <Route path="/products/kozmo-ai" element={<KozmoAI />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/security" element={<Security />} />
         {import.meta.env.VITE_TEMPO === "true" && <Route path="/tempobook/*" />}
       </Routes>
     </Suspense>

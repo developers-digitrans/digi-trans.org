@@ -106,12 +106,15 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="relative group"
             >
-              <img
-                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800"
-                alt="CEO"
-                className="rounded-lg shadow-lg"
-              />
+              <div className="relative max-w-[400px] mx-auto overflow-hidden">
+                <img
+                  src="/images/ceo.png"
+                  alt="CEO"
+                  className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -128,7 +131,10 @@ function About() {
                 transformation initiatives for Fortune 500 companies. Their
                 vision drives our commitment to innovation and excellence.
               </p>
-              <Button className="group">
+              <Button
+                className="group"
+                onClick={() => (window.location.href = "/ceo-profile")}
+              >
                 Read Full Bio
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
