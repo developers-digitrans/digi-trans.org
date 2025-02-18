@@ -16,6 +16,11 @@ interface ServiceCard {
   title: string;
   description: string;
   icon: React.ReactNode;
+  story?: {
+    title: string;
+    description: string;
+    metrics: string[];
+  };
 }
 
 interface HeroProps {
@@ -95,7 +100,9 @@ const Hero = ({
   onRegisterInterest = () => {},
   showCards = true,
 }: HeroProps) => {
-  const [headline, setHeadline] = React.useState(initialHeadline);
+  const [headline, setHeadline] = React.useState<string | JSX.Element>(
+    initialHeadline,
+  );
   const [selectedCard, setSelectedCard] = React.useState<
     (typeof defaultServiceCards)[0] | null
   >(null);
@@ -158,7 +165,7 @@ const Hero = ({
           className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 min-h-[180px] flex items-center justify-center"
         >
           <motion.span
-            key={headline} // Key helps React identify when text changes
+            key={typeof headline === "string" ? headline : "jsx-headline"}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -227,7 +234,7 @@ const Hero = ({
 
       <Dialog open={!!selectedCard} onOpenChange={() => setSelectedCard(null)}>
         <DialogContent className="sm:max-w-[600px] bg-slate-900 text-white border-slate-800">
-          {selectedCard && (
+          {selectedCard?.story && (
             <>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold">
