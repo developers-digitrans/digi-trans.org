@@ -146,7 +146,7 @@ const Hero = ({
   }, []);
 
   return (
-    <div className="relative w-full h-[800px] bg-black overflow-hidden">
+    <div className="relative w-full h-[800px] bg-black overflow-hidden pt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
       <video
         autoPlay

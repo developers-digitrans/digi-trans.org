@@ -116,7 +116,7 @@ export default function Careers() {
                 <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">
+                      <h3 className="text-xl font-semibold mb-2 text-white">
                         {position.title}
                       </h3>
                       <div className="flex items-center gap-4 text-gray-400 text-sm">
@@ -172,7 +172,7 @@ export default function Careers() {
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
               >
                 <Card className="p-6 text-center h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-xl font-semibold mb-4 text-white">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-400">{benefit.description}</p>

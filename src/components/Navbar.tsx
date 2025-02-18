@@ -126,7 +126,7 @@ const Navbar = ({
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg",
+        "fixed top-12 left-0 right-0 z-40 bg-black/90 backdrop-blur-lg",
         "border-b border-white/10 py-2",
         isScrolled ? "shadow-lg" : "",
       )}
@@ -319,13 +319,23 @@ const Navbar = ({
             </NavigationMenuList>
           </NavigationMenu>
           <div className="flex items-center gap-4">
-            <Button
-              onClick={() => setShowRegistrationModal(true)}
-              className="flex items-center gap-2 bg-transparent border border-white/20 text-white hover:bg-white/10 transition-colors"
-            >
-              Book a Call
-              <ChevronDown className="h-4 w-4" />
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button
+                onClick={() => setShowRegistrationModal(true)}
+                className="flex items-center gap-2 bg-transparent border border-white/20 text-white hover:bg-white/10 transition-colors"
+              >
+                Book a Call
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+              <Button
+                onClick={() =>
+                  window.open("https://app.getefficio.com", "_blank")
+                }
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 transition-colors"
+              >
+                Try Efficio
+              </Button>
+            </div>
           </div>
         </div>
       </div>
