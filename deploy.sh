@@ -1,75 +1,93 @@
 #!/bin/bash
 
-# Variables
-VPC_ID="your-vpc-id"
-SUBNET_ID="your-subnet-id"
-KEY_NAME="your-key-pair"
-PROJECT_PATH="$(pwd)"
-DOMAIN="digi-trans.org"
-REGION="us-east-1"
+# Exit on error
+set -e
 
-# Create security group
-echo "Creating security group..."
-SG_ID=$(aws ec2 create-security-group \
-    --group-name digitrans-web \
-    --description "Security group for Digitrans web server" \
-    --vpc-id $VPC_ID \
-    --output text --query 'GroupId')
+# Load environment variables
+if [ -f .env ]; then
+    source .env
+fi
 
-# Configure security group
-aws ec2 authorize-security-group-ingress \
-    --group-id $SG_ID \
-    --protocol tcp \
-    --port 80 \
-    --cidr 0.0.0.0/0
+# Check required AWS CLI environment variables
+if [ -z "$AWS_ACCESS_KEY_ID" ] || [ -z "$AWS_SECRET_ACCESS_KEY" ] || [ -z "$AWS_DEFAULT_REGION" ]; then
+    echo "Error: AWS credentials not set. Please set AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_DEFAULT_REGION"
+    exit 1
+fi
 
-aws ec2 authorize-security-group-ingress \
-    --group-id $SG_ID \
-    --protocol tcp \
-    --port 443 \
-    --cidr 0.0.0.0/0
+# Required variables
+AMI_ID="ami-0c7217cdde317cfec"  # Amazon Linux 2023 AMI
+INSTANCE_TYPE="t2.micro"
+KEY_NAME="your-key-pair-name"  # Replace with your key pair name
+PROJECT_NAME="digitrans"
+DOMAIN_NAME="yourdomain.com"  # Replace with your domain
 
-aws ec2 authorize-security-group-ingress \
-    --group-id $SG_ID \
-    --protocol tcp \
-    --port 22 \
-    --cidr 0.0.0.0/0
+echo "🚀 Starting deployment process..."
 
-# Create EC2 instance
-echo "Launching EC2 instance..."
+# 1. Create security groups
+echo "📦 Setting up security groups..."
+source ./security-group.sh
+SECURITY_GROUP_ID=$SECURITY_GROUP_ID
+
+# 2. Launch EC2 instance
+echo "🖥️ Launching EC2 instance..."
 INSTANCE_ID=$(aws ec2 run-instances \
-    --image-id ami-0c7217cdde317cfec \
-    --instance-type t3.small \
+    --image-id $AMI_ID \
+    --instance-type $INSTANCE_TYPE \
     --key-name $KEY_NAME \
-    --security-group-ids $SG_ID \
-    --subnet-id $SUBNET_ID \
+    --security-group-ids $SECURITY_GROUP_ID \
     --user-data file://user-data.sh \
-    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=digitrans-web}]" \
-    --output text \
-    --query 'Instances[0].InstanceId')
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$PROJECT_NAME}]" \
+    --query 'Instances[0].InstanceId' \
+    --output text)
+
+echo "✅ EC2 instance $INSTANCE_ID launched successfully"
 
 # Wait for instance to be running
-echo "Waiting for instance to be ready..."
+echo "⏳ Waiting for instance to be running..."
 aws ec2 wait instance-running --instance-ids $INSTANCE_ID
 
 # Get instance public IP
-PUBLIC_IP=$(aws ec2 describe-instances \
+INSTANCE_IP=$(aws ec2 describe-instances \
     --instance-ids $INSTANCE_ID \
-    --output text \
-    --query 'Reservations[0].Instances[0].PublicIpAddress')
+    --query 'Reservations[0].Instances[0].PublicIpAddress' \
+    --output text)
 
-echo "Instance is running at $PUBLIC_IP"
+echo "🌐 Instance public IP: $INSTANCE_IP"
 
-# Wait for instance to be ready
-sleep 60
+# 3. Setup Route53
+echo "🔄 Setting up Route53..."
+export INSTANCE_IP
+source ./route53-setup.sh
 
-# Copy project files to instance
-echo "Copying project files to instance..."
-scp -i "$KEY_NAME.pem" -r $PROJECT_PATH/* ec2-user@$PUBLIC_IP:/home/ec2-user/app/
+# 4. Import domain settings
+echo "🌍 Importing domain settings..."
+export DOMAIN_NAME
+source ./import-domain.sh
 
-# SSH into instance and build/start the application
-ssh -i "$KEY_NAME.pem" ec2-user@$PUBLIC_IP 'cd /home/ec2-user/app && docker-compose up -d --build'
+# 5. Build the application
+echo "🏗️ Building application..."
+npm install
+npm run build
 
-echo "Deployment completed!"
-echo "Instance ID: $INSTANCE_ID"
-echo "Public IP: $PUBLIC_IP"
+# 6. Deploy to EC2
+echo "📤 Deploying to EC2..."
+# Wait for SSH to be available
+echo "⏳ Waiting for SSH to be available..."
+while ! nc -z $INSTANCE_IP 22; do   
+    echo "Waiting for SSH..."
+    sleep 5
+done
+
+# Copy files to EC2
+echo "📂 Copying files to EC2..."
+scp -i "$KEY_NAME.pem" -r ./dist/* ec2-user@$INSTANCE_IP:/var/www/html/
+scp -i "$KEY_NAME.pem" ./nginx.conf ec2-user@$INSTANCE_IP:/etc/nginx/conf.d/default.conf
+
+# Restart Nginx
+ssh -i "$KEY_NAME.pem" ec2-user@$INSTANCE_IP "sudo systemctl restart nginx"
+
+echo "🎉 Deployment completed successfully!"
+echo "🌐 Your website should be available at: http://$DOMAIN_NAME"
+echo "⚠️ Note: DNS propagation might take up to 48 hours"
+echo "🔍 Instance ID: $INSTANCE_ID"
+echo "🔍 Instance IP: $INSTANCE_IP"
