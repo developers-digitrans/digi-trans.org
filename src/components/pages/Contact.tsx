@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import type { Map as LeafletMap } from "leaflet";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { motion } from "framer-motion";
@@ -56,9 +57,11 @@ export default function Contact() {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mapRef.current) return;
+    if (!mapRef.current || typeof window === "undefined") return;
 
-    const map = L.map(mapRef.current).setView([30, 0], 2);
+    const L = window.L;
+    const map: LeafletMap = L.map(mapRef.current).setView([30, 0], 2);
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "© OpenStreetMap contributors",
     }).addTo(map);

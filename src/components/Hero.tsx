@@ -32,7 +32,20 @@ interface HeroProps {
   showCards?: boolean;
 }
 
-const defaultServiceCards = [
+interface ServiceCardStory {
+  title: string;
+  description: string;
+  metrics: string[];
+}
+
+interface ServiceCard {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  story?: ServiceCardStory;
+}
+
+const defaultServiceCards: ServiceCard[] = [
   {
     title: "Enterprise Data Platform",
     description: "Modern data architecture with real-time analytics",
