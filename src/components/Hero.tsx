@@ -12,26 +12,6 @@ import {
 } from "./ui/dialog";
 import { BarChart, Cloud, Bot, AppWindow } from "lucide-react";
 
-interface ServiceCard {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  story?: {
-    title: string;
-    description: string;
-    metrics: string[];
-  };
-}
-
-interface HeroProps {
-  headline?: string;
-  subheadline?: string;
-  serviceCards?: ServiceCard[];
-  videoUrl?: string;
-  onRegisterInterest?: () => void;
-  showCards?: boolean;
-}
-
 interface ServiceCardStory {
   title: string;
   description: string;
@@ -43,6 +23,15 @@ interface ServiceCard {
   description: string;
   icon: React.ReactNode;
   story?: ServiceCardStory;
+}
+
+interface HeroProps {
+  headline?: string;
+  subheadline?: string;
+  serviceCards?: ServiceCard[];
+  videoUrl?: string;
+  onRegisterInterest?: () => void;
+  showCards?: boolean;
 }
 
 const defaultServiceCards: ServiceCard[] = [
@@ -116,44 +105,48 @@ const Hero = ({
   const [headline, setHeadline] = React.useState<string | JSX.Element>(
     initialHeadline,
   );
-  const [selectedCard, setSelectedCard] = React.useState<
-    (typeof defaultServiceCards)[0] | null
-  >(null);
+  const [selectedCard, setSelectedCard] = React.useState<ServiceCard | null>(
+    null,
+  );
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setHeadline((current) =>
-        current ===
-        "On-demand Technical Team for SaaS Products and Midsize Businesses" ? (
-          <>
-            Not just a Vendor.{" "}
-            <span className="relative">
-              <span className="text-yellow-400">Your Partner</span>
-              <svg
-                className="absolute w-full -bottom-6 left-0"
-                viewBox="0 0 100 12"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,12 Q50,0 100,12"
-                  stroke="rgba(252, 211, 77, 0.5)"
-                  strokeWidth="3"
-                  fill="none"
-                />
-              </svg>
-            </span>
-          </>
-        ) : (
-          "On-demand Technical Team for SaaS Products and Midsize Businesses"
-        ),
-      );
+      setHeadline((current) => {
+        if (
+          typeof current === "string" &&
+          current ===
+            "On-demand Technical Team for SaaS Products and Midsize Businesses"
+        ) {
+          return (
+            <>
+              Not just a Vendor.{" "}
+              <span className="relative">
+                <span className="text-yellow-400">Your Partner</span>
+                <svg
+                  className="absolute w-full -bottom-6 left-0"
+                  viewBox="0 0 100 12"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,12 Q50,0 100,12"
+                    stroke="rgba(252, 211, 77, 0.5)"
+                    strokeWidth="3"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+            </>
+          );
+        }
+        return "On-demand Technical Team for SaaS Products and Midsize Businesses";
+      });
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <div className="relative w-full h-[800px] bg-black overflow-hidden">
-      {/* Video Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
       <video
         autoPlay
@@ -169,7 +162,6 @@ const Hero = ({
       </video>
       <UniverseLights />
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

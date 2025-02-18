@@ -51,6 +51,7 @@ export default function Locations() {
   React.useEffect(() => {
     if (!mapRef.current || typeof window === "undefined") return;
 
+    // @ts-ignore
     const L = window.L;
     const map: LeafletMap = L.map(mapRef.current).setView([30, 0], 2);
 

@@ -152,6 +152,7 @@ export default function RegistrationModal({
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
                 onClick={() => {
+                  // @ts-ignore
                   Cal.openCalendar({
                     calLink: "your-organization/30min",
                     config: {
