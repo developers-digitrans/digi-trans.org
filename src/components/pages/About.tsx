@@ -131,13 +131,6 @@ function About() {
                 transformation initiatives for Fortune 500 companies. Their
                 vision drives our commitment to innovation and excellence.
               </p>
-              <Button
-                className="group"
-                onClick={() => (window.location.href = "/ceo-profile")}
-              >
-                Read Full Bio
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
             </motion.div>
           </div>
         </div>

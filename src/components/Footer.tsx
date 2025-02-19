@@ -81,7 +81,7 @@ const Footer = ({
             <h2 className="text-2xl font-bold mb-8">
               Trusted by Industry Leaders
             </h2>
-            <div className="relative max-w-4xl mx-auto overflow-hidden mb-12 h-20">
+            <div className="relative max-w-4xl mx-auto overflow-hidden mb-12 h-48">
               <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black to-transparent z-10" />
               <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black to-transparent z-10" />
               <motion.div
@@ -90,21 +90,35 @@ const Footer = ({
                   x: ["-100%", "0%"],
                 }}
                 transition={{
-                  duration: 10,
+                  duration: 20,
                   repeat: Infinity,
                   ease: "linear",
                 }}
               >
-                {[...clientLogos, ...clientLogos, ...clientLogos].map(
-                  (logo, index) => (
-                    <div
-                      key={index}
-                      className="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-3xl font-bold text-white rounded-xl shadow-lg"
-                    >
-                      {logo.split("=")[1]}
-                    </div>
-                  ),
-                )}
+                {[...Array(11)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-48 h-48 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-lg"
+                  >
+                    <img
+                      src={`/images/${index + 1}.svg`}
+                      alt={`Logo ${index + 1}`}
+                      className="w-40 h-40 object-contain"
+                    />
+                  </div>
+                ))}
+                {[...Array(11)].map((_, index) => (
+                  <div
+                    key={`repeat-${index}`}
+                    className="w-48 h-48 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-lg"
+                  >
+                    <img
+                      src={`/images/${index + 1}.svg`}
+                      alt={`Logo ${index + 1}`}
+                      className="w-40 h-40 object-contain"
+                    />
+                  </div>
+                ))}
               </motion.div>
             </div>
             <div className="relative w-full overflow-hidden">

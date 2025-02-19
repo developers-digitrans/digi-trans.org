@@ -56,6 +56,37 @@ export default function Solutions() {
         showCards={false}
       />
 
+      {/* Introduction Section */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-3xl font-bold mb-6 text-white">
+              Driving Digital Excellence
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              At Digitrans, we understand that every enterprise faces unique
+              challenges in today's rapidly evolving digital landscape. Our
+              comprehensive suite of solutions is designed to address these
+              challenges head-on, combining cutting-edge technology with
+              industry best practices.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              From modernizing legacy systems to implementing robust security
+              measures, our solutions are tailored to help your organization
+              stay competitive and efficient. We leverage our expertise in cloud
+              computing, AI, and data analytics to deliver solutions that drive
+              real business value.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Solutions Grid */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,7 +100,7 @@ export default function Solutions() {
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="text-blue-500 mb-6">{solution.icon}</div>
-                  <h3 className="text-2xl font-semibold mb-4">
+                  <h3 className="text-2xl font-semibold mb-4 text-white">
                     {solution.title}
                   </h3>
                   <p className="text-gray-400 mb-6">{solution.description}</p>
