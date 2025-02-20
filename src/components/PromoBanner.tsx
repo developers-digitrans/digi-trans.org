@@ -10,7 +10,7 @@ export default function PromoBanner() {
         Try our Human Resources Management platform "Efficio", and start
         building your remote team.
         <button
-          onClick={() => navigate("/products/ember")}
+          onClick={() => navigate("/products/efficio")}
           className="text-white font-semibold hover:text-purple-200 transition-colors underline underline-offset-2"
         >
           Start here →

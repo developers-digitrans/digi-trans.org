@@ -104,15 +104,12 @@ export default function BigBytes() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
+              onClick={() =>
+                window.open("https://app.getbigbytes.com", "_blank")
+              }
             >
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out"
-            >
-              Book a 30-min Call with our CEO
             </Button>
           </motion.div>
         </div>
@@ -140,6 +137,22 @@ export default function BigBytes() {
               />
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="py-12 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              BigBytes is a modern data pipeline platform that simplifies ETL
+              and data processing at scale. With support for 100+ integrations,
+              real-time processing capabilities, and built-in monitoring,
+              BigBytes helps data teams build and maintain reliable data
+              pipelines. Our platform combines ease of use with enterprise-grade
+              features to handle your most demanding data workflows.
+            </p>
+          </div>
         </div>
       </section>
 

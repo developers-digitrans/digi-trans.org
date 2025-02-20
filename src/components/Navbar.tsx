@@ -67,9 +67,9 @@ const defaultProducts = [
     href: "/products/utrack",
   },
   {
-    title: "Ember",
+    title: "Efficio",
     description: "Complete human resource management system",
-    href: "/products/ember",
+    href: "/products/efficio",
   },
   {
     title: "GoDash",

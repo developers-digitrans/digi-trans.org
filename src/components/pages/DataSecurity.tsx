@@ -75,6 +75,17 @@ export default function DataSecurity() {
 
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              In today's digital landscape, protecting your data is more
+              critical than ever. Our comprehensive data security solutions
+              combine advanced encryption, access control systems, and
+              continuous monitoring to safeguard your valuable information
+              assets. We ensure compliance with global security standards while
+              maintaining the flexibility your business needs to operate
+              efficiently.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div

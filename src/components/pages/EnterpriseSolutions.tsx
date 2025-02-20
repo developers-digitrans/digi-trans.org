@@ -74,6 +74,17 @@ export default function EnterpriseSolutions() {
 
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Our enterprise solutions are designed to meet the complex needs of
+              large organizations. We combine cutting-edge technology with
+              industry best practices to deliver scalable, secure, and efficient
+              systems that drive business growth and digital transformation. Our
+              team of experts works closely with your organization to understand
+              your unique requirements and deliver tailored solutions that
+              provide lasting value.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div

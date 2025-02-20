@@ -74,6 +74,18 @@ export default function DigitalTransformation() {
 
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Digital transformation is more than just adopting new
+              technologies—it's about fundamentally changing how your business
+              operates and delivers value to customers. Our comprehensive
+              approach combines strategic consulting, technical expertise, and
+              change management to help organizations navigate their digital
+              journey successfully. We focus on creating sustainable,
+              future-proof solutions that drive innovation and competitive
+              advantage.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div

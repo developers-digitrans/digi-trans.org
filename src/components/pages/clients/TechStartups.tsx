@@ -74,6 +74,22 @@ export default function TechStartups() {
         </div>
       </div>
 
+      {/* Overview Section */}
+      <section className="py-12 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              We partner with innovative startups to build and scale their
+              technology solutions rapidly. Our agile approach combines
+              technical expertise with startup-focused methodologies to help you
+              move fast and grow faster. From MVP development to scaling
+              infrastructure, we provide the technical foundation your startup
+              needs to succeed in today's competitive landscape.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -90,7 +106,7 @@ export default function TechStartups() {
                   <h3 className="text-2xl font-semibold mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600">{feature.description}</p>
+                  <p className="text-gray-400">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}

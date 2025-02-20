@@ -78,6 +78,8 @@ export default function Locations() {
         headline="Our Global Presence"
         subheadline="With offices across multiple continents, we're ready to serve your business needs wherever you are."
         showCards={false}
+        showBookCallButton={true}
+        onRegisterInterest={() => setShowRegistrationModal(true)}
       />
 
       <section className="py-24">

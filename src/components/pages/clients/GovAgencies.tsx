@@ -105,6 +105,23 @@ export default function GovAgencies() {
         </div>
       </div>
 
+      {/* Overview Section */}
+      <section className="py-12 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              We specialize in delivering secure, compliant solutions for
+              government agencies and public sector organizations. Our solutions
+              meet the highest security standards including FedRAMP, NIST, and
+              CMMC, while providing the modern capabilities needed to serve
+              citizens effectively. From classified systems to public services,
+              we ensure your technology infrastructure is both secure and
+              efficient.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-4">

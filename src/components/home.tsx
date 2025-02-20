@@ -13,7 +13,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar onRegisterInterest={() => setShowRegistrationModal(true)} />
-      <Hero onRegisterInterest={() => setShowRegistrationModal(true)} />
+      <Hero
+        onRegisterInterest={() => setShowRegistrationModal(true)}
+        showBookCallButton={true}
+      />
       <ServicesSection />
       <ProcessSection />
       <ProjectsSection />

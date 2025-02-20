@@ -112,15 +112,10 @@ export default function UTrack() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
+              onClick={() => window.open("https://app.getutrack.com", "_blank")}
             >
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out"
-            >
-              Book a 30-min Call with our CEO
             </Button>
           </motion.div>
         </div>
@@ -148,6 +143,22 @@ export default function UTrack() {
               />
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="py-12 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              uTrack is a modern project management platform designed for teams
+              that demand flexibility and power. With multiple views including
+              Kanban, List, and Timeline, teams can visualize their work in ways
+              that make sense for them. Our real-time collaboration features,
+              custom workflows, and powerful automation capabilities help teams
+              stay productive and deliver projects on time.
+            </p>
+          </div>
         </div>
       </section>
 

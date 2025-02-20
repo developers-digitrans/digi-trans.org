@@ -113,6 +113,22 @@ export default function Fortune500() {
         </div>
       </div>
 
+      {/* Overview Section */}
+      <section className="py-12 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Our Fortune 500 solutions are designed to meet the complex needs
+              of global enterprises. With a proven track record of delivering
+              mission-critical systems, we help industry leaders leverage
+              cutting-edge technology to maintain their competitive advantage.
+              Our enterprise-grade solutions combine scalability, security, and
+              innovation to drive digital transformation at scale.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-4">

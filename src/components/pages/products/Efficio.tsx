@@ -7,53 +7,49 @@ import { Card } from "../../ui/card";
 import { Button } from "../../ui/button";
 import { BlogCard } from "../../ui/blog-card";
 import {
-  LineChart,
-  DollarSign,
-  FileText,
-  BarChart,
+  UserCircle,
+  Briefcase,
+  GraduationCap,
+  Target,
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
 
 const features = [
   {
-    icon: <LineChart className="w-8 h-8" />,
-    title: "Financial Analytics",
-    description:
-      "Real-time insights into your business finances with powerful reporting tools.",
+    icon: <UserCircle className="w-8 h-8" />,
+    title: "Talent Acquisition",
+    description: "AI-powered recruitment and candidate matching system.",
   },
   {
-    icon: <DollarSign className="w-8 h-8" />,
-    title: "Multi-Currency",
-    description:
-      "Handle transactions in multiple currencies with automatic exchange rates.",
+    icon: <Briefcase className="w-8 h-8" />,
+    title: "Onboarding Automation",
+    description: "Streamline employee onboarding with automated workflows.",
   },
   {
-    icon: <FileText className="w-8 h-8" />,
-    title: "Automated Accounting",
-    description:
-      "Automate your accounting processes with smart transaction matching.",
+    icon: <GraduationCap className="w-8 h-8" />,
+    title: "Performance Analytics",
+    description: "Track and optimize team performance with real-time insights.",
   },
   {
-    icon: <BarChart className="w-8 h-8" />,
-    title: "Business Intelligence",
-    description:
-      "Make data-driven decisions with advanced analytics and insights.",
+    icon: <Target className="w-8 h-8" />,
+    title: "Goal Management",
+    description: "Set and track OKRs with our intuitive goal-setting system.",
   },
 ];
 
 const benefits = [
-  "Cloud-Based",
-  "Multi-Currency",
-  "Automated Reports",
-  "Bank Integration",
-  "Custom Fields",
-  "Role-Based Access",
-  "Audit Trails",
+  "AI-Powered Matching",
+  "Automated Workflows",
+  "Performance Tracking",
+  "Custom Reports",
+  "Team Analytics",
+  "Mobile Apps",
   "API Access",
+  "SSO Integration",
 ];
 
-export default function Ledger() {
+export default function Efficio() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -81,10 +77,10 @@ export default function Ledger() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
           >
-            Modern Accounting Software
+            Modern HR Platform
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-              Built for Growth
+              Built for Scale
             </span>
           </motion.h1>
 
@@ -94,8 +90,8 @@ export default function Ledger() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
           >
-            Streamline your financial operations with powerful accounting
-            software designed for modern businesses.
+            Streamline your HR operations with AI-powered recruitment, automated
+            onboarding, and performance analytics.
           </motion.p>
 
           <motion.div
@@ -107,7 +103,9 @@ export default function Ledger() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
-              onClick={() => window.open("https://app.getledger.com", "_blank")}
+              onClick={() =>
+                window.open("https://app.getefficio.com", "_blank")
+              }
             >
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -129,7 +127,7 @@ export default function Ledger() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/4mXBPRLhaQ4"
+                src="https://www.youtube.com/embed/WKmpm0ms_Sg"
                 title="Product Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -146,12 +144,12 @@ export default function Ledger() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xl text-gray-300 leading-relaxed">
-              Ledger is more than just accounting software—it's a comprehensive
-              financial management platform built for modern businesses. With
-              real-time insights, automated workflows, and powerful reporting
-              tools, Ledger helps you make informed decisions faster. Our
-              platform seamlessly integrates with your existing systems while
-              maintaining bank-grade security and compliance standards.
+              Efficio is a modern HR platform that transforms how companies
+              manage their workforce. From AI-powered recruitment to automated
+              onboarding and performance analytics, Efficio streamlines your HR
+              operations while providing actionable insights. Built with
+              security and compliance in mind, our platform helps you build and
+              manage high-performing teams efficiently.
             </p>
           </div>
         </div>
@@ -195,7 +193,7 @@ export default function Ledger() {
               Everything you need in one place
             </h2>
             <p className="text-xl text-gray-400">
-              Powerful features to help your business succeed
+              Powerful features to help your HR team succeed
             </p>
           </motion.div>
 
@@ -230,18 +228,18 @@ export default function Ledger() {
               Related Articles
             </h2>
             <p className="text-xl text-gray-400">
-              Learn more about fintech and accounting
+              Learn more about HR tech and management
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <BlogCard
-              title="Real-time Analytics with Apache Kafka"
-              description="Building real-time analytics pipelines processing millions of events per second using Apache Kafka and modern streaming technologies."
-              image="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800"
-              date="March 1, 2024"
-              readTime="8 min read"
-              slug="real-time-analytics-kafka"
+              title="MLOps Best Practices for Production AI Systems"
+              description="A comprehensive guide to implementing MLOps in enterprise environments, from model training to production deployment."
+              image="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800"
+              date="March 10, 2024"
+              readTime="12 min read"
+              slug="mlops-best-practices"
             />
             <BlogCard
               title="Cloud-Native Architecture Patterns"

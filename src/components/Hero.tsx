@@ -32,6 +32,7 @@ interface HeroProps {
   videoUrl?: string;
   onRegisterInterest?: () => void;
   showCards?: boolean;
+  showBookCallButton?: boolean;
 }
 
 const defaultServiceCards: ServiceCard[] = [
@@ -101,6 +102,7 @@ const Hero = ({
   videoUrl = "https://example.com/video.mp4",
   onRegisterInterest = () => {},
   showCards = true,
+  showBookCallButton = false,
 }: HeroProps) => {
   const [headline, setHeadline] = React.useState<string | JSX.Element>(
     initialHeadline,
@@ -226,21 +228,23 @@ const Hero = ({
           </motion.div>
         )}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -10, scale: 1.02 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12"
-        >
-          <Button
-            size="lg"
-            onClick={onRegisterInterest}
-            className="p-6 bg-blue-950/30 backdrop-blur-lg border-blue-800/30 hover:bg-blue-900/40 transition-all duration-300 ease-in-out text-white px-8 py-6 text-lg"
+        {showBookCallButton && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -10, scale: 1.02 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-12"
           >
-            Book a 30-min Call with our CEO
-          </Button>
-        </motion.div>
+            <Button
+              size="lg"
+              onClick={onRegisterInterest}
+              className="p-6 bg-blue-950/30 backdrop-blur-lg border-blue-800/30 hover:bg-blue-900/40 transition-all duration-300 ease-in-out text-white px-8 py-6 text-lg"
+            >
+              Book a 30-min Call with our CEO
+            </Button>
+          </motion.div>
+        )}
       </div>
 
       <Dialog open={!!selectedCard} onOpenChange={() => setSelectedCard(null)}>
