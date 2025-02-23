@@ -32,12 +32,27 @@ const Line = ({ delay }: { delay: number }) => (
 
 export default function GridBackground() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-      {/* Falling Lines */}
-      {Array.from({ length: 50 }).map((_, i) => (
-        <Line key={`line-${i}`} delay={i * 0.2} />
-      ))}
+    <div
+      className="fixed inset-0 overflow-hidden pointer-events-none"
+      style={{ zIndex: -1 }}
+    >
+      <div className="absolute inset-0 bg-black z-[-2]" />
+      <div className="absolute inset-0 z-[-1]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgb(147 197 253) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+            backgroundPosition: "0 0",
+          }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        {/* Falling Lines */}
+        {Array.from({ length: 50 }).map((_, i) => (
+          <Line key={`line-${i}`} delay={i * 0.2} />
+        ))}
+      </div>
     </div>
   );
 }

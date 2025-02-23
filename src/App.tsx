@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import GridBackground from "./components/GridBackground";
 import PromoBanner from "./components/PromoBanner";
+import EnablingClientMaximizeIT from "./components/pages/blog/EnablingClientMaximizeIT";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import Services from "./components/pages/Services";
@@ -50,6 +51,10 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route
+          path="/blog/enabling-our-client-to-maximise-the-business-value-from-it"
+          element={<EnablingClientMaximizeIT />}
+        />
         <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />

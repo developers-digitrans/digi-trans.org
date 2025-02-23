@@ -73,7 +73,10 @@ const Footer = ({
   testimonials = defaultTestimonials,
 }: FooterProps) => {
   return (
-    <footer className="bg-black text-white py-16 border-t border-gray-800">
+    <footer
+      className="relative bg-black/50 backdrop-blur-sm text-white py-16 border-t border-gray-800"
+      style={{ zIndex: 1 }}
+    >
       <div className="container mx-auto px-4">
         {/* Social Proof Section */}
         <div>

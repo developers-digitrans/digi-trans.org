@@ -10,6 +10,16 @@ import { ArrowRight, Clock } from "lucide-react";
 function Blog() {
   const blogPosts = [
     {
+      title: "Enabling our client to maximise the business value from IT",
+      description:
+        "How we helped a retailer understand and maximize their IT landscape value through comprehensive evaluation and strategic planning.",
+      image: "/images/consult.png",
+      date: "March 20, 2024",
+      readTime: "5 min read",
+      slug: "enabling-our-client-to-maximise-the-business-value-from-it",
+      category: "Case Study",
+    },
+    {
       title: "Building Enterprise Data Lakes: A Complete Guide",
       description:
         "Learn how to design and implement scalable data lakes that process petabytes of data with real-time analytics capabilities.",

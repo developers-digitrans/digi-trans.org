@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure all content is above background */
+.card,
+.button,
+.dialog,
+.dropdown-menu,
+.navigation-menu,
+.popover,
+.tooltip,
+section,
+header,
+footer,
+.prose,
+.form,
+.input,
+.textarea {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure text content is visible */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dotted background pattern */
+.dotted-background {
+  background-image: radial-gradient(
+    circle,
+    rgb(75 85 99 / 0.2) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  background-position: 0 0;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

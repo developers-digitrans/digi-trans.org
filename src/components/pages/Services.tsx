@@ -1,6 +1,7 @@
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Hero from "../Hero";
+import UniverseLights from "../UniverseLights";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
@@ -203,11 +204,85 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <Hero
-        headline="Our Services"
-        subheadline="Comprehensive technology solutions to drive your business forward with AI, cloud, and modern software development."
-        showCards={false}
-      />
+      <div className="relative w-full h-[800px] bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+        >
+          <source
+            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <UniverseLights />
+
+        <div className="relative z-10 container mx-auto px-4 h-full flex flex-row gap-12 items-center pt-32">
+          <div className="flex-1 max-w-3xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+            >
+              Better solutions for{" "}
+              <span className="text-orange-500">today's</span>
+              <br />
+              challenges
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-gray-300 mb-12 max-w-3xl"
+            >
+              Explore the ways we tackle complex and dynamic IT challenges for
+              private and public organisations alike.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="max-w-4xl space-y-6"
+            >
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Digitrans puts better consulting into action. At its core,
+                better consulting is all about people and relationships. We
+                start by listening, taking the time to understand each
+                customer's challenges and objectives, and getting to grips with
+                what's really important. We then bring the right team and skill
+                sets to bear for the problem at hand, designing the most
+                effective IT solutions to solve your specific business problems.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Together, we achieve things that wouldn't be possible on our
+                own. We strive to always raise the bar, establishing better
+                consulting as the industry standard.
+              </p>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex-1 relative hidden lg:block"
+          >
+            <div className="relative w-full aspect-square">
+              <div className="absolute inset-0 border-2 border-orange-500 transform rotate-3 scale-105"></div>
+              <img
+                src="/images/consult.png"
+                alt="IT Consulting"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Services Grid */}
       <section className="py-24">
