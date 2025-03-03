@@ -15,7 +15,7 @@ const services = [
     icon: <Code2 className="w-8 h-8" />,
     title: "Enterprise Software Development",
     description:
-      "Custom enterprise solutions with modern tech stack and scalable architecture.",
+      "Future-proof enterprise solutions built with scalable architecture and modern technology stacks for maximum business impact.",
     technologies: [
       "Microservices",
       "Event-Driven",
@@ -27,21 +27,21 @@ const services = [
     icon: <Smartphone className="w-8 h-8" />,
     title: "Data Engineering & Analytics",
     description:
-      "End-to-end data pipelines and analytics solutions for actionable insights.",
+      "Transform raw data into actionable intelligence with our end-to-end data pipelines and advanced analytics solutions.",
     technologies: ["Apache Spark", "Snowflake", "dbt", "Airflow"],
   },
   {
     icon: <Cloud className="w-8 h-8" />,
     title: "Cloud & DevOps",
     description:
-      "Cloud transformation and DevOps automation for operational excellence.",
+      "Accelerate innovation with seamless cloud transformation and DevOps automation that drives operational excellence.",
     technologies: ["AWS", "Kubernetes", "Terraform", "CI/CD"],
   },
   {
     icon: <Blocks className="w-8 h-8" />,
     title: "AI/ML Solutions",
     description:
-      "Custom AI/ML models and MLOps for production-grade AI systems.",
+      "Harness the power of artificial intelligence with custom ML models and production-grade MLOps for enterprise applications.",
     technologies: ["TensorFlow", "PyTorch", "MLflow", "Kubeflow"],
   },
 ];

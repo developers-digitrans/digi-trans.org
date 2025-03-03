@@ -96,8 +96,8 @@ const defaultServiceCards: ServiceCard[] = [
 
 const Hero = ({
   headline:
-    initialHeadline = "Enterprise Data & AI Solutions for Digital Transformation",
-  subheadline = "Partner with us to unlock the power of your data through advanced analytics, AI/ML solutions, and cloud-native architectures that drive business growth.",
+    initialHeadline = "Transforming Businesses Through Enterprise Technology",
+  subheadline = "We build scalable, future-proof solutions that drive innovation and growth for forward-thinking organizations. From data analytics to cloud architecture, we're your partner in digital excellence.",
   serviceCards = defaultServiceCards,
   videoUrl = "https://example.com/video.mp4",
   onRegisterInterest = () => {},

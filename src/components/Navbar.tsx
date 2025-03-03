@@ -58,32 +58,32 @@ const defaultSolutions = [
 const defaultProducts = [
   {
     title: "Ledger",
-    description: "Comprehensive accounting & finance platform",
+    description: "Enterprise-grade financial management platform",
     href: "/products/ledger",
   },
   {
     title: "uTrack",
-    description: "Advanced project management solution",
+    description: "Agile project management for high-performing teams",
     href: "/products/utrack",
   },
   {
     title: "Efficio",
-    description: "Complete human resource management system",
+    description: "AI-powered HR and talent management solution",
     href: "/products/efficio",
   },
   {
     title: "GoDash",
-    description: "Business intelligence as a service",
+    description: "Real-time business intelligence platform",
     href: "/products/godash",
   },
   {
     title: "BigBytes",
-    description: "Big data processing and integration platform",
+    description: "Scalable data processing and analytics engine",
     href: "/products/bigbytes",
   },
   {
     title: "Kozmo AI",
-    description: "Agentic AI orchestration platform",
+    description: "Enterprise AI orchestration and automation",
     href: "/products/kozmo-ai",
   },
 ];

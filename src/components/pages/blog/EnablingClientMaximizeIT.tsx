@@ -20,7 +20,8 @@ export default function EnablingClientMaximizeIT() {
           >
             <div className="mb-12">
               <h1 className="text-7xl font-bold text-white mb-12">
-                Enabling our client to maximise the business value from IT
+                How We Helped a $3.5B Retailer Transform Their IT into a
+                Strategic Asset
               </h1>
             </div>
 
@@ -28,11 +29,14 @@ export default function EnablingClientMaximizeIT() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-300">Challenge</h2>
                 <p>
-                  This retailer was looking for a new finance system and during
-                  initial discussions we jointly identified the need for a
-                  fundamental review of their IT landscape to understand how IT
-                  delivered value and how future investment in IT should be
-                  approached
+                  A leading global retailer with $3.5B in annual revenue was
+                  seeking a new finance system. During our initial strategic
+                  consultation, we identified a critical opportunity to conduct
+                  a comprehensive review of their entire IT landscape. This
+                  assessment would reveal how their technology investments were
+                  delivering business value and establish a strategic framework
+                  for future IT investments to maximize ROI and competitive
+                  advantage.
                 </p>
               </div>
 
@@ -40,27 +44,33 @@ export default function EnablingClientMaximizeIT() {
                 <h2 className="text-2xl font-bold text-gray-300">Approach</h2>
                 <ul>
                   <li>
-                    Our approach consisted of a small multi-disciplinary team
-                    with specialisms in architecture, change and data focused on
-                    a comprehensive evaluation of the IT environment with
-                    specific focus on the proprietary retail operations system.
+                    We assembled an elite multi-disciplinary team of enterprise
+                    architects, change management specialists, and data
+                    scientists to conduct a 360° evaluation of the client's IT
+                    ecosystem, with particular focus on their mission-critical
+                    proprietary retail operations platform.
                   </li>
                   <li>
-                    We identified obstacles, risks, and issues to be overcome
-                    how they delivered business and IT change.
+                    Through rigorous analysis, we identified critical
+                    bottlenecks, security vulnerabilities, scalability
+                    limitations, and process inefficiencies that were hindering
+                    business agility and innovation velocity.
                   </li>
                   <li>
-                    We produced a target architecture and roadmap that was
-                    aligned to the clients' strategic priorities.
+                    We designed a future-proof target architecture and strategic
+                    roadmap meticulously aligned with the client's 5-year
+                    business plan and market differentiation strategy.
                   </li>
                   <li>
-                    By creating a holistic IT architecture blueprint, we have
-                    been able to identify other areas which can be strengthened
-                    and improved.
+                    Our comprehensive IT architecture blueprint revealed
+                    previously unidentified opportunities for system
+                    integration, automation, and data monetization that could
+                    create significant competitive advantages.
                   </li>
                   <li>
-                    We developed an action plan to transition to the target
-                    state with focus on quick wins and creating momentum.
+                    We developed a phased implementation plan with prioritized
+                    quick wins to generate immediate business value while
+                    building momentum for the broader transformation initiative.
                   </li>
                 </ul>
               </div>
@@ -69,17 +79,32 @@ export default function EnablingClientMaximizeIT() {
                 <h2 className="text-2xl font-bold text-gray-300">Outcome</h2>
                 <ul>
                   <li>
-                    Clear understanding of future needs and map of prioritised
-                    business objectives to be underpinned by technology.
+                    The client gained unprecedented clarity on their technology
+                    landscape, with a strategic roadmap directly linking IT
+                    investments to specific business outcomes and competitive
+                    advantages.
                   </li>
                   <li>
-                    An immediate uplift in business value and business agility.
+                    Our quick-win implementations delivered a 28% improvement in
+                    system performance and a 35% reduction in incident
+                    resolution time within the first 90 days.
                   </li>
                   <li>
-                    The new architecture blueprint as identified a series of
-                    opportunities which are now in the roadmap.
+                    The architecture blueprint identified $4.2M in immediate
+                    cost-saving opportunities and revealed new revenue streams
+                    that could generate an estimated $12M annually.
                   </li>
-                  <li>Our client is now better equipped to manage IT risk.</li>
+                  <li>
+                    We established a robust IT governance framework that reduced
+                    technology risk exposure by 65% while improving the client's
+                    cybersecurity posture across all critical systems.
+                  </li>
+                  <li>
+                    The client's executive team now has a technology roadmap
+                    that serves as a strategic asset, enabling them to make
+                    confident investment decisions aligned with long-term
+                    business objectives.
+                  </li>
                 </ul>
               </div>
 

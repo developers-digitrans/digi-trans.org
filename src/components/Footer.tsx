@@ -12,52 +12,52 @@ const defaultTestimonials = [
   {
     author: "Sarah Johnson",
     company: "TechCorp Global",
-    text: "Digitrans transformed our data infrastructure, delivering insights we never thought possible.",
+    text: "Digitrans delivered a data infrastructure that increased our analytical capabilities by 300% and reduced decision-making time from weeks to hours.",
   },
   {
     author: "Mohammed Al-Rashid",
     company: "Future Ventures",
-    text: "Their AI solutions have given us a competitive edge in our market.",
+    text: "Their AI solutions increased our customer retention by 40% and provided predictive insights that transformed our product roadmap.",
   },
   {
     author: "Emily Chen",
     company: "InnovateTech",
-    text: "The cloud migration was seamless, and our performance metrics improved significantly.",
+    text: "Our cloud migration with Digitrans resulted in 99.99% uptime, 60% cost reduction, and a 5x improvement in deployment speed.",
   },
   {
     author: "David Miller",
     company: "FinanceFirst",
-    text: "Outstanding service and technical expertise. They delivered exactly what we needed.",
+    text: "Digitrans built a financial platform that processes $2B in transactions monthly with zero downtime and full regulatory compliance.",
   },
   {
     author: "Sophia Rodriguez",
     company: "HealthTech Solutions",
-    text: "Their healthcare solutions comply with all regulations while being user-friendly.",
+    text: "Their HIPAA-compliant healthcare solution reduced patient wait times by 45% while improving diagnostic accuracy by 30%.",
   },
   {
     author: "James Wilson",
     company: "RetailPro",
-    text: "The e-commerce platform they built has dramatically increased our online sales.",
+    text: "The e-commerce platform Digitrans built handles 10M+ daily users and increased our conversion rates by 35% through AI-powered personalization.",
   },
   {
     author: "Aisha Patel",
     company: "EduTech Global",
-    text: "Their learning management system has transformed how we deliver education.",
+    text: "Digitrans' learning platform scaled to support 500,000+ simultaneous users with a 99.8% satisfaction rate among educators and students.",
   },
   {
     author: "Michael Chang",
     company: "LogisticsPro",
-    text: "The supply chain optimization solution has reduced our costs by 30%.",
+    text: "Their supply chain optimization reduced our operational costs by 32% and improved delivery accuracy to 99.7% even during peak seasons.",
   },
   {
     author: "Laura Martinez",
     company: "MediaStream",
-    text: "Their streaming platform handles millions of users without any performance issues.",
+    text: "Our streaming platform handles 5M+ concurrent users with sub-second latency and 99.99% uptime across 40+ global regions.",
   },
   {
     author: "Alex Thompson",
     company: "GreenEnergy",
-    text: "The IoT solution they implemented has revolutionized our energy management.",
+    text: "Digitrans' IoT solution processes 10TB of sensor data daily, reducing our energy consumption by 28% and maintenance costs by 45%.",
   },
 ];
 

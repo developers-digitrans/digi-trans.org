@@ -5,27 +5,27 @@ import { Search, Code, TestTube, Rocket } from "lucide-react";
 const steps = [
   {
     icon: <Search className="w-8 h-8" />,
-    title: "Assessment & Strategy",
+    title: "Discovery & Strategy",
     description:
-      "Deep-dive technical assessment and strategic roadmap development aligned with business goals.",
+      "We conduct comprehensive technical assessments and develop strategic roadmaps perfectly aligned with your business objectives and growth targets.",
   },
   {
     icon: <Code className="w-8 h-8" />,
     title: "Architecture & Design",
     description:
-      "Scalable architecture design and technology selection based on enterprise requirements.",
+      "Our experts design scalable, future-proof architectures and select optimal technologies based on your specific enterprise requirements.",
   },
   {
     icon: <TestTube className="w-8 h-8" />,
-    title: "Implementation",
+    title: "Agile Implementation",
     description:
-      "Agile development with continuous integration, testing, and stakeholder feedback.",
+      "We employ agile methodologies with continuous integration, rigorous testing, and regular stakeholder feedback to ensure quality and alignment.",
   },
   {
     icon: <Rocket className="w-8 h-8" />,
     title: "Optimization & Scale",
     description:
-      "Performance optimization, monitoring setup, and continuous improvement cycles.",
+      "Post-launch, we focus on performance optimization, comprehensive monitoring, and continuous improvement to maximize ROI and scalability.",
   },
 ];
 

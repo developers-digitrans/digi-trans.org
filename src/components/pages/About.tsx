@@ -85,16 +85,18 @@ function About() {
             className="max-w-4xl mx-auto text-center space-y-8"
           >
             <p className="text-xl text-gray-300 leading-relaxed">
-              Digitrans exists to deliver a better IT consulting experience for
-              our clients by forging meaningful relationships, building tailored
-              solutions and delivering impactful outcomes through our unique,
-              multi-disciplinary approach.
+              Digitrans exists to redefine the enterprise technology consulting
+              experience. We forge strategic partnerships with our clients,
+              building transformative solutions that deliver measurable business
+              outcomes through our unique blend of technical excellence,
+              industry expertise, and innovative thinking.
             </p>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Our vision is to inspire positive change by becoming a beacon of
-              better consulting. We want to lead a community of like-minded
-              business technologists who improve the industry for practitioners
-              and clients alike.
+              Our vision is to be the global leader in enterprise technology
+              transformation, setting new standards for consulting excellence
+              while building a community of visionary technologists who drive
+              positive change across industries. We don't just solve today's
+              problems—we architect tomorrow's opportunities.
             </p>
           </motion.div>
         </div>

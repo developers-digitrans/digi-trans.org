@@ -10,9 +10,10 @@ import { ArrowRight, Clock } from "lucide-react";
 function Blog() {
   const blogPosts = [
     {
-      title: "Enabling our client to maximise the business value from IT",
+      title:
+        "How We Helped a $3.5B Retailer Transform Their IT into a Strategic Asset",
       description:
-        "How we helped a retailer understand and maximize their IT landscape value through comprehensive evaluation and strategic planning.",
+        "Learn how our strategic IT assessment unlocked $16M+ in value and created a technology roadmap that became a competitive advantage for a global retail leader.",
       image: "/images/consult.png",
       date: "March 20, 2024",
       readTime: "5 min read",

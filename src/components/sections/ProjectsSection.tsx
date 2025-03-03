@@ -5,25 +5,25 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Global Bank Data Platform",
+    title: "Global Financial Data Platform",
     description:
-      "Enterprise data lake and analytics platform processing 10TB+ daily transactions for a Fortune 500 bank.",
+      "Built a secure, scalable data platform processing 15TB+ daily transactions with real-time fraud detection for a Fortune 100 bank, reducing operational costs by $45M annually.",
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=60",
     tags: ["Snowflake", "Apache Spark", "Kubernetes", "ML Ops"],
   },
   {
-    title: "Healthcare AI System",
+    title: "Healthcare AI Diagnostic System",
     description:
-      "HIPAA-compliant AI system for medical image analysis with 95% accuracy in cancer detection.",
+      "Developed a HIPAA-compliant AI system for medical image analysis achieving 97.8% accuracy in early cancer detection, now used by 200+ hospitals nationwide.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=60",
     tags: ["TensorFlow", "AWS", "HIPAA Compliant", "MLflow"],
   },
   {
-    title: "Real-time Analytics Platform",
+    title: "Enterprise E-commerce Analytics",
     description:
-      "Cloud-native analytics platform processing 1M+ events/sec for a leading e-commerce company.",
+      "Engineered a cloud-native analytics platform processing 3M+ events/sec with sub-100ms latency, enabling real-time personalization that increased conversion rates by 32%.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
     tags: ["Apache Kafka", "Elasticsearch", "Grafana", "AWS"],

@@ -251,18 +251,23 @@ export default function Services() {
               className="max-w-4xl space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Digitrans puts better consulting into action. At its core,
-                better consulting is all about people and relationships. We
-                start by listening, taking the time to understand each
-                customer's challenges and objectives, and getting to grips with
-                what's really important. We then bring the right team and skill
-                sets to bear for the problem at hand, designing the most
-                effective IT solutions to solve your specific business problems.
+                At Digitrans, we don't just provide services—we forge strategic
+                partnerships that transform businesses. Our approach begins with
+                deep discovery, where we immerse ourselves in your
+                organization's challenges, objectives, and competitive
+                landscape. This foundation allows us to assemble the perfect
+                blend of industry experts, technical specialists, and strategic
+                thinkers to architect solutions that drive measurable business
+                outcomes.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Together, we achieve things that wouldn't be possible on our
-                own. We strive to always raise the bar, establishing better
-                consulting as the industry standard.
+                What sets us apart is our commitment to excellence at every
+                stage. From initial strategy through implementation and beyond,
+                we maintain unwavering focus on delivering exceptional quality,
+                innovative thinking, and tangible results that exceed
+                expectations. Our success is measured not just by project
+                completion, but by the lasting business value we create for our
+                clients.
               </p>
             </motion.div>
           </div>
