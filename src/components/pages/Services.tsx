@@ -29,6 +29,9 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { useState } from "react";
+import { ProgressBar } from "../ui/progress-bar";
+import { BackToTop } from "../ui/back-to-top";
+import { StickyCTA } from "../ui/sticky-cta";
 
 const services = [
   {
@@ -203,6 +206,7 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <ProgressBar />
       <Navbar />
       <div className="relative w-full h-[800px] bg-black overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
@@ -382,6 +386,8 @@ export default function Services() {
       </Dialog>
 
       <Footer />
+      <BackToTop />
+      <StickyCTA />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UniverseLights from "./UniverseLights";
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "./ui/dialog";
-import { BarChart, Cloud, Bot, AppWindow } from "lucide-react";
+import { BarChart, Cloud, Bot, AppWindow, ArrowRight } from "lucide-react";
 
 interface ServiceCardStory {
   title: string;
@@ -212,7 +212,7 @@ const Hero = ({
                 className="w-full sm:w-[300px]"
               >
                 <Card
-                  className="p-6 bg-blue-950/30 backdrop-blur-lg border-blue-800/30 hover:bg-blue-900/40 transition-all duration-300 ease-in-out cursor-pointer"
+                  className="p-6 bg-blue-950/30 backdrop-blur-lg border-blue-800/30 hover:bg-blue-900/40 transition-all duration-300 ease-in-out cursor-pointer transform hover:translate-y-[-10px] hover:shadow-[0_10px_25px_-5px_rgba(59,130,246,0.3)]"
                   onClick={() => setSelectedCard(card)}
                 >
                   <div className="flex justify-center items-center mb-4">
@@ -238,10 +238,15 @@ const Hero = ({
           >
             <Button
               size="lg"
-              onClick={onRegisterInterest}
-              className="p-6 bg-blue-950/30 backdrop-blur-lg border-blue-800/30 hover:bg-blue-900/40 transition-all duration-300 ease-in-out text-white px-8 py-6 text-lg"
+              onClick={() => setShowCalPopup(true)}
+              className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 ease-in-out text-white px-8 py-6 text-lg relative group overflow-hidden"
             >
-              Book a 30-min Call with our CEO
+              <span className="relative z-10 flex items-center gap-2">
+                <span className="animate-pulse bg-white rounded-full w-2 h-2 mr-1"></span>
+                Book a 30-min Call with our CEO
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></span>
             </Button>
           </motion.div>
         )}

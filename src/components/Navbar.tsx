@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import {
   NavigationMenu,
@@ -11,7 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Logo } from "./ui/logo";
-import RegistrationModal from "./RegistrationModal";
+import BookingModal from "./BookingModal";
 
 interface NavbarProps {
   logo?: string;
@@ -112,7 +112,7 @@ const Navbar = ({
   onRegisterInterest = () => console.log("Register Interest clicked"),
 }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -310,7 +310,7 @@ const Navbar = ({
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <a
-                  href="/locations"
+                  href="/contact"
                   className="block select-none rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
                 >
                   Contact Us
@@ -321,27 +321,22 @@ const Navbar = ({
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-4">
               <Button
-                onClick={() => setShowRegistrationModal(true)}
-                className="flex items-center gap-2 bg-transparent border border-white/20 text-white hover:bg-white/10 transition-colors"
+                onClick={() => setShowBookingModal(true)}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 transition-colors relative group"
               >
-                Book a Call
-                <ChevronDown className="h-4 w-4" />
-              </Button>
-              <Button
-                onClick={() =>
-                  window.open("https://app.getefficio.com", "_blank")
-                }
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 transition-colors"
-              >
-                Try Efficio
+                <span className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></span>
+                <span className="relative">Book a Demo</span>
               </Button>
             </div>
           </div>
         </div>
       </div>
-      <RegistrationModal
-        open={showRegistrationModal}
-        onOpenChange={setShowRegistrationModal}
+
+      <BookingModal
+        open={showBookingModal}
+        onOpenChange={setShowBookingModal}
+        title="Book a Demo with Our Team"
+        description="Schedule a personalized demo to see how our solutions can transform your business."
       />
     </div>
   );

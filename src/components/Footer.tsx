@@ -1,7 +1,13 @@
 import React from "react";
 import { Card } from "./ui/card";
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Facebook } from "lucide-react";
+import {
+  Linkedin,
+  Twitter,
+  Facebook,
+  Github,
+  MessageSquare,
+} from "lucide-react";
 
 interface FooterProps {
   clientLogos?: string[];
@@ -282,7 +288,7 @@ const Footer = ({
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/company/digitranslab"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
@@ -292,22 +298,42 @@ const Footer = ({
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com"
+                    href="https://twitter.com/digitranslab"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <Twitter className="h-4 w-4" /> Twitter
+                    <Twitter className="h-4 w-4" /> X (Twitter)
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://facebook.com"
+                    href="https://facebook.com/digitranslab"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
                   >
                     <Facebook className="h-4 w-4" /> Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/digitranslab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                  >
+                    <Github className="h-4 w-4" /> GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/digitranslab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                  >
+                    <MessageSquare className="h-4 w-4" /> Discord
                   </a>
                 </li>
               </ul>

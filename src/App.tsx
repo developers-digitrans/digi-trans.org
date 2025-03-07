@@ -55,7 +55,7 @@ function App() {
           path="/blog/enabling-our-client-to-maximise-the-business-value-from-it"
           element={<EnablingClientMaximizeIT />}
         />
-        <Route path="/locations" element={<Locations />} />
+        {/* Removed Locations route */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/ceo-profile" element={<CeoProfile />} />

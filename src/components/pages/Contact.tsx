@@ -1,12 +1,11 @@
-import React, { useRef, useEffect } from "react";
-import type { Map as LeafletMap } from "leaflet";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import { MapPin, Phone, Mail } from "lucide-react";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import BookingModal from "../BookingModal";
 
 const locations = [
   {
@@ -15,7 +14,8 @@ const locations = [
     address: "Downtown Dubai, Business Center",
     phone: "+971 4 123 4567",
     email: "dubai@digitrans.ai",
-    coordinates: { lat: 25.2048, lng: 55.2708 },
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
   },
   {
     city: "Paris",
@@ -23,7 +23,8 @@ const locations = [
     address: "15 Avenue des Champs-Élysées",
     phone: "+33 1 23 45 67 89",
     email: "paris@digitrans.ai",
-    coordinates: { lat: 48.8566, lng: 2.3522 },
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
   },
   {
     city: "London",
@@ -31,7 +32,8 @@ const locations = [
     address: "30 St Mary Axe",
     phone: "+44 20 7123 4567",
     email: "london@digitrans.ai",
-    coordinates: { lat: 51.5074, lng: -0.1278 },
+    image:
+      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
   },
   {
     city: "Casablanca",
@@ -39,43 +41,14 @@ const locations = [
     address: "Marina Business District",
     phone: "+212 5 2234 5678",
     email: "casablanca@digitrans.ai",
-    coordinates: { lat: 33.5731, lng: -7.5898 },
+    image:
+      "https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=800&q=80",
   },
 ];
 
 export default function Contact() {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("ui", {
-        styles: { branding: { brandColor: "#000000" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
-  }, []);
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!mapRef.current || typeof window === "undefined") return;
-
-    const L = window.L;
-    const map: LeafletMap = L.map(mapRef.current).setView([30, 0], 2);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors",
-    }).addTo(map);
-
-    locations.forEach((location) => {
-      L.marker([location.coordinates.lat, location.coordinates.lng])
-        .bindPopup(`${location.city}, ${location.country}`)
-        .addTo(map);
-    });
-
-    return () => {
-      map.remove();
-    };
-  }, []);
+  const [showBookingModal, setShowBookingModal] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -92,20 +65,10 @@ export default function Contact() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Our Global Presence
             </h1>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-gray-300">
               With offices across multiple continents, we're ready to serve your
               business needs wherever you are.
             </p>
-          </motion.div>
-
-          {/* Map */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full h-[400px] rounded-xl overflow-hidden mb-16 shadow-lg"
-          >
-            <div ref={mapRef} className="w-full h-full" />
           </motion.div>
 
           {/* Location Cards */}
@@ -117,75 +80,138 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
-                  <div className="flex items-start gap-4 mb-4">
-                    <MapPin className="h-5 w-5 text-blue-500 mt-1" />
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">
-                        {location.city}, {location.country}
+                <Card className="overflow-hidden h-full hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gray-900/50 backdrop-blur border-gray-800">
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <img
+                      src={location.image}
+                      alt={`${location.city}, ${location.country}`}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-2xl font-bold text-white mb-1">
+                        {location.city}
                       </h3>
-                      <p className="text-slate-600 text-sm">
-                        {location.address}
-                      </p>
+                      <p className="text-gray-300">{location.country}</p>
                     </div>
                   </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-slate-400" />
-                      <span className="text-sm text-slate-600">
-                        {location.phone}
-                      </span>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
+                      <p className="text-gray-300">{location.address}</p>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Mail className="h-4 w-4 text-slate-400" />
-                      <span className="text-sm text-slate-600">
-                        {location.email}
-                      </span>
+                    <div className="flex items-start gap-3">
+                      <Phone className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
+                      <p className="text-gray-300">{location.phone}</p>
                     </div>
+                    <div className="flex items-start gap-3">
+                      <Mail className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
+                      <p className="text-gray-300">{location.email}</p>
+                    </div>
+                    <Button
+                      onClick={() => {
+                        setSelectedLocation(location);
+                        setShowBookingModal(true);
+                      }}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 mt-4 group"
+                    >
+                      Book a Meeting
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
                   </div>
-                  <Button
-                    variant="outline"
-                    className="w-full"
-                    onClick={() =>
-                      (window.location.href = `/contact/${location.city.toLowerCase()}`)
-                    }
-                  >
-                    Get in Touch
-                  </Button>
                 </Card>
               </motion.div>
             ))}
           </div>
 
-          {/* Calendar Section */}
+          {/* Contact Form Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-24 max-w-4xl mx-auto"
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mt-24 max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Schedule a Meeting</h2>
-              <p className="text-slate-600">
-                Book a 30-minute consultation with our team to discuss your
-                project needs.
+              <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+              <p className="text-gray-300">
+                Have a question or want to learn more about our services? Send
+                us a message and we'll get back to you as soon as possible.
               </p>
             </div>
-            <Card className="p-8 bg-white">
-              <Cal
-                calLink="your-organization/30min"
-                style={{ width: "100%", height: "600px" }}
-                config={{
-                  theme: "light",
-                  layout: "month_view",
-                }}
-              />
-            </Card>
+
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-white font-medium">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-white font-medium">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                    placeholder="Your email"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-white font-medium">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                  placeholder="Subject"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-white font-medium">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={6}
+                  className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 py-3 text-lg"
+              >
+                Send Message
+              </Button>
+            </form>
           </motion.div>
         </div>
       </section>
 
       <Footer />
+      <BookingModal
+        open={showBookingModal}
+        onOpenChange={setShowBookingModal}
+        title={
+          selectedLocation
+            ? `Book a Meeting in ${selectedLocation.city}`
+            : "Book a Meeting"
+        }
+        description={
+          selectedLocation
+            ? `Schedule a meeting with our team in ${selectedLocation.city}, ${selectedLocation.country}.`
+            : "Schedule a meeting with our team."
+        }
+      />
     </div>
   );
 }
