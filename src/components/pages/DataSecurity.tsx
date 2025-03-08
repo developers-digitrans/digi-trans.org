@@ -4,7 +4,28 @@ import Footer from "../Footer";
 import UniverseLights from "../UniverseLights";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
-import { Shield, Lock, Key, Eye } from "lucide-react";
+import { Button } from "../ui/button";
+import { ProgressBar } from "../ui/progress-bar";
+import { BackToTop } from "../ui/back-to-top";
+import { StickyCTA } from "../ui/sticky-cta";
+import {
+  Shield,
+  Lock,
+  Key,
+  Eye,
+  CheckCircle,
+  ArrowRight,
+  FileText,
+  Users,
+  TrendingUp,
+  Layers,
+  AlertTriangle,
+  Database,
+  Network,
+  BarChart,
+  Code,
+  Cloud,
+} from "lucide-react";
 
 const features = [
   {
@@ -33,6 +54,7 @@ const features = [
 export default function DataSecurity() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <ProgressBar />
       <Navbar />
 
       <div className="relative w-full h-[800px] bg-black overflow-hidden">
@@ -68,25 +90,97 @@ export default function DataSecurity() {
             className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl"
           >
             Protect your valuable data assets with our comprehensive security
-            solutions.
+            solutions designed for the modern threat landscape.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <Button
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              onClick={() => (window.location.href = "/contact")}
+            >
+              Request a Security Assessment
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button
+              variant="outline"
+              className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg rounded-lg"
+              onClick={() =>
+                document
+                  .getElementById("understanding")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Learn More
+            </Button>
+          </motion.div>
         </div>
       </div>
 
-      <section className="py-24 bg-black text-white">
+      {/* Understanding Data Security Section */}
+      <section id="understanding" className="py-20 bg-black scroll-mt-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-xl text-gray-300 leading-relaxed">
-              In today's digital landscape, protecting your data is more
-              critical than ever. Our comprehensive data security solutions
-              combine advanced encryption, access control systems, and
-              continuous monitoring to safeguard your valuable information
-              assets. We ensure compliance with global security standards while
-              maintaining the flexibility your business needs to operate
-              efficiently.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Understanding Data Security
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              In today's digital landscape, data has become one of the most
+              valuable assets for organizations across all industries. From
+              customer information and financial records to intellectual
+              property and operational data, the information that businesses
+              collect, process, and store is critical to their success. However,
+              this valuable data is increasingly under threat from sophisticated
+              cyber attacks, insider threats, and accidental exposures.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Data security encompasses the practices, technologies, and
+              controls deployed to protect data from unauthorized access, use,
+              disclosure, disruption, modification, or destruction. It aims to
+              ensure the confidentiality, integrity, and availability of data
+              throughout its lifecycle—from creation and storage to processing,
+              sharing, and eventual deletion. Effective data security requires a
+              comprehensive approach that addresses not only technical
+              vulnerabilities but also human factors, organizational processes,
+              and regulatory requirements.
+            </p>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              The consequences of data security breaches can be severe and
+              far-reaching. According to IBM's Cost of a Data Breach Report, the
+              global average cost of a data breach reached $4.45 million in
+              2023, a 15% increase over three years. Beyond the immediate
+              financial impact, breaches can result in reputational damage, loss
+              of customer trust, regulatory penalties, legal liabilities, and
+              operational disruptions. For many organizations, a significant
+              data breach can be an existential threat.
+            </p>
+
+            <p className="text-xl text-gray-300 leading-relaxed">
+              At Digitrans, we understand that effective data security is not
+              just about implementing the latest technologies—it's about
+              developing a holistic security strategy aligned with your business
+              objectives, risk tolerance, and compliance requirements. Our data
+              security solutions combine industry-leading technologies, proven
+              methodologies, and deep expertise to help you protect your most
+              valuable data assets while enabling the business agility needed to
+              thrive in today's digital economy.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -95,12 +189,12 @@ export default function DataSecurity() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900 border-gray-800">
-                  <div className="text-blue-600 mb-6">{feature.icon}</div>
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                  <div className="text-blue-500 mb-6">{feature.icon}</div>
                   <h3 className="text-2xl font-semibold mb-4 text-white">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <p className="text-gray-300">{feature.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -108,7 +202,723 @@ export default function DataSecurity() {
         </div>
       </section>
 
+      {/* The Evolving Threat Landscape */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              The Evolving Threat Landscape
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              The data security threat landscape is constantly evolving, with
+              attackers developing increasingly sophisticated methods to
+              compromise systems and steal sensitive information. Understanding
+              these threats is essential for developing effective security
+              strategies that can adapt to emerging risks.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
+              Ransomware and Extortion Attacks
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Ransomware attacks have evolved from opportunistic campaigns to
+              highly targeted operations conducted by organized criminal groups.
+              Modern ransomware attacks often employ a double extortion
+              strategy, where attackers not only encrypt data but also
+              exfiltrate it and threaten to publish it unless a ransom is paid.
+              According to Cybersecurity Ventures, the global cost of ransomware
+              is expected to reach $265 billion by 2031, with an attack
+              occurring every 2 seconds.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              These attacks are becoming more sophisticated, with attackers
+              conducting extensive reconnaissance to identify high-value
+              targets, exploiting multiple vulnerabilities, and using legitimate
+              tools to evade detection. The rise of Ransomware-as-a-Service
+              (RaaS) has also lowered the barrier to entry, allowing less
+              technically skilled attackers to deploy sophisticated ransomware.
+              Defending against these threats requires a multi-layered approach
+              that includes robust backup strategies, advanced threat detection,
+              and comprehensive incident response planning.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Supply Chain Attacks
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Supply chain attacks target the less-secure elements in a supply
+              chain to compromise the ultimate target. The SolarWinds attack in
+              2020 and the Kaseya attack in 2021 demonstrated the devastating
+              potential of these attacks, which can affect thousands of
+              organizations through a single compromise. According to the
+              European Union Agency for Cybersecurity (ENISA), supply chain
+              attacks are expected to quadruple in 2023 compared to 2021.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              These attacks are particularly challenging to defend against
+              because they exploit trusted relationships and legitimate update
+              mechanisms. Organizations must implement rigorous third-party risk
+              management processes, conduct thorough due diligence on vendors,
+              and implement technical controls such as code signing, integrity
+              verification, and network segmentation to mitigate these risks.
+              Additionally, organizations should develop contingency plans for
+              responding to supply chain compromises affecting critical vendors.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Advanced Persistent Threats (APTs)
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Advanced Persistent Threats are sophisticated, targeted attacks
+              conducted by well-resourced threat actors, often nation-states or
+              state-sponsored groups. These attacks are characterized by their
+              persistence, stealth, and focus on specific high-value targets.
+              APTs typically involve multiple attack vectors, custom malware,
+              and advanced evasion techniques designed to maintain long-term
+              access to compromised environments.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Defending against APTs requires advanced security capabilities,
+              including threat intelligence, behavioral analytics, endpoint
+              detection and response (EDR), and security information and event
+              management (SIEM) solutions. Organizations should also implement a
+              defense-in-depth strategy that includes network segmentation,
+              principle of least privilege, and regular security assessments to
+              identify and remediate vulnerabilities that could be exploited by
+              APT actors.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Cloud Security Challenges
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              As organizations increasingly migrate data and applications to the
+              cloud, they face new security challenges related to shared
+              responsibility models, misconfigurations, identity management, and
+              data protection. According to Gartner, through 2025, 99% of cloud
+              security failures will be the customer's fault, primarily due to
+              misconfigurations and inadequate identity and access management.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Securing cloud environments requires a different approach than
+              traditional on-premises security. Organizations must understand
+              the shared responsibility model of their cloud providers,
+              implement cloud-native security controls, and adapt their security
+              processes and tools to address cloud-specific risks. Key focus
+              areas include identity and access management, data protection,
+              network security, and continuous compliance monitoring. Cloud
+              security posture management (CSPM) tools can help identify and
+              remediate misconfigurations that could lead to data breaches.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Our Data Security Framework */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Our Data Security Framework
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Effective data security requires a comprehensive, risk-based
+              approach that addresses the full spectrum of threats while
+              enabling business operations. Our Data Security Framework provides
+              a structured methodology for developing, implementing, and
+              maintaining robust data security programs aligned with your
+              business objectives and compliance requirements.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
+              1. Data Discovery and Classification
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              The foundation of effective data security is understanding what
+              data you have, where it resides, and its sensitivity level. Our
+              data discovery and classification services help you identify and
+              categorize your data assets based on sensitivity, business value,
+              and regulatory requirements. We employ automated discovery tools,
+              data flow mapping, and classification methodologies to create a
+              comprehensive inventory of your data assets.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              This process includes identifying structured and unstructured data
+              across on-premises systems, cloud environments, and third-party
+              services. We help you develop and implement data classification
+              policies that define sensitivity levels (e.g., public, internal,
+              confidential, restricted) and handling requirements for each
+              level. The output of this phase is a detailed data inventory and
+              classification scheme that serves as the foundation for your data
+              security strategy.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              2. Risk Assessment and Security Strategy
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              With a clear understanding of your data assets, we conduct a
+              comprehensive risk assessment to identify threats,
+              vulnerabilities, and potential impacts related to your data. This
+              assessment considers various risk factors, including technical
+              vulnerabilities, process weaknesses, regulatory requirements, and
+              business context. We use industry-standard methodologies such as
+              NIST, ISO 27005, and FAIR to ensure a thorough and structured
+              approach to risk assessment.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Based on the risk assessment findings, we develop a data security
+              strategy that defines your security objectives, risk tolerance,
+              and prioritized initiatives. This strategy aligns security
+              investments with business priorities and regulatory requirements,
+              ensuring that resources are allocated to the most significant
+              risks. The strategy also includes a roadmap for implementing
+              security controls, addressing gaps, and continuously improving
+              your security posture.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              3. Data Protection Implementation
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              With a clear strategy in place, we implement a comprehensive set
+              of data protection controls across your environment. These
+              controls are designed to protect data throughout its lifecycle and
+              address the specific risks identified in the risk assessment. Our
+              implementation approach follows security best practices and
+              industry standards while considering your unique business
+              requirements and technical constraints.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Key data protection capabilities include encryption (for data at
+              rest, in transit, and in use), access controls, data loss
+              prevention, secure data sharing, and secure deletion. We implement
+              these capabilities using a combination of native platform
+              controls, third-party security solutions, and custom integrations.
+              Our implementation approach emphasizes security effectiveness
+              while minimizing business disruption and user friction.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              4. Security Monitoring and Incident Response
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Implementing security controls is not sufficient—you must also
+              continuously monitor your environment for security events and
+              respond effectively to incidents. We help you establish robust
+              security monitoring capabilities that provide visibility into
+              potential security incidents and data breaches. This includes
+              implementing security information and event management (SIEM)
+              solutions, user and entity behavior analytics (UEBA), and data
+              activity monitoring.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              We also help you develop and implement incident response plans
+              specifically focused on data security incidents. These plans
+              define roles and responsibilities, escalation procedures,
+              containment strategies, and communication protocols for responding
+              to data breaches and other security incidents. We conduct tabletop
+              exercises and simulations to test and refine these plans, ensuring
+              that your organization is prepared to respond effectively to
+              security incidents.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              5. Governance and Compliance
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Effective data security requires strong governance and compliance
+              mechanisms to ensure that security policies are followed and
+              regulatory requirements are met. We help you establish data
+              security governance frameworks that define roles and
+              responsibilities, decision-making processes, and oversight
+              mechanisms for your data security program. This includes
+              developing security policies, standards, and procedures that
+              provide clear guidance for securing data.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              We also help you implement compliance management processes that
+              ensure adherence to relevant regulations such as GDPR, CCPA,
+              HIPAA, PCI DSS, and industry-specific requirements. This includes
+              conducting compliance assessments, implementing controls to
+              address compliance requirements, and establishing monitoring and
+              reporting mechanisms to demonstrate compliance to regulators and
+              stakeholders.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Key Data Security Capabilities */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Key Data Security Capabilities
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Our data security solutions include a comprehensive set of
+              capabilities designed to protect your data across its lifecycle.
+              These capabilities can be tailored to your specific requirements
+              and integrated with your existing security infrastructure.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Data Encryption
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Encryption is a fundamental data security control that protects
+              data confidentiality by converting plaintext data into ciphertext
+              that can only be read with the appropriate decryption key. We
+              implement encryption solutions for data at rest (stored in
+              databases, file systems, and cloud storage), data in transit
+              (moving across networks), and increasingly, data in use (being
+              processed in memory).
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Our encryption solutions include transparent database encryption,
+              file and disk encryption, email encryption, and secure
+              communication protocols (TLS/SSL). We also implement encryption
+              key management solutions that ensure secure generation, storage,
+              rotation, and revocation of encryption keys. For sensitive cloud
+              workloads, we leverage advanced encryption technologies such as
+              confidential computing and homomorphic encryption that protect
+              data even during processing.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Identity and Access Management
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Controlling who can access data and what they can do with it is
+              critical for data security. Our identity and access management
+              (IAM) solutions help you implement the principle of least
+              privilege, ensuring that users have only the access necessary for
+              their roles. We implement robust authentication mechanisms,
+              including multi-factor authentication (MFA), single sign-on (SSO),
+              and risk-based authentication that adapts to user behavior and
+              context.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              For authorization, we implement role-based access control (RBAC),
+              attribute-based access control (ABAC), and fine-grained access
+              controls that restrict access based on data sensitivity and user
+              attributes. We also help you implement privileged access
+              management (PAM) solutions that provide additional controls and
+              monitoring for high-risk administrative accounts. Our IAM
+              solutions integrate with your existing directory services and
+              identity providers, ensuring a seamless user experience while
+              enhancing security.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Data Loss Prevention
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Data Loss Prevention (DLP) solutions help prevent the unauthorized
+              disclosure of sensitive data, whether accidental or malicious. We
+              implement DLP controls that monitor, detect, and block sensitive
+              data transfers across various channels, including email, web,
+              cloud services, and removable media. Our DLP solutions use content
+              inspection, contextual analysis, and machine learning to
+              accurately identify sensitive data and apply appropriate controls.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              We implement DLP at multiple levels, including endpoint DLP
+              (protecting data on user devices), network DLP (monitoring data in
+              transit), and cloud DLP (securing data in cloud services). Our DLP
+              implementations include both preventive controls that block
+              unauthorized transfers and detective controls that alert security
+              teams to potential data leakage. We also help you develop and
+              implement DLP policies that balance security requirements with
+              business needs, minimizing false positives and user friction.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Database Security
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Databases often contain an organization's most sensitive and
+              valuable data, making them prime targets for attackers. Our
+              database security solutions help you protect database systems from
+              unauthorized access, SQL injection attacks, and other threats. We
+              implement database activity monitoring (DAM) solutions that
+              provide visibility into database queries, schema changes, and
+              administrative actions, helping detect suspicious activities and
+              compliance violations.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              We also implement database vulnerability management processes that
+              identify and remediate security weaknesses in database
+              configurations, patch levels, and access controls. For sensitive
+              data within databases, we implement data masking and tokenization
+              solutions that protect production data while enabling its use for
+              development, testing, and analytics. Our database security
+              approach addresses both traditional on-premises databases and
+              cloud-based database services.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Cloud Data Security
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              As organizations increasingly store and process data in cloud
+              environments, securing this data requires cloud-specific
+              approaches and tools. Our cloud data security solutions help you
+              implement the shared responsibility model, ensuring that you
+              fulfill your security obligations while leveraging the security
+              capabilities provided by cloud service providers. We implement
+              cloud security posture management (CSPM) solutions that
+              continuously monitor your cloud environments for
+              misconfigurations, compliance violations, and security risks.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              For data stored in cloud services, we implement cloud access
+              security broker (CASB) solutions that provide visibility and
+              control over data access and sharing. We also help you implement
+              cloud-native security controls such as AWS Macie, Azure
+              Information Protection, and Google Cloud Data Loss Prevention to
+              protect sensitive data in cloud environments. Our cloud data
+              security approach addresses multi-cloud and hybrid environments,
+              ensuring consistent protection across your entire data estate.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Industry-Specific Data Security */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Industry-Specific Data Security
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Different industries face unique data security challenges based on
+              the types of data they handle, regulatory requirements, and threat
+              landscape. Our industry-specific data security solutions address
+              these unique challenges while leveraging our comprehensive
+              security framework.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
+              Financial Services
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Financial institutions handle highly sensitive financial and
+              personal data, making them prime targets for cyber attacks. They
+              also face stringent regulatory requirements from authorities such
+              as the SEC, FINRA, and various international financial regulators.
+              Our data security solutions for financial services focus on
+              protecting customer financial data, transaction information, and
+              trading data while ensuring compliance with regulations such as
+              GLBA, PCI DSS, and MiFID II.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Key capabilities include fraud detection and prevention, secure
+              payment processing, insider threat detection, and secure customer
+              authentication. We implement advanced security controls such as
+              behavioral analytics, real-time transaction monitoring, and secure
+              customer portals. Our solutions also address the unique challenges
+              of securing fintech applications, open banking interfaces, and
+              blockchain-based financial systems.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Healthcare and Life Sciences
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Healthcare organizations handle protected health information (PHI)
+              that is subject to strict privacy and security regulations such as
+              HIPAA in the US and similar regulations globally. They also face
+              unique challenges related to medical devices, clinical systems,
+              and research data. Our data security solutions for healthcare
+              focus on protecting patient data while enabling secure sharing for
+              care coordination, research, and administrative purposes.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Key capabilities include PHI identification and protection, secure
+              health information exchange, medical device security, and secure
+              telehealth platforms. We implement healthcare-specific security
+              controls such as electronic health record (EHR) security, medical
+              device security monitoring, and secure clinical collaboration
+              tools. Our solutions also address emerging challenges such as
+              securing genomic data, AI-powered clinical decision support
+              systems, and remote patient monitoring platforms.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Retail and E-commerce
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Retail and e-commerce companies handle large volumes of customer
+              data, payment information, and inventory data across multiple
+              channels and locations. They face challenges related to securing
+              e-commerce platforms, point-of-sale systems, and supply chain
+              data. Our data security solutions for retail focus on protecting
+              customer and payment data while enabling personalized customer
+              experiences and efficient operations.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Key capabilities include payment card security, secure e-commerce
+              platforms, and customer data protection. We implement
+              retail-specific security controls such as point-to-point
+              encryption for payment processing, secure customer authentication
+              for online shopping, and inventory data protection. Our solutions
+              also address emerging challenges such as securing omnichannel
+              retail environments, IoT devices in stores, and personalization
+              platforms that leverage customer data.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Manufacturing and Industrial
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Manufacturing and industrial organizations increasingly rely on
+              connected systems and data-driven processes, creating new security
+              challenges related to operational technology (OT), industrial
+              control systems (ICS), and intellectual property. Our data
+              security solutions for manufacturing focus on protecting
+              intellectual property, production data, and connected industrial
+              systems while enabling digital transformation initiatives.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Key capabilities include industrial control system security,
+              intellectual property protection, and secure supply chain
+              collaboration. We implement manufacturing-specific security
+              controls such as OT network segmentation, secure remote access for
+              maintenance, and data loss prevention for design files and
+              manufacturing processes. Our solutions also address emerging
+              challenges such as securing Industry 4.0 initiatives, industrial
+              IoT devices, and digital twins that contain sensitive operational
+              data.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Compliance and Regulatory Considerations */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Compliance and Regulatory Considerations
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Data security is increasingly governed by a complex landscape of
+              regulations and standards that vary by industry, geography, and
+              data type. Organizations must navigate these requirements while
+              implementing effective security controls that protect their data
+              assets. Our data security solutions help you address compliance
+              requirements while building a robust security program that goes
+              beyond checkbox compliance.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
+              Privacy Regulations
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Privacy regulations such as the General Data Protection Regulation
+              (GDPR) in Europe, the California Consumer Privacy Act (CCPA) and
+              California Privacy Rights Act (CPRA) in the US, and similar
+              regulations globally impose specific requirements for protecting
+              personal data. These regulations typically require organizations
+              to implement appropriate security measures, conduct privacy impact
+              assessments, report data breaches, and provide individuals with
+              rights regarding their personal data.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Industry-Specific Regulations
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Many industries are subject to sector-specific regulations that
+              include data security requirements. Examples include the Health
+              Insurance Portability and Accountability Act (HIPAA) for
+              healthcare, the Gramm-Leach-Bliley Act (GLBA) for financial
+              services, the Payment Card Industry Data Security Standard (PCI
+              DSS) for organizations handling payment card data, and the Federal
+              Information Security Modernization Act (FISMA) for federal
+              agencies and their contractors.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Security Frameworks and Standards
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Various security frameworks and standards provide guidance for
+              implementing effective data security controls. These include the
+              National Institute of Standards and Technology (NIST)
+              Cybersecurity Framework, ISO/IEC 27001 (Information Security
+              Management), the Center for Internet Security (CIS) Controls, and
+              the Cloud Security Alliance (CSA) Cloud Controls Matrix. These
+              frameworks provide structured approaches to security that can help
+              organizations build comprehensive security programs.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Our Compliance Approach
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Our approach to compliance integrates regulatory requirements into
+              your overall data security program, avoiding siloed compliance
+              efforts that can lead to inefficiencies and gaps. We help you map
+              security controls to multiple regulatory requirements, implement
+              continuous compliance monitoring, and develop documentation and
+              evidence to demonstrate compliance to regulators and auditors. Our
+              compliance solutions include readiness assessments, gap analysis,
+              remediation planning, and ongoing compliance management.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Getting Started with Data Security */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Getting Started with Data Security
+            </h2>
+
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Implementing a comprehensive data security program can seem
+              daunting, especially for organizations with limited security
+              resources or those early in their security maturity journey. We
+              offer several engagement models to help you get started with data
+              security, regardless of your current security posture.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
+              Data Security Assessment
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Our Data Security Assessment provides a comprehensive evaluation
+              of your current data security posture, identifying strengths,
+              weaknesses, and opportunities for improvement. The assessment
+              typically takes 4-6 weeks and involves interviews with key
+              stakeholders, documentation review, technical testing, and
+              benchmarking against industry standards and best practices. The
+              output includes a detailed assessment report, risk-prioritized
+              findings, and recommendations for enhancing your data security
+              posture.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Data Security Strategy and Roadmap
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              Building on the findings from the Data Security Assessment, our
+              Strategy and Roadmap engagement helps you develop a comprehensive
+              data security strategy and implementation plan. This typically
+              takes 6-8 weeks and involves defining your security objectives,
+              identifying key initiatives, developing business cases, and
+              creating a phased implementation roadmap. The output includes a
+              detailed strategy document, initiative descriptions, resource
+              requirements, and a timeline for implementation.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Data Security Quick Wins
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-10">
+              For organizations looking to make immediate improvements to their
+              data security posture, our Quick Wins engagement focuses on
+              implementing high-impact, low-complexity security controls that
+              can be deployed in 8-12 weeks. This approach is particularly
+              valuable for addressing critical security gaps or compliance
+              requirements. The engagement involves identifying candidate quick
+              wins, prioritizing based on risk reduction and feasibility, and
+              implementing selected controls. The output includes implemented
+              security controls, documentation, and recommendations for further
+              improvements.
+            </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Data Security Program Development
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              For organizations ready to build a comprehensive data security
+              program, our Program Development engagement provides end-to-end
+              support for designing, implementing, and operationalizing your
+              security program. This typically takes 4-6 months and involves
+              developing security policies and standards, implementing technical
+              controls, establishing governance processes, and building security
+              operations capabilities. The output includes a fully operational
+              data security program aligned with your business objectives and
+              compliance requirements.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-4xl mx-auto text-center mt-16"
+          >
+            <h2 className="text-3xl font-bold mb-6">
+              Ready to Enhance Your Data Security Posture?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Contact us to discuss how we can help you protect your valuable
+              data assets and address your security and compliance requirements.
+            </p>
+            <Button
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              onClick={() => (window.location.href = "/contact")}
+            >
+              Schedule a Security Assessment
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
+      <BackToTop />
+      <StickyCTA />
     </div>
   );
 }

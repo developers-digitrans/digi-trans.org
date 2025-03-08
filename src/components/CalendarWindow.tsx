@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Cal, { getCalApi } from "@calcom/embed-react";
 import {
   Dialog,
   DialogContent,
@@ -6,21 +7,20 @@ import {
   DialogTitle,
   DialogDescription,
 } from "./ui/dialog";
-import Cal, { getCalApi } from "@calcom/embed-react";
 
-interface BookingModalProps {
+interface CalendarWindowProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   title?: string;
   description?: string;
 }
 
-export default function BookingModal({
-  open,
+export default function CalendarWindow({
+  open = false,
   onOpenChange,
-  title = "Book a Demo",
-  description = "Schedule a personalized demo to see how our solutions can transform your business.",
-}: BookingModalProps) {
+  title = "Book a Consultation",
+  description = "Schedule a consultation with our team to discuss your project needs.",
+}: CalendarWindowProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -33,7 +33,7 @@ export default function BookingModal({
 
     const initializeCal = async () => {
       try {
-        console.log("Initializing Cal.com in BookingModal");
+        console.log("Initializing Cal.com");
         const cal = await getCalApi();
 
         if (!cal) {

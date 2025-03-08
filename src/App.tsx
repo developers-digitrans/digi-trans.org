@@ -35,6 +35,8 @@ import Ember from "./components/pages/products/Ember";
 import GoDash from "./components/pages/products/GoDash";
 import BigBytes from "./components/pages/products/BigBytes";
 import KozmoAI from "./components/pages/products/KozmoAI";
+import CalendarPage from "./components/pages/CalendarPage";
+import SimpleCalendarTest from "./components/pages/SimpleCalendarTest";
 
 function App() {
   return (
@@ -83,6 +85,8 @@ function App() {
         <Route path="/products/godash" element={<GoDash />} />
         <Route path="/products/bigbytes" element={<BigBytes />} />
         <Route path="/products/kozmo-ai" element={<KozmoAI />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/simple-calendar" element={<SimpleCalendarTest />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />

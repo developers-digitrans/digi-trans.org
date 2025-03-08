@@ -316,6 +316,22 @@ const Navbar = ({
                   Contact Us
                 </a>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <a
+                  href="/calendar"
+                  className="block select-none rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
+                >
+                  Book a Call
+                </a>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <a
+                  href="/simple-calendar"
+                  className="block select-none rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
+                >
+                  Simple Calendar
+                </a>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <div className="flex items-center gap-4">
