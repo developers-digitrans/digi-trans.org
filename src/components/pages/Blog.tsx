@@ -73,6 +73,7 @@ function Blog() {
         headline="Insights & Expertise"
         subheadline="Discover the latest in Big Data, Cloud Computing, and AI through our expert insights and in-depth analysis."
         showCards={false}
+        videoUrl="/videos/blog.mp4"
       />
 
       {/* Blog Posts Grid */}

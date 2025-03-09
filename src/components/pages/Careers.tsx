@@ -71,13 +71,10 @@ export default function Careers() {
           autoPlay
           loop
           muted
-          playsInline
+          playsInLine
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/join.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
@@ -98,6 +95,21 @@ export default function Careers() {
           >
             Help us build the future of enterprise technology. We're looking for
             passionate individuals to join our growing team.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg text-gray-400 max-w-3xl mt-4"
+          >
+            At Digitrans, we embrace diversity and inclusion as core strengths.
+            Our flat hierarchy structure privileges the best ideas over years of
+            experience, creating an environment where innovation thrives and
+            every voice matters. We believe that diverse perspectives lead to
+            better solutions, and we're committed to building a workplace where
+            everyone can contribute their unique talents regardless of
+            background, identity, or experience level.
           </motion.p>
         </div>
       </div>

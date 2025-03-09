@@ -266,12 +266,10 @@ export default function CloudComputing() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 object-center"
+          style={{ objectPosition: "center 30%" }}
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/cloud.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
@@ -309,8 +307,7 @@ export default function CloudComputing() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() =>
                 document
                   .getElementById("case-studies")

@@ -215,80 +215,60 @@ export default function Services() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 object-center"
+          style={{ objectPosition: "center 30%" }}
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/services.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-row gap-12 items-center pt-32">
-          <div className="flex-1 max-w-3xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-            >
-              Better solutions for{" "}
-              <span className="text-orange-500">today's</span>
-              <br />
-              challenges
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-300 mb-12 max-w-3xl"
-            >
-              Explore the ways we tackle complex and dynamic IT challenges for
-              private and public organisations alike.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="max-w-4xl space-y-6"
-            >
-              <p className="text-lg text-gray-300 leading-relaxed">
-                At Digitrans, we don't just provide services—we forge strategic
-                partnerships that transform businesses. Our approach begins with
-                deep discovery, where we immerse ourselves in your
-                organization's challenges, objectives, and competitive
-                landscape. This foundation allows us to assemble the perfect
-                blend of industry experts, technical specialists, and strategic
-                thinkers to architect solutions that drive measurable business
-                outcomes.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                What sets us apart is our commitment to excellence at every
-                stage. From initial strategy through implementation and beyond,
-                we maintain unwavering focus on delivering exceptional quality,
-                innovative thinking, and tangible results that exceed
-                expectations. Our success is measured not just by project
-                completion, but by the lasting business value we create for our
-                clients.
-              </p>
-            </motion.div>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex-1 relative hidden lg:block"
+        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center pt-32">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
           >
-            <div className="relative w-full aspect-square">
-              <div className="absolute inset-0 border-2 border-orange-500 transform rotate-3 scale-105"></div>
-              <img
-                src="/images/consult.png"
-                alt="IT Consulting"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            Better solutions for{" "}
+            <span className="text-orange-500">today's</span>
+            <br />
+            challenges
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl text-gray-300 mb-12 max-w-3xl"
+          >
+            Explore the ways we tackle complex and dynamic IT challenges for
+            private and public organisations alike.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="max-w-4xl space-y-6"
+          >
+            <p className="text-lg text-gray-300 leading-relaxed">
+              At Digitrans, we don't just provide services—we forge strategic
+              partnerships that transform businesses. Our approach begins with
+              deep discovery, where we immerse ourselves in your organization's
+              challenges, objectives, and competitive landscape. This foundation
+              allows us to assemble the perfect blend of industry experts,
+              technical specialists, and strategic thinkers to architect
+              solutions that drive measurable business outcomes.
+            </p>
+
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Our AI implementation and orchestration platforms allow businesses
+              to seamlessly integrate artificial intelligence into their
+              operations. We design and deploy sophisticated AI systems that
+              automate complex processes, generate actionable insights, and
+              create competitive advantages. Our approach ensures AI solutions
+              are explainable, ethical, and aligned with business objectives.
+            </p>
           </motion.div>
         </div>
       </div>

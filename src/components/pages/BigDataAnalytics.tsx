@@ -286,8 +286,7 @@ export default function BigDataAnalytics() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() =>
                 document
                   .getElementById("case-studies")

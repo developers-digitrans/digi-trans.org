@@ -69,10 +69,7 @@ export default function KozmoAI() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-typing-on-a-computer-keyboard-1584/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/kozmoai.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 

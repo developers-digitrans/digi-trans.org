@@ -67,9 +67,9 @@ const defaultProducts = [
     href: "/products/utrack",
   },
   {
-    title: "Efficio",
-    description: "AI-powered HR and talent management solution",
-    href: "/products/efficio",
+    title: "Ember",
+    description: "Modern development workflow platform for engineering teams",
+    href: "/products/ember",
   },
   {
     title: "GoDash",
@@ -314,22 +314,6 @@ const Navbar = ({
                   className="block select-none rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
                 >
                   Contact Us
-                </a>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <a
-                  href="/calendar"
-                  className="block select-none rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
-                >
-                  Book a Call
-                </a>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <a
-                  href="/simple-calendar"
-                  className="block select-none rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors"
-                >
-                  Simple Calendar
                 </a>
               </NavigationMenuItem>
             </NavigationMenuList>

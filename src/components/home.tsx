@@ -83,7 +83,7 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white">
       <ProgressBar />
       <Navbar />
-      <Hero />
+      <Hero videoUrl="/videos/home-page.mp4" />
       <ServicesSection />
       <ProcessSection />
       <ProjectsSection />

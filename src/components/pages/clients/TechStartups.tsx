@@ -46,10 +46,7 @@ export default function TechStartups() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/startup.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 

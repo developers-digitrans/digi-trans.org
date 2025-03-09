@@ -164,7 +164,10 @@ const Hero = ({
         className="absolute inset-0 w-full h-full object-cover opacity-50"
       >
         <source
-          src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
+          src={
+            videoUrl ||
+            "https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
+          }
           type="video/mp4"
         />
       </video>
@@ -239,7 +242,7 @@ const Hero = ({
             <Button
               size="lg"
               onClick={() => setShowCalPopup(true)}
-              className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 ease-in-out text-white px-8 py-6 text-lg relative group overflow-hidden"
+              className="p-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 ease-in-out text-white px-8 py-6 text-lg relative group overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <span className="animate-pulse bg-white rounded-full w-2 h-2 mr-1"></span>

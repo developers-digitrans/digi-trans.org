@@ -7,49 +7,59 @@ import { Card } from "../../ui/card";
 import { Button } from "../../ui/button";
 import { BlogCard } from "../../ui/blog-card";
 import {
-  UserCircle,
-  Briefcase,
-  GraduationCap,
-  Target,
+  ClipboardList,
+  Users,
+  Calendar,
+  LineChart,
   ArrowRight,
   CheckCircle,
+  Zap,
+  Blocks,
+  Workflow,
+  Layout,
+  Filter,
+  List,
+  Table,
 } from "lucide-react";
 
 const features = [
   {
-    icon: <UserCircle className="w-8 h-8" />,
-    title: "Talent Acquisition",
-    description: "AI-powered recruitment and candidate matching system.",
+    icon: <Layout className="w-8 h-8" />,
+    title: "Multiple Views",
+    description:
+      "List, Kanban, Calendar, and Gantt views to visualize your business data.",
   },
   {
-    icon: <Briefcase className="w-8 h-8" />,
-    title: "Onboarding Automation",
-    description: "Streamline employee onboarding with automated workflows.",
+    icon: <Filter className="w-8 h-8" />,
+    title: "Custom Filters",
+    description:
+      "Create and save custom filters to quickly find relevant information.",
   },
   {
-    icon: <GraduationCap className="w-8 h-8" />,
-    title: "Performance Analytics",
-    description: "Track and optimize team performance with real-time insights.",
+    icon: <List className="w-8 h-8" />,
+    title: "Business Planning",
+    description:
+      "Plan and track business metrics with custom fields and properties.",
   },
   {
-    icon: <Target className="w-8 h-8" />,
-    title: "Goal Management",
-    description: "Set and track OKRs with our intuitive goal-setting system.",
+    icon: <Users className="w-8 h-8" />,
+    title: "Team Collaboration",
+    description: "Real-time updates and seamless team communication.",
   },
 ];
 
 const benefits = [
-  "AI-Powered Matching",
-  "Automated Workflows",
-  "Performance Tracking",
-  "Custom Reports",
-  "Team Analytics",
-  "Mobile Apps",
+  "All-in-One Platform",
+  "Self-Hosted Option",
+  "Real-time Updates",
+  "Multiple Views",
+  "Custom Properties",
+  "Rich Text Editor",
+  "File Attachments",
   "API Access",
-  "SSO Integration",
 ];
 
-export default function Efficio() {
+function Efficio() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
@@ -63,10 +73,7 @@ export default function Efficio() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-typing-on-a-computer-keyboard-1584/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/utrack.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
@@ -77,10 +84,10 @@ export default function Efficio() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
           >
-            Modern HR Platform
+            Business Management,
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-              Built for Scale
+              Reimagined
             </span>
           </motion.h1>
 
@@ -90,8 +97,8 @@ export default function Efficio() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
           >
-            Streamline your HR operations with AI-powered recruitment, automated
-            onboarding, and performance analytics.
+            The everything app for your business. Plan, track, and deliver
+            results with a modern, intuitive interface.
           </motion.p>
 
           <motion.div
@@ -103,9 +110,7 @@ export default function Efficio() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
-              onClick={() =>
-                window.open("https://app.getefficio.com", "_blank")
-              }
+              onClick={() => window.open("https://app.efficio.ai", "_blank")}
             >
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -115,7 +120,7 @@ export default function Efficio() {
       </div>
 
       {/* Video Demo Section */}
-      <section className="pt-4 pb-24 bg-black text-white">
+      <section className="pt-8 pb-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -123,11 +128,11 @@ export default function Efficio() {
             viewport={{ once: true }}
             className="relative w-full max-w-4xl mx-auto"
           >
-            <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur border border-gray-800/50 shadow-[0_0_15px_rgba(0,0,0,0.1)]">
+            <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur border border-gray-800">
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/WKmpm0ms_Sg"
+                src="https://www.youtube.com/embed/CCJJl66t4Ak"
                 title="Product Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -144,12 +149,13 @@ export default function Efficio() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xl text-gray-300 leading-relaxed">
-              Efficio is a modern HR platform that transforms how companies
-              manage their workforce. From AI-powered recruitment to automated
-              onboarding and performance analytics, Efficio streamlines your HR
-              operations while providing actionable insights. Built with
-              security and compliance in mind, our platform helps you build and
-              manage high-performing teams efficiently.
+              Efficio is a modern business management platform designed for
+              organizations that demand flexibility and power. With multiple
+              views including Kanban, List, and Timeline, teams can visualize
+              their work in ways that make sense for them. Our real-time
+              collaboration features, custom workflows, and powerful automation
+              capabilities help businesses stay productive and achieve their
+              goals.
             </p>
           </div>
         </div>
@@ -193,7 +199,7 @@ export default function Efficio() {
               Everything you need in one place
             </h2>
             <p className="text-xl text-gray-400">
-              Powerful features to help your HR team succeed
+              Powerful features to help your business succeed
             </p>
           </motion.div>
 
@@ -228,34 +234,34 @@ export default function Efficio() {
               Related Articles
             </h2>
             <p className="text-xl text-gray-400">
-              Learn more about HR tech and management
+              Learn more about business management and collaboration
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <BlogCard
-              title="MLOps Best Practices for Production AI Systems"
-              description="A comprehensive guide to implementing MLOps in enterprise environments, from model training to production deployment."
-              image="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800"
-              date="March 10, 2024"
-              readTime="12 min read"
-              slug="mlops-best-practices"
-            />
-            <BlogCard
-              title="Cloud-Native Architecture Patterns"
-              description="Explore modern architecture patterns for building scalable, resilient cloud-native applications."
-              image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
-              date="March 5, 2024"
-              readTime="10 min read"
-              slug="cloud-native-architecture-patterns"
-            />
-            <BlogCard
-              title="How We Improve Our Website Speed"
-              description="Learn about the techniques and tools we used to optimize our website performance and achieve better loading times."
+              title="The Rise of Everything Apps in Enterprise"
+              description="How consolidated platforms are replacing fragmented software ecosystems in modern businesses."
               image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
-              date="March 15, 2024"
+              date="April 5, 2024"
+              readTime="10 min read"
+              slug="rise-of-everything-apps"
+            />
+            <BlogCard
+              title="Reducing Context Switching for Productivity"
+              description="Research shows that constant app switching can reduce productivity by up to 40%. Learn how to minimize this cognitive drain."
+              image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800"
+              date="April 12, 2024"
               readTime="8 min read"
-              slug="how-we-improve-our-website-speed"
+              slug="reducing-context-switching"
+            />
+            <BlogCard
+              title="The Total Cost of Software Fragmentation"
+              description="Understanding the hidden costs of maintaining multiple specialized applications versus a unified platform approach."
+              image="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800"
+              date="April 18, 2024"
+              readTime="12 min read"
+              slug="cost-of-software-fragmentation"
             />
           </div>
         </div>
@@ -265,3 +271,5 @@ export default function Efficio() {
     </div>
   );
 }
+
+export default Efficio;

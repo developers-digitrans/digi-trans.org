@@ -268,10 +268,7 @@ export default function AiSolutions() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/ai.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
@@ -302,15 +299,14 @@ export default function AiSolutions() {
             className="flex flex-wrap justify-center gap-4"
           >
             <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() => (window.location.href = "/contact")}
             >
               Request a Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() =>
                 document
                   .getElementById("case-studies")
@@ -483,8 +479,7 @@ export default function AiSolutions() {
               Technology Stack
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We leverage cutting-edge AI technologies to build intelligent,
-              scalable solutions
+              We leverage cutting-edge AI technologies and tools
             </p>
           </motion.div>
 
@@ -1126,7 +1121,7 @@ export default function AiSolutions() {
               business goals.
             </p>
             <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() => (window.location.href = "/contact")}
             >
               Schedule a Consultation

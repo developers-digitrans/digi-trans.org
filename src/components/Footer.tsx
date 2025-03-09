@@ -7,6 +7,9 @@ import {
   Facebook,
   Github,
   MessageSquare,
+  MapPin,
+  Mail,
+  Phone,
 } from "lucide-react";
 
 interface FooterProps {
@@ -74,6 +77,33 @@ const defaultClientLogos = [
   "https://api.dicebear.com/7.x/initials/svg?seed=ST",
 ];
 
+const locations = [
+  {
+    city: "Dubai, UAE",
+    address: "Downtown Dubai, UAE",
+    email: "info@digi-trans.org",
+    phone: "+971 4 123 4567",
+  },
+  {
+    city: "London, UK",
+    address: "London, UK",
+    email: "info@digi-trans.org",
+    phone: "+44 20 1234 5678",
+  },
+  {
+    city: "Paris, France",
+    address: "Paris, France",
+    email: "info@digi-trans.org",
+    phone: "+33 1 23 45 67 89",
+  },
+  {
+    city: "Casablanca, Morocco",
+    address: "Casablanca, Morocco",
+    email: "info@digi-trans.org",
+    phone: "+212 5 22 12 34 56",
+  },
+];
+
 const Footer = ({
   clientLogos = defaultClientLogos,
   testimonials = defaultTestimonials,
@@ -84,6 +114,47 @@ const Footer = ({
       style={{ zIndex: 1 }}
     >
       <div className="container mx-auto px-4">
+        {/* Locations Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Our Global Offices
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {locations.map((location) => (
+              <Card
+                key={location.city}
+                className="p-6 bg-gray-900/50 backdrop-blur border-gray-800"
+              >
+                <h3 className="text-xl font-semibold mb-4">{location.city}</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-300">{location.address}</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <a
+                      href={`mailto:${location.email}`}
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {location.email}
+                    </a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <a
+                      href={`tel:${location.phone.replace(/\s+/g, "")}`}
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {location.phone}
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Social Proof Section */}
         <div>
           <div className="text-center">

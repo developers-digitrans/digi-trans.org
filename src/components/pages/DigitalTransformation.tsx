@@ -61,12 +61,10 @@ export default function DigitalTransformation() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 object-center"
+          style={{ objectPosition: "center 30%" }}
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/digital.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 

@@ -54,6 +54,7 @@ export default function Clients() {
         headline="Our Clients"
         subheadline="Trusted by leading organizations across industries, from Fortune 500 companies to innovative startups."
         showCards={false}
+        videoUrl="/videos/clients.mp4"
       />
 
       <section className="py-24 bg-black">

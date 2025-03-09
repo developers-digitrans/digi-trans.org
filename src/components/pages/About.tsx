@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import UniverseLights from "../UniverseLights";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
@@ -219,23 +220,28 @@ function About() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-transparent opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+        >
+          <source src="/videos/about2.mp4" type="video/mp4" />
+        </video>
+        <UniverseLights />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-6xl font-bold mb-6"
-            >
-              Transforming Businesses Through Data & AI
-            </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-300 mb-10 leading-relaxed"
             >
+              <span className="block text-5xl md:text-6xl font-bold mb-6 mt-6">
+                Transforming Businesses Through Data & AI
+              </span>
               Digitrans is a global technology consultancy specializing in
               enterprise-grade data analytics, cloud computing, and artificial
               intelligence solutions. Since 2012, we've been helping
@@ -249,18 +255,11 @@ function About() {
               className="flex flex-wrap justify-center gap-4"
             >
               <Button
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
                 onClick={() => (window.location.href = "/contact")}
               >
                 Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg rounded-lg"
-                onClick={() => (window.location.href = "/services")}
-              >
-                Our Services
               </Button>
             </motion.div>
           </div>
@@ -661,40 +660,6 @@ function About() {
             </p>
           </motion.div>
 
-          <div className="relative w-full h-[400px] bg-gray-900/50 rounded-xl overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Globe className="w-full h-full text-blue-500/20" />
-            </div>
-
-            {/* Dubai Office Marker */}
-            <div className="absolute top-[45%] left-[55%] w-4 h-4 bg-blue-500 rounded-full animate-ping"></div>
-            <div className="absolute top-[45%] left-[55%] w-4 h-4 bg-blue-500 rounded-full"></div>
-            <div className="absolute top-[40%] left-[55%] bg-gray-900/80 p-2 rounded text-white text-sm">
-              Dubai, UAE
-            </div>
-
-            {/* London Office Marker */}
-            <div className="absolute top-[35%] left-[45%] w-4 h-4 bg-purple-500 rounded-full animate-ping"></div>
-            <div className="absolute top-[35%] left-[45%] w-4 h-4 bg-purple-500 rounded-full"></div>
-            <div className="absolute top-[30%] left-[45%] bg-gray-900/80 p-2 rounded text-white text-sm">
-              London, UK
-            </div>
-
-            {/* Paris Office Marker */}
-            <div className="absolute top-[38%] left-[47%] w-4 h-4 bg-green-500 rounded-full animate-ping"></div>
-            <div className="absolute top-[38%] left-[47%] w-4 h-4 bg-green-500 rounded-full"></div>
-            <div className="absolute top-[33%] left-[47%] bg-gray-900/80 p-2 rounded text-white text-sm">
-              Paris, France
-            </div>
-
-            {/* Casablanca Office Marker */}
-            <div className="absolute top-[42%] left-[44%] w-4 h-4 bg-yellow-500 rounded-full animate-ping"></div>
-            <div className="absolute top-[42%] left-[44%] w-4 h-4 bg-yellow-500 rounded-full"></div>
-            <div className="absolute top-[37%] left-[44%] bg-gray-900/80 p-2 rounded text-white text-sm">
-              Casablanca, Morocco
-            </div>
-          </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
             <div className="text-center">
               <div className="w-4 h-4 bg-blue-500 rounded-full mx-auto mb-2"></div>
@@ -738,7 +703,7 @@ function About() {
               your business goals.
             </p>
             <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() => (window.location.href = "/contact")}
             >
               Contact Us Today

@@ -113,7 +113,7 @@ export default function CalendarPage() {
           <div className="mt-12 text-center">
             <Button
               onClick={() => setShowCalendar(true)}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg"
             >
               Open Calendar in Modal
             </Button>

@@ -64,12 +64,10 @@ export default function DataSecurity() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 object-center"
+          style={{ objectPosition: "center 30%" }}
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/security.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
@@ -100,15 +98,14 @@ export default function DataSecurity() {
             className="flex flex-wrap justify-center gap-4"
           >
             <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() => (window.location.href = "/contact")}
             >
               Request a Security Assessment
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() =>
                 document
                   .getElementById("understanding")
@@ -603,6 +600,36 @@ export default function DataSecurity() {
               security approach addresses multi-cloud and hybrid environments,
               ensuring consistent protection across your entire data estate.
             </p>
+
+            <h3 className="text-2xl font-semibold mb-4 text-white mt-8">
+              Secure Data Platforms in the Cloud
+            </h3>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Building secure data platforms in the cloud requires a
+              comprehensive approach that addresses security at every layer of
+              the stack. Our secure-by-design methodology ensures that security
+              is integrated from the beginning, not added as an afterthought. We
+              implement defense-in-depth strategies that include network
+              security, identity and access management, data encryption, and
+              continuous monitoring.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed mb-6">
+              Our cloud data platform security framework includes automated
+              compliance checks, security posture management, and real-time
+              threat detection. We leverage infrastructure-as-code practices to
+              ensure consistent security controls across environments and
+              implement zero-trust architectures that verify every access
+              request regardless of source.
+            </p>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              For organizations with sensitive data subject to regulatory
+              requirements, we design cloud data platforms that maintain
+              compliance with standards such as GDPR, HIPAA, PCI DSS, and
+              industry-specific regulations. Our solutions include data
+              sovereignty controls, audit logging, and comprehensive
+              documentation to support compliance verification and reporting
+              requirements.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -795,20 +822,21 @@ export default function DataSecurity() {
               Our Compliance Approach
             </h3>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Our approach to compliance integrates regulatory requirements into
-              your overall data security program, avoiding siloed compliance
-              efforts that can lead to inefficiencies and gaps. We help you map
-              security controls to multiple regulatory requirements, implement
-              continuous compliance monitoring, and develop documentation and
-              evidence to demonstrate compliance to regulators and auditors. Our
-              compliance solutions include readiness assessments, gap analysis,
-              remediation planning, and ongoing compliance management.
+              Our approach to compliance focuses on integrating regulatory
+              requirements into your overall data security program rather than
+              treating compliance as a separate activity. We help you map
+              security controls to specific regulatory requirements, implement
+              controls that address multiple regulations simultaneously, and
+              establish monitoring and reporting mechanisms that demonstrate
+              compliance to auditors and regulators. This integrated approach
+              reduces duplication of effort and ensures that compliance
+              activities contribute to your overall security posture.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Getting Started with Data Security */}
+      {/* CTA Section */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <motion.div
@@ -816,97 +844,17 @@ export default function DataSecurity() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto mb-16"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Getting Started with Data Security
-            </h2>
-
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
-              Implementing a comprehensive data security program can seem
-              daunting, especially for organizations with limited security
-              resources or those early in their security maturity journey. We
-              offer several engagement models to help you get started with data
-              security, regardless of your current security posture.
-            </p>
-
-            <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
-              Data Security Assessment
-            </h3>
-            <p className="text-xl text-gray-300 leading-relaxed mb-10">
-              Our Data Security Assessment provides a comprehensive evaluation
-              of your current data security posture, identifying strengths,
-              weaknesses, and opportunities for improvement. The assessment
-              typically takes 4-6 weeks and involves interviews with key
-              stakeholders, documentation review, technical testing, and
-              benchmarking against industry standards and best practices. The
-              output includes a detailed assessment report, risk-prioritized
-              findings, and recommendations for enhancing your data security
-              posture.
-            </p>
-
-            <h3 className="text-2xl font-semibold mb-4 text-white">
-              Data Security Strategy and Roadmap
-            </h3>
-            <p className="text-xl text-gray-300 leading-relaxed mb-10">
-              Building on the findings from the Data Security Assessment, our
-              Strategy and Roadmap engagement helps you develop a comprehensive
-              data security strategy and implementation plan. This typically
-              takes 6-8 weeks and involves defining your security objectives,
-              identifying key initiatives, developing business cases, and
-              creating a phased implementation roadmap. The output includes a
-              detailed strategy document, initiative descriptions, resource
-              requirements, and a timeline for implementation.
-            </p>
-
-            <h3 className="text-2xl font-semibold mb-4 text-white">
-              Data Security Quick Wins
-            </h3>
-            <p className="text-xl text-gray-300 leading-relaxed mb-10">
-              For organizations looking to make immediate improvements to their
-              data security posture, our Quick Wins engagement focuses on
-              implementing high-impact, low-complexity security controls that
-              can be deployed in 8-12 weeks. This approach is particularly
-              valuable for addressing critical security gaps or compliance
-              requirements. The engagement involves identifying candidate quick
-              wins, prioritizing based on risk reduction and feasibility, and
-              implementing selected controls. The output includes implemented
-              security controls, documentation, and recommendations for further
-              improvements.
-            </p>
-
-            <h3 className="text-2xl font-semibold mb-4 text-white">
-              Data Security Program Development
-            </h3>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              For organizations ready to build a comprehensive data security
-              program, our Program Development engagement provides end-to-end
-              support for designing, implementing, and operationalizing your
-              security program. This typically takes 4-6 months and involves
-              developing security policies and standards, implementing technical
-              controls, establishing governance processes, and building security
-              operations capabilities. The output includes a fully operational
-              data security program aligned with your business objectives and
-              compliance requirements.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-4xl mx-auto text-center mt-16"
-          >
-            <h2 className="text-3xl font-bold mb-6">
-              Ready to Enhance Your Data Security Posture?
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Strengthen Your Data Security Posture?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Contact us to discuss how we can help you protect your valuable
-              data assets and address your security and compliance requirements.
+              Contact us to discuss how our data security solutions can help
+              protect your most valuable assets.
             </p>
             <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg rounded-lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 text-lg rounded-lg"
               onClick={() => (window.location.href = "/contact")}
             >
               Schedule a Security Assessment
