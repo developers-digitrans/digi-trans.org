@@ -6,6 +6,8 @@ import Hero from "../Hero";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { ArrowRight, Clock } from "lucide-react";
+import SEO from "../SEO";
+import LazyImage from "../LazyImage";
 
 function Blog() {
   const blogPosts = [
@@ -67,6 +69,12 @@ function Blog() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO
+        title="Blog | Insights on Big Data, AI & Cloud Computing | Digitrans"
+        description="Discover the latest in Big Data, Cloud Computing, and AI through our expert insights and in-depth analysis."
+        canonicalUrl="/blog"
+        ogType="website"
+      />
       <Navbar />
 
       <Hero
@@ -90,7 +98,7 @@ function Blog() {
               >
                 <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="aspect-video relative overflow-hidden">
-                    <img
+                    <LazyImage
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

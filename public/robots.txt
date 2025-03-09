@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /tempobook/
+
 Sitemap: https://digitrans.ai/sitemap.xml

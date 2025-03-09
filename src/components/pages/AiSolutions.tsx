@@ -8,6 +8,9 @@ import { Button } from "../ui/button";
 import { ProgressBar } from "../ui/progress-bar";
 import { BackToTop } from "../ui/back-to-top";
 import { StickyCTA } from "../ui/sticky-cta";
+import SEO from "../SEO";
+import { ServiceSchema } from "../JsonLd";
+import LazyImage from "../LazyImage";
 import {
   Brain,
   Cpu,
@@ -256,6 +259,27 @@ function Shield(props) {
 export default function AiSolutions() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO
+        title="AI Solutions | Enterprise Machine Learning & AI Services | Digitrans"
+        description="Transform your business with cutting-edge artificial intelligence and machine learning solutions designed for enterprise needs."
+        canonicalUrl="/services/ai-solutions"
+        keywords={[
+          "AI solutions",
+          "machine learning",
+          "artificial intelligence",
+          "enterprise AI",
+          "natural language processing",
+          "computer vision",
+          "generative AI",
+          "AI agents",
+          "ML development",
+          "AI orchestration",
+        ]}
+      />
+      <ServiceSchema
+        serviceType="AI Solutions"
+        description="Transform your business with cutting-edge artificial intelligence and machine learning solutions designed for enterprise needs."
+      />
       <ProgressBar />
       <Navbar />
 

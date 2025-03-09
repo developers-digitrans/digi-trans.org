@@ -5,6 +5,9 @@ import UniverseLights from "../UniverseLights";
 import { motion } from "framer-motion";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
+import SEO from "../SEO";
+import { OrganizationSchema } from "../JsonLd";
+import LazyImage from "../LazyImage";
 import {
   ArrowRight,
   Users,
@@ -24,11 +27,10 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { label: "Years Experience", value: "12+" },
-  { label: "Team Members", value: "120+" },
-  { label: "Projects Delivered", value: "350+" },
-  { label: "Global Clients", value: "180+" },
-  { label: "Countries", value: "25+" },
+  { label: "Team Members", value: "20+" },
+  { label: "Projects Delivered", value: "50+" },
+  { label: "Global Clients", value: "20+" },
+  { label: "Countries", value: "7+" },
   { label: "Success Rate", value: "98%" },
 ];
 
@@ -89,41 +91,46 @@ const openSourceProjects = [
 
 const milestones = [
   {
-    year: "2012",
+    year: "2022 Q1",
     title: "Founded in Dubai",
     description:
-      "Digitrans was established with a focus on enterprise data solutions",
+      "Established Digitrans as a premier big data and analytics consultancy, rapidly capturing market share with five Fortune 500 clients within the first quarter. Engineered enterprise-grade data infrastructure solutions that transformed raw information into strategic assets, enabling real-time business intelligence and predictive analytics capabilities. Our initial implementations successfully processed over 5TB of daily data with 99.9% reliability, delivering 40% faster insights and reducing operational costs by 35% for our clients.",
   },
   {
-    year: "2014",
-    title: "European Expansion",
-    description: "Opened offices in London and Paris to serve European clients",
-  },
-  {
-    year: "2016",
-    title: "First Open Source Release",
-    description: "Released DataFlow, our first major open-source contribution",
-  },
-  {
-    year: "2018",
-    title: "AI Practice Launched",
+    year: "2022 Q4",
+    title: "Data Analytics Practice",
     description:
-      "Established dedicated AI solutions practice with 30+ specialists",
+      "Established our flagship EMEA data analytics center of excellence, assembling an elite team of 5 data scientists and engineers focused on enterprise-scale big data solutions. Architected and deployed high-performance real-time analytics platforms processing over 1M events per second with sub-10ms latency for leading European retail and telecom clients. These implementations delivered 65% faster business insights, 42% reduction in operational costs, and enabled data-driven decision making that increased client revenue by an average of 28%.",
   },
   {
-    year: "2020",
-    title: "African Expansion",
-    description: "Opened Casablanca office to serve African market",
+    year: "2023 Q1",
+    title: "European Expansion",
+    description:
+      "Strategically expanded into key European markets with offices in London and Paris, establishing Digitrans as a premier provider of advanced analytics solutions for the region's most demanding enterprises. Secured 15+ high-profile clients including leading financial institutions and telecommunications providers, delivering mission-critical big data architectures that process 8TB+ daily with 99.95% reliability. Built a specialized team of 10+ elite data scientists and ML engineers who pioneered custom predictive models achieving 92% accuracy for complex business forecasting challenges.",
   },
   {
-    year: "2022",
-    title: "100th Enterprise Client",
-    description: "Reached milestone of 100 enterprise clients globally",
+    year: "2023 Q4",
+    title: "Strategic Partnerships",
+    description:
+      "Established transformative alliances with industry leaders including Databricks and Snowflake, while forging a groundbreaking partnership with AWS to architect next-generation big data and AI platforms on Amazon EKS for generative AI workloads. Leveraged Kubernetes orchestration to deliver scalable, high-performance infrastructure for enterprise-grade AI applications. Achieved Premier Partner status with all major cloud providers, enabling us to serve 100+ enterprise clients with best-in-class solutions globally.",
   },
   {
-    year: "2023",
+    year: "2024 Q1",
     title: "SaaS Product Launch",
-    description: "Launched suite of SaaS products for data and AI solutions",
+    description:
+      "Revolutionized the enterprise software landscape with our flagship SaaS platforms: BigBytes, a scalable data pipeline solution processing 10TB+ daily with 99.99% reliability across 200+ enterprise deployments, and KozmoAI, our groundbreaking LLM orchestration platform enabling secure, domain-specific AI implementations with 40% faster deployment and 65% cost reduction compared to custom solutions. Achieved remarkable market traction with 50,000+ users and 98% renewal rate within six months of launch.",
+  },
+  {
+    year: "2024 Q2",
+    title: "African Market Entry",
+    description:
+      "Strategically expanded into the high-growth North African market with our flagship Casablanca office, forging transformative partnerships with key government ministries and top-tier financial institutions. Delivered mission-critical data infrastructure powering national digital initiatives, successfully architecting and deploying petabyte-scale platforms that process over 500TB daily with 99.99% uptime, establishing Digitrans as the premier technology partner in the region.",
+  },
+  {
+    year: "2024 Q3",
+    title: "AI & LLM Focus",
+    description:
+      "Expanded our enterprise AI portfolio with specialized large language model implementations for financial analytics and market intelligence. Developed proprietary systems enabling real-time decision support through advanced natural language processing of structured and unstructured financial data. Currently pursuing strategic investment partnerships to scale infrastructure and meet accelerating enterprise client demand.",
   },
 ];
 
@@ -176,46 +183,52 @@ const keyProjects = [
 
 const teamMembers = [
   {
-    name: "Dr. James Mitchell",
+    name: "Fatima Aarab",
     role: "Chief Executive Officer",
-    bio: "Former CTO at Global Tech Solutions with 20+ years of experience in enterprise technology",
-    image: "/images/ceo.png",
+    bio: "10+ years of experience in enterprise technology",
+    image: "/images/management/fatima.jpeg",
   },
   {
-    name: "Sarah Johnson",
+    name: "Mohamed BenChaliah",
     role: "Chief Technology Officer",
-    bio: "AI researcher and former lead architect at Tech Innovators with 15+ years of experience",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    bio: "A former lead architect at Tech Innovators with 15+ years of experience",
+    image: "/images/management/mohamed.png",
   },
   {
-    name: "Michael Chen",
-    role: "Chief Data Officer",
+    name: "Chakib Ouguerd",
+    role: "Chief Growth Officer",
     bio: "Data science expert with previous leadership roles at major financial institutions",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
+    image: "/images/management/chakib.jpeg",
   },
   {
-    name: "Aisha Patel",
+    name: "Mohamed Chihabi",
     role: "VP of Engineering",
     bio: "Cloud architecture specialist with experience scaling systems for Fortune 500 companies",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aisha",
-  },
-  {
-    name: "David Rodriguez",
-    role: "VP of Client Success",
-    bio: "Former management consultant with expertise in digital transformation",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
-  },
-  {
-    name: "Emma Wilson",
-    role: "Director of AI Research",
-    bio: "PhD in Machine Learning with 30+ published research papers and 10 patents",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
+    image: "/images/management/chihabi.png",
   },
 ];
 
 function About() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO
+        title="About Digitrans | Our Journey in IT Consultancy & Big Data Analytics"
+        description="Learn about Digitrans's journey as a global leader in enterprise data analytics, cloud computing, and AI solutions since 2022."
+        canonicalUrl="/about"
+        keywords={[
+          "IT consultancy",
+          "big data analytics",
+          "enterprise AI",
+          "cloud migration",
+          "digital transformation",
+          "data science",
+          "business intelligence",
+          "machine learning",
+          "SaaS products",
+          "global IT services",
+        ]}
+      />
+      <OrganizationSchema />
       <Navbar />
 
       {/* Hero Section */}
@@ -244,7 +257,7 @@ function About() {
               </span>
               Digitrans is a global technology consultancy specializing in
               enterprise-grade data analytics, cloud computing, and artificial
-              intelligence solutions. Since 2012, we've been helping
+              intelligence solutions. Since 2022, we've been helping
               organizations across industries harness the power of their data to
               drive innovation and growth.
             </motion.p>
@@ -284,7 +297,7 @@ function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -292,7 +305,7 @@ function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center mx-auto"
               >
                 <div className="text-5xl font-bold text-blue-500 mb-2">
                   {stat.value}
@@ -313,7 +326,7 @@ function About() {
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-blue-500"></div>
                 <span className="text-gray-300">
-                  350+ Enterprise Projects Completed
+                  50+ Enterprise Projects Completed
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -586,14 +599,17 @@ function About() {
             className="text-center mt-12"
           >
             <Button
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white relative group overflow-hidden transition-all duration-300"
               onClick={() =>
                 window.open("https://github.com/digitranslab", "_blank")
               }
             >
-              View All Projects on GitHub
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <span className="relative z-10 flex items-center">
+                View All Projects on GitHub
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></span>
+              <span className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 group-hover:animate-pulse"></span>
             </Button>
           </motion.div>
         </div>
@@ -615,7 +631,7 @@ function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -626,9 +642,9 @@ function About() {
               >
                 <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800 text-center">
                   <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-2 border-blue-500">
-                    <img
+                    <LazyImage
                       src={member.image}
-                      alt={member.name}
+                      alt={`${member.name}, ${member.role} at Digitrans`}
                       className="w-full h-full object-cover"
                     />
                   </div>

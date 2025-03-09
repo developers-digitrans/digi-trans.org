@@ -8,6 +8,9 @@ import { Button } from "../ui/button";
 import { ProgressBar } from "../ui/progress-bar";
 import { BackToTop } from "../ui/back-to-top";
 import { StickyCTA } from "../ui/sticky-cta";
+import SEO from "../SEO";
+import { ServiceSchema } from "../JsonLd";
+import LazyImage from "../LazyImage";
 import {
   Database,
   BarChart,
@@ -232,6 +235,27 @@ const methodologies = [
 export default function BigDataAnalytics() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO
+        title="Big Data Analytics Services | Enterprise Data Solutions | Digitrans"
+        description="Transform your raw data into actionable insights with our advanced big data analytics solutions powered by cutting-edge technology and industry expertise."
+        canonicalUrl="/services/big-data-analytics"
+        keywords={[
+          "big data analytics",
+          "data processing",
+          "business intelligence",
+          "data visualization",
+          "predictive analytics",
+          "real-time analytics",
+          "data warehousing",
+          "data lake",
+          "ETL pipeline",
+          "data integration",
+        ]}
+      />
+      <ServiceSchema
+        serviceType="Big Data Analytics"
+        description="Transform your raw data into actionable insights with our advanced analytics solutions powered by cutting-edge technology and industry expertise."
+      />
       <ProgressBar />
       <Navbar />
 

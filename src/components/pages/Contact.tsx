@@ -11,36 +11,36 @@ const locations = [
   {
     city: "Dubai",
     country: "UAE",
-    address: "Downtown Dubai, Business Center",
-    phone: "+971 4 123 4567",
-    email: "dubai@digitrans.ai",
+    address: "Downtown Dubai, UAE",
+    phone: "+971 50 205 5733",
+    email: "info@digi-trans.org",
     image:
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
   },
   {
     city: "Paris",
     country: "France",
-    address: "15 Avenue des Champs-Élysées",
-    phone: "+33 1 23 45 67 89",
-    email: "paris@digitrans.ai",
+    address: "Paris, France",
+    phone: "+33 6 13 70 97 58",
+    email: "info@digi-trans.org",
     image:
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
   },
   {
     city: "London",
     country: "UK",
-    address: "30 St Mary Axe",
-    phone: "+44 20 7123 4567",
-    email: "london@digitrans.ai",
+    address: "London, UK",
+    phone: "+44 777 11 51 435",
+    email: "info@digi-trans.org",
     image:
       "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
   },
   {
     city: "Casablanca",
     country: "Morocco",
-    address: "Marina Business District",
-    phone: "+212 5 2234 5678",
-    email: "casablanca@digitrans.ai",
+    address: "Casablanca, Morocco",
+    phone: "+212 6 67 19 71 88",
+    email: "info@digi-trans.org",
     image:
       "https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=800&q=80",
   },
