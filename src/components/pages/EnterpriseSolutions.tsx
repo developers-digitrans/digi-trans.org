@@ -308,25 +308,49 @@ export default function EnterpriseSolutions() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
               Comprehensive Enterprise Solutions
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              In today's rapidly evolving business landscape, enterprises face
-              unprecedented challenges in managing complex operations,
-              leveraging data effectively, and delivering exceptional customer
-              experiences. Our enterprise solutions address these challenges by
-              providing integrated, scalable platforms that connect people,
-              processes, and technology across your organization.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed mt-4">
-              We combine deep industry expertise with cutting-edge technology to
-              deliver solutions that are tailored to your specific business
-              needs. Whether you're looking to streamline operations, enhance
-              decision-making capabilities, or transform customer experiences,
-              our enterprise solutions provide the foundation for sustainable
-              growth and competitive advantage.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8">
+              <div>
+                <p className="text-xl text-gray-300 leading-relaxed text-left">
+                  In today's rapidly evolving business landscape, enterprises
+                  face unprecedented challenges in managing complex operations,
+                  leveraging data effectively, and delivering exceptional
+                  customer experiences. Our enterprise solutions address these
+                  challenges by providing integrated, scalable platforms that
+                  connect people, processes, and technology across your
+                  organization.
+                </p>
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80"
+                  alt="Enterprise solutions visualization"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8">
+              <div className="rounded-xl overflow-hidden shadow-2xl order-2 md:order-1">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                  alt="Enterprise technology solutions and data visualization"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="order-1 md:order-2">
+                <p className="text-xl text-gray-300 leading-relaxed text-left">
+                  We combine deep industry expertise with cutting-edge
+                  technology to deliver solutions that are tailored to your
+                  specific business needs. Whether you're looking to streamline
+                  operations, enhance decision-making capabilities, or transform
+                  customer experiences, our enterprise solutions provide the
+                  foundation for sustainable growth and competitive advantage.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -340,10 +364,12 @@ export default function EnterpriseSolutions() {
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                  <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {feature.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}
@@ -382,10 +408,12 @@ export default function EnterpriseSolutions() {
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">
+                  <h3 className="text-xl font-semibold mb-3 text-white text-left">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-300">{benefit.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {benefit.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}

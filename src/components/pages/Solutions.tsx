@@ -112,10 +112,10 @@ export default function Solutions() {
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800 flex flex-col">
                   <div className="mb-6">{solution.icon}</div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">
+                  <h3 className="text-2xl font-bold mb-4 text-white text-left">
                     {solution.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 flex-grow">
+                  <p className="text-gray-300 mb-6 flex-grow text-left">
                     {solution.description}
                   </p>
                   <Button
@@ -136,10 +136,10 @@ export default function Solutions() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-20 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
               Not Sure Which Solution You Need?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto text-center">
               Our experts can help you identify the right solutions for your
               specific business challenges. Schedule a consultation to discuss
               your needs.

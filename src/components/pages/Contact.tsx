@@ -125,93 +125,161 @@ export default function Contact() {
           </div>
 
           {/* Contact Form Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-24 max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-              <p className="text-gray-300">
-                Have a question or want to learn more about our services? Send
-                us a message and we'll get back to you as soon as possible.
-              </p>
-            </div>
+          <section className="py-20 bg-black">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                  {/* Contact Form */}
+                  <div>
+                    <div className="flex items-center gap-6 mb-8">
+                      <div className="flex-shrink-0 w-1/4">
+                        <img
+                          src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=400&q=80"
+                          alt="Customer support team"
+                          className="rounded-lg shadow-xl w-full h-auto"
+                        />
+                      </div>
+                      <div>
+                        <h2 className="text-3xl font-bold mb-2">
+                          Get in Touch
+                        </h2>
+                        <p className="text-gray-300">
+                          Fill out the form below and our team will get back to
+                          you shortly.
+                        </p>
+                      </div>
+                    </div>
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-white font-medium">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
-                    placeholder="Your name"
-                  />
+                    <form className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label
+                            htmlFor="firstName"
+                            className="text-white font-medium"
+                          >
+                            First Name
+                          </label>
+                          <input
+                            type="text"
+                            id="firstName"
+                            className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                            placeholder="Your name"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label
+                            htmlFor="lastName"
+                            className="text-white font-medium"
+                          >
+                            Last Name
+                          </label>
+                          <input
+                            type="text"
+                            id="lastName"
+                            className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                            placeholder="Your last name"
+                          />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="email"
+                          className="text-white font-medium"
+                        >
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                          placeholder="Your email"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="subject"
+                          className="text-white font-medium"
+                        >
+                          Subject
+                        </label>
+                        <input
+                          type="text"
+                          id="subject"
+                          className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                          placeholder="Subject"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="message"
+                          className="text-white font-medium"
+                        >
+                          Message
+                        </label>
+                        <textarea
+                          id="message"
+                          rows={6}
+                          className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none"
+                          placeholder="Your message"
+                        ></textarea>
+                      </div>
+                      <Button
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 text-lg"
+                      >
+                        Send Message
+                      </Button>
+                    </form>
+                  </div>
+
+                  {/* Contact Information */}
+                  <div>
+                    <div className="rounded-xl overflow-hidden shadow-2xl mb-8">
+                      <img
+                        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80"
+                        alt="Modern office space"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+
+                    <h2 className="text-3xl font-bold mb-6">
+                      Contact Information
+                    </h2>
+                    <p className="text-gray-300 mb-8">
+                      Reach out to us directly using the information below.
+                    </p>
+
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-4">
+                        <Mail className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
+                        <div>
+                          <h3 className="text-xl font-semibold mb-2">Email</h3>
+                          <a
+                            href="mailto:info@digitrans.ai"
+                            className="text-gray-300 hover:text-white transition-colors"
+                          >
+                            info@digitrans.ai
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-white font-medium">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
-                    placeholder="Your email"
-                  />
-                </div>
               </div>
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-white font-medium">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
-                  placeholder="Subject"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-white font-medium">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 text-lg"
-              >
-                Send Message
-              </Button>
-            </form>
-          </motion.div>
+            </div>
+          </section>
         </div>
       </section>
 
+      {showBookingModal && (
+        <BookingModal
+          isOpen={showBookingModal}
+          onClose={() => setShowBookingModal(false)}
+          location={selectedLocation}
+        />
+      )}
+
       <Footer />
-      <BookingModal
-        open={showBookingModal}
-        onOpenChange={setShowBookingModal}
-        title={
-          selectedLocation
-            ? `Book a Meeting in ${selectedLocation.city}`
-            : "Book a Meeting"
-        }
-        description={
-          selectedLocation
-            ? `Schedule a meeting with our team in ${selectedLocation.city}, ${selectedLocation.country}.`
-            : "Schedule a meeting with our team."
-        }
-      />
     </div>
   );
 }

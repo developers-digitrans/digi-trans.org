@@ -346,34 +346,68 @@ export default function AiSolutions() {
       {/* Overview Section */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-xl overflow-hidden shadow-2xl order-2 md:order-1"
+            >
+              <img
+                src="/images/ai.png"
+                alt="AI technology visualization with neural networks"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-left order-1 md:order-2"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Enterprise AI for Real-World Impact
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed mb-4">
+                Artificial Intelligence is no longer just a buzzword—it's a
+                transformative technology reshaping industries and creating
+                unprecedented innovation opportunities. Our AI solutions deliver
+                tangible business outcomes that drive growth, efficiency, and
+                competitive advantage.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                We combine expertise in machine learning, NLP, computer vision,
+                and generative AI with industry knowledge to address your unique
+                business challenges, ensuring seamless integration with your
+                existing systems.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Enterprise AI for Real-World Impact
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our AI Capabilities
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Artificial Intelligence is no longer just a buzzword—it's a
-              transformative technology that's reshaping industries and creating
-              unprecedented opportunities for innovation. Our AI solutions go
-              beyond theoretical applications to deliver tangible business
-              outcomes that drive growth, efficiency, and competitive advantage.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed mt-4">
-              We combine deep technical expertise in machine learning, natural
-              language processing, computer vision, and generative AI with
-              industry-specific knowledge to create solutions that address your
-              unique business challenges. Our approach focuses on practical
-              implementation, ensuring that AI technologies are seamlessly
-              integrated into your existing systems and workflows.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Cutting-edge AI solutions for enterprise needs
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -384,10 +418,12 @@ export default function AiSolutions() {
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                  <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {feature.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}
@@ -426,10 +462,12 @@ export default function AiSolutions() {
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">
+                  <h3 className="text-xl font-semibold mb-3 text-white text-left">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-300">{benefit.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {benefit.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}

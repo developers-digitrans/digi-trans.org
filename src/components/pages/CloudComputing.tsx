@@ -323,33 +323,67 @@ export default function CloudComputing() {
       {/* Overview Section */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Enterprise Cloud Solutions
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed mb-4">
+                Cloud computing has evolved from a cost-saving technology to a
+                strategic business enabler. Our solutions help organizations
+                leverage cloud platforms to drive innovation, enhance agility,
+                and create competitive advantages.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Whether you're migrating existing applications, building
+                cloud-native solutions, or optimizing current infrastructure,
+                our certified experts navigate cloud adoption complexities to
+                maximize your investments.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="/images/cloud.png"
+                alt="Cloud computing infrastructure visualization"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Enterprise Cloud Solutions
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Cloud Capabilities
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Cloud computing has evolved from a cost-saving technology to a
-              strategic business enabler. Our cloud solutions help organizations
-              leverage the full potential of cloud platforms to drive
-              innovation, enhance agility, and create competitive advantages in
-              today's rapidly changing business landscape.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed mt-4">
-              Whether you're looking to migrate existing applications to the
-              cloud, build cloud-native solutions, or optimize your current
-              cloud infrastructure, our team of certified cloud experts can help
-              you navigate the complexities of cloud adoption and maximize the
-              value of your cloud investments.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive cloud solutions for modern enterprises
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -360,10 +394,12 @@ export default function CloudComputing() {
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                  <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {feature.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}
@@ -402,10 +438,12 @@ export default function CloudComputing() {
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">
+                  <h3 className="text-xl font-semibold mb-3 text-white text-left">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-300">{benefit.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {benefit.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}

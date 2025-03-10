@@ -355,40 +355,58 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex flex-col md:flex-row gap-8 items-center"
             >
-              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                To empower organizations with transformative data and AI
-                solutions that drive innovation, efficiency, and competitive
-                advantage in the digital age.
-              </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                We believe that every organization, regardless of size or
-                industry, should have access to the power of advanced analytics
-                and artificial intelligence to make better decisions, optimize
-                operations, and create exceptional experiences for their
-                customers.
-              </p>
+              <div className="md:w-1/3">
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+                  alt="Team collaborating on digital transformation project"
+                  className="rounded-lg shadow-xl w-full h-auto"
+                />
+              </div>
+              <div className="md:w-2/3">
+                <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+                <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                  To empower organizations with transformative data and AI
+                  solutions that drive innovation, efficiency, and competitive
+                  advantage in the digital age.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  We believe every organization should access advanced analytics
+                  and AI to make better decisions, optimize operations, and
+                  create exceptional customer experiences.
+                </p>
+              </div>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex flex-col md:flex-row-reverse gap-8 items-center"
             >
-              <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                To be the global leader in enterprise technology transformation,
-                setting new standards for consulting excellence while building a
-                community of visionary technologists who drive positive change
-                across industries.
-              </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                We envision a world where data-driven decision making and
-                AI-powered automation enable organizations to solve complex
-                challenges, operate with unprecedented efficiency, and create
-                sustainable value for all stakeholders.
-              </p>
+              <div className="md:w-1/3">
+                <img
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80"
+                  alt="Business professional with digital visualization"
+                  className="rounded-lg shadow-xl w-full h-auto"
+                />
+              </div>
+              <div className="md:w-2/3">
+                <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+                <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                  To be the global leader in enterprise technology
+                  transformation, setting new standards for consulting
+                  excellence while building a community of visionary
+                  technologists.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  We envision a world where data-driven decision making and
+                  AI-powered automation enable organizations to solve complex
+                  challenges with unprecedented efficiency.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>

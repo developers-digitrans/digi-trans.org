@@ -121,63 +121,113 @@ export default function DataSecurity() {
       {/* Understanding Data Security Section */}
       <section id="understanding" className="py-20 bg-black scroll-mt-20">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            Understanding Data Security
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                In today's digital landscape, data has become one of the most
+                valuable assets for organizations across all industries. From
+                customer information and financial records to intellectual
+                property, this information is critical to business success but
+                increasingly threatened by cyber attacks and insider threats.
+              </p>
+
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Data security encompasses the practices, technologies, and
+                controls deployed to protect data from unauthorized access, use,
+                disclosure, disruption, modification, or destruction. It ensures
+                confidentiality, integrity, and availability throughout the data
+                lifecycle.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+                alt="Data security visualization with lock and shield concepts"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-xl overflow-hidden shadow-2xl order-2 md:order-1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
+                alt="Business team reviewing security protocols"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-left order-1 md:order-2"
+            >
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                The consequences of data security breaches can be severe.
+                According to IBM's Cost of a Data Breach Report, the global
+                average cost reached $4.45 million in 2023, a 15% increase over
+                three years. Beyond financial impact, breaches damage
+                reputation, customer trust, and can trigger regulatory
+                penalties.
+              </p>
+
+              <p className="text-lg text-gray-300 leading-relaxed">
+                At Digitrans, we understand that effective data security
+                requires a holistic strategy aligned with your business
+                objectives and compliance requirements. Our solutions combine
+                leading technologies, proven methodologies, and deep expertise
+                to protect your valuable data assets while enabling business
+                agility.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Understanding Data Security
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Security Capabilities
             </h2>
-
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
-              In today's digital landscape, data has become one of the most
-              valuable assets for organizations across all industries. From
-              customer information and financial records to intellectual
-              property and operational data, the information that businesses
-              collect, process, and store is critical to their success. However,
-              this valuable data is increasingly under threat from sophisticated
-              cyber attacks, insider threats, and accidental exposures.
-            </p>
-
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
-              Data security encompasses the practices, technologies, and
-              controls deployed to protect data from unauthorized access, use,
-              disclosure, disruption, modification, or destruction. It aims to
-              ensure the confidentiality, integrity, and availability of data
-              throughout its lifecycle—from creation and storage to processing,
-              sharing, and eventual deletion. Effective data security requires a
-              comprehensive approach that addresses not only technical
-              vulnerabilities but also human factors, organizational processes,
-              and regulatory requirements.
-            </p>
-
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
-              The consequences of data security breaches can be severe and
-              far-reaching. According to IBM's Cost of a Data Breach Report, the
-              global average cost of a data breach reached $4.45 million in
-              2023, a 15% increase over three years. Beyond the immediate
-              financial impact, breaches can result in reputational damage, loss
-              of customer trust, regulatory penalties, legal liabilities, and
-              operational disruptions. For many organizations, a significant
-              data breach can be an existential threat.
-            </p>
-
-            <p className="text-xl text-gray-300 leading-relaxed">
-              At Digitrans, we understand that effective data security is not
-              just about implementing the latest technologies—it's about
-              developing a holistic security strategy aligned with your business
-              objectives, risk tolerance, and compliance requirements. Our data
-              security solutions combine industry-leading technologies, proven
-              methodologies, and deep expertise to help you protect your most
-              valuable data assets while enabling the business agility needed to
-              thrive in today's digital economy.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive protection for your valuable data assets
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -188,10 +238,12 @@ export default function DataSecurity() {
               >
                 <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                  <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-300 text-left">
+                    {feature.description}
+                  </p>
                 </Card>
               </motion.div>
             ))}
@@ -213,13 +265,25 @@ export default function DataSecurity() {
               The Evolving Threat Landscape
             </h2>
 
-            <p className="text-xl text-gray-300 leading-relaxed mb-6">
-              The data security threat landscape is constantly evolving, with
-              attackers developing increasingly sophisticated methods to
-              compromise systems and steal sensitive information. Understanding
-              these threats is essential for developing effective security
-              strategies that can adapt to emerging risks.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8">
+              <div>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6 text-left">
+                  The data security threat landscape is constantly evolving,
+                  with attackers developing increasingly sophisticated methods
+                  to compromise systems and steal sensitive information.
+                  Understanding these threats is essential for developing
+                  effective security strategies that can adapt to emerging
+                  risks.
+                </p>
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80"
+                  alt="Cybersecurity threat landscape visualization"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
 
             <h3 className="text-2xl font-semibold mb-4 text-white mt-10">
               Ransomware and Extortion Attacks

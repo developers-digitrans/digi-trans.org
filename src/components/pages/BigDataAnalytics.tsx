@@ -268,10 +268,7 @@ export default function BigDataAnalytics() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-an-aerial-view-of-a-business-district-1573/1080p.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/bigdata.mp4" type="video/mp4" />
         </video>
         <UniverseLights />
 
@@ -326,33 +323,43 @@ export default function BigDataAnalytics() {
       {/* Overview Section */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Unlock the Power of Your Data
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              In today's data-driven world, organizations are generating
-              unprecedented volumes of data. The challenge lies not in
-              collecting data, but in extracting meaningful insights that drive
-              business value. Our Big Data Analytics services help you harness
-              the full potential of your data assets through advanced analytics,
-              machine learning, and purpose-built data platforms.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed mt-4">
-              We combine deep technical expertise with industry knowledge to
-              deliver end-to-end solutions that transform how you leverage
-              data—from ingestion and processing to visualization and predictive
-              analytics. Our approach is tailored to your specific business
-              needs, ensuring you get actionable insights that create tangible
-              business outcomes.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Transform Your Data into Actionable Insights
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed mb-4">
+                In today's data-driven world, organizations generate
+                unprecedented volumes of data. The true value lies in extracting
+                meaningful insights from this data.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our Big Data Analytics solutions help you harness your data's
+                full potential, enabling informed decisions, identifying new
+                opportunities, and gaining a competitive edge.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="/images/bigdata.jpg"
+                alt="Data analytics dashboard with business insights"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             {features.map((feature, index) => (
