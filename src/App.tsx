@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import GridBackground from "./components/GridBackground";
 import PromoBanner from "./components/PromoBanner";
-import EnablingClientMaximizeIT from "./components/pages/blog/EnablingClientMaximizeIT";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import Services from "./components/pages/Services";
@@ -11,6 +10,11 @@ import Portfolio from "./components/pages/Portfolio";
 import Careers from "./components/pages/Careers";
 import Blog from "./components/pages/Blog";
 import BlogPost from "./components/pages/BlogPost";
+import EnablingClientMaximizeIT from "./components/pages/blog/EnablingClientMaximizeIT";
+import BuildingEnterpriseDataLakes from "./components/pages/blog/BuildingEnterpriseDataLakes";
+import MLOpsBestPractices from "./components/pages/blog/MLOpsBestPractices";
+import CloudNativeArchitecturePatterns from "./components/pages/blog/CloudNativeArchitecturePatterns";
+import RealTimeAnalyticsKafka from "./components/pages/blog/RealTimeAnalyticsKafka";
 import Locations from "./components/pages/Locations";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
@@ -56,6 +60,22 @@ function App() {
         <Route
           path="/blog/enabling-our-client-to-maximise-the-business-value-from-it"
           element={<EnablingClientMaximizeIT />}
+        />
+        <Route
+          path="/blog/building-enterprise-data-lakes"
+          element={<BuildingEnterpriseDataLakes />}
+        />
+        <Route
+          path="/blog/mlops-best-practices"
+          element={<MLOpsBestPractices />}
+        />
+        <Route
+          path="/blog/cloud-native-architecture-patterns"
+          element={<CloudNativeArchitecturePatterns />}
+        />
+        <Route
+          path="/blog/real-time-analytics-kafka"
+          element={<RealTimeAnalyticsKafka />}
         />
         {/* Removed Locations route */}
         <Route path="/contact" element={<Contact />} />

@@ -120,65 +120,67 @@ const Footer = ({
             <h2 className="text-2xl font-bold mb-8">
               Trusted by Industry Leaders
             </h2>
-            <div className="relative max-w-4xl mx-auto overflow-hidden mb-12 h-48">
-              <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black to-transparent z-10" />
-              <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black to-transparent z-10" />
+            <div className="relative max-w-5xl mx-auto overflow-hidden mb-12 h-32">
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10" />
               <motion.div
-                className="flex gap-12 absolute whitespace-nowrap"
+                className="flex gap-6 absolute whitespace-nowrap"
                 animate={{
-                  x: ["-100%", "0%"],
+                  x: ["0%", "-50%"],
                 }}
                 transition={{
                   duration: 20,
                   repeat: Infinity,
                   ease: "linear",
+                  repeatType: "loop",
                 }}
               >
                 {[...Array(11)].map((_, index) => (
                   <div
                     key={index}
-                    className="w-48 h-48 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-lg"
+                    className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-sm rounded-lg border border-purple-500/20 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
                   >
                     <img
                       src={`/images/${index + 1}.svg`}
                       alt={`Logo ${index + 1}`}
-                      className="w-40 h-40 object-contain"
+                      className="w-24 h-24 object-contain p-2"
                     />
                   </div>
                 ))}
                 {[...Array(11)].map((_, index) => (
                   <div
                     key={`repeat-${index}`}
-                    className="w-48 h-48 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-lg"
+                    className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-sm rounded-lg border border-purple-500/20 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
                   >
                     <img
                       src={`/images/${index + 1}.svg`}
                       alt={`Logo ${index + 1}`}
-                      className="w-40 h-40 object-contain"
+                      className="w-24 h-24 object-contain p-2"
                     />
                   </div>
                 ))}
               </motion.div>
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-hidden mt-8">
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
 
               <motion.div
                 className="flex gap-8"
                 initial={{ x: 0 }}
-                animate={{ x: ["-50%", "0%"] }}
+                animate={{ x: ["0%", "-50%"] }}
                 transition={{
                   duration: 40,
                   repeat: Infinity,
                   ease: "linear",
+                  repeatType: "loop",
                 }}
               >
                 {[...testimonials, ...testimonials].map(
                   (testimonial, index) => (
                     <div
                       key={index}
-                      className="flex-shrink-0 w-[400px] bg-gray-900/50 backdrop-blur rounded-lg p-6"
+                      className="flex-shrink-0 w-[380px] bg-gradient-to-br from-gray-900/70 via-purple-900/20 to-indigo-900/30 backdrop-blur rounded-lg p-6 border border-purple-500/10 shadow-lg"
                     >
                       <p className="text-gray-300 italic mb-4 text-lg">
                         "{testimonial.text}"

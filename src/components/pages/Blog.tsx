@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Hero from "../Hero";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Calendar, Tag, User, BookOpen } from "lucide-react";
 import SEO from "../SEO";
 import LazyImage from "../LazyImage";
 
@@ -16,7 +16,8 @@ function Blog() {
         "How We Helped a $3.5B Retailer Transform Their IT into a Strategic Asset",
       description:
         "Learn how our strategic IT assessment unlocked $16M+ in value and created a technology roadmap that became a competitive advantage for a global retail leader.",
-      image: "/images/consult.png",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
       date: "March 20, 2024",
       readTime: "5 min read",
       slug: "enabling-our-client-to-maximise-the-business-value-from-it",
@@ -87,41 +88,61 @@ function Blog() {
       {/* Blog Posts Grid */}
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
             {blogPosts.map((post, index) => (
               <motion.div
                 key={post.slug}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.7, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
-                <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
-                  <div className="aspect-video relative overflow-hidden">
-                    <LazyImage
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
-                      <span>{post.date}</span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {post.readTime}
-                      </span>
+                <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 group">
+                  <div className="flex flex-col md:flex-row">
+                    <div className="md:w-2/5 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                      <LazyImage
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 aspect-video md:aspect-auto"
+                      />
                     </div>
-                    <h3 className="text-2xl font-semibold mb-3">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6">{post.description}</p>
-                    <a href={`/blog/${post.slug}`}>
-                      <Button variant="outline" className="group">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </a>
+                    <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-between">
+                      <div>
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-4">
+                          <span className="flex items-center gap-2 bg-gray-800/50 px-3 py-1 rounded-full">
+                            <Calendar className="w-4 h-4 text-purple-400" />
+                            {post.date}
+                          </span>
+                          <span className="flex items-center gap-2 bg-gray-800/50 px-3 py-1 rounded-full">
+                            <Clock className="w-4 h-4 text-blue-400" />
+                            {post.readTime}
+                          </span>
+                          <span className="flex items-center gap-2 bg-gray-800/50 px-3 py-1 rounded-full">
+                            <Tag className="w-4 h-4 text-green-400" />
+                            {post.category}
+                          </span>
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-purple-300 transition-colors duration-300">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-300 mb-6 text-lg">
+                          {post.description}
+                        </p>
+                      </div>
+                      <div className="mt-auto">
+                        <a href={`/blog/${post.slug}`}>
+                          <Button
+                            variant="outline"
+                            className="group bg-gradient-to-r from-purple-600/20 to-blue-600/20 hover:from-purple-600/30 hover:to-blue-600/30 border-purple-500/30"
+                          >
+                            <span className="mr-2">Read Article</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </Card>
               </motion.div>

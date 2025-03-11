@@ -132,13 +132,6 @@ export default function Contact() {
                   {/* Contact Form */}
                   <div>
                     <div className="flex items-center gap-6 mb-8">
-                      <div className="flex-shrink-0 w-1/4">
-                        <img
-                          src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=400&q=80"
-                          alt="Customer support team"
-                          className="rounded-lg shadow-xl w-full h-auto"
-                        />
-                      </div>
                       <div>
                         <h2 className="text-3xl font-bold mb-2">
                           Get in Touch
@@ -255,10 +248,10 @@ export default function Contact() {
                         <div>
                           <h3 className="text-xl font-semibold mb-2">Email</h3>
                           <a
-                            href="mailto:info@digitrans.ai"
+                            href="mailto:info@digi-trans.org"
                             className="text-gray-300 hover:text-white transition-colors"
                           >
-                            info@digitrans.ai
+                            info@digi-trans.org
                           </a>
                         </div>
                       </div>
