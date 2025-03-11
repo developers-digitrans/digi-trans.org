@@ -35,7 +35,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="py-24 bg-black text-white">
+    <section className="py-24 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -59,31 +59,29 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm border border-blue-800/30 hover:border-blue-700/50 transition-all duration-300"
             >
-              <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow bg-gray-900 border-gray-800">
-                <div className="aspect-video relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">{project.description}</p>
-                  {/* Technology tags removed */}
-                  <Button
-                    variant="outline"
-                    className="w-full group"
-                    onClick={() => (window.location.href = project.blogUrl)}
-                  >
-                    Learn more
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </Card>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90 z-10"></div>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0"
+              />
+              <div className="relative z-20 p-8 h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-6 flex-grow">
+                  {project.description}
+                </p>
+                <a
+                  href={project.blogUrl}
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors mt-auto"
+                >
+                  Learn more
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

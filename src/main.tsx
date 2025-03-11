@@ -10,6 +10,19 @@ TempoDevtools.init();
 
 const basename = import.meta.env.BASE_URL;
 
+// Add this to help with debugging SEO issues
+if (typeof window !== "undefined") {
+  window.addEventListener("load", () => {
+    console.log("SEO Debug: Document title is", document.title);
+    console.log(
+      "SEO Debug: Meta description is",
+      document
+        .querySelector('meta[name="description"]')
+        ?.getAttribute("content"),
+    );
+  });
+}
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HelmetProvider>

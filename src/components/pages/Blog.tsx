@@ -119,65 +119,67 @@ export default function Blog() {
       />
 
       {/* Blog Posts Grid */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold mb-4">Latest Articles</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Discover insights and expertise from our team of specialists in
+              Big Data, AI, and Cloud Computing
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <motion.div
                 key={post.slug}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm border border-blue-800/30 hover:border-blue-700/50 transition-all duration-300 h-[450px]"
               >
-                <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 group">
-                  <div className="flex flex-col md:flex-row">
-                    <div className="md:w-2/5 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-                      <LazyImage
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 aspect-video md:aspect-auto"
-                      />
-                    </div>
-                    <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-between">
-                      <div>
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-4">
-                          <span className="flex items-center gap-2 bg-gray-800/50 px-3 py-1 rounded-full">
-                            <Calendar className="w-4 h-4 text-purple-400" />
-                            {post.date}
-                          </span>
-                          <span className="flex items-center gap-2 bg-gray-800/50 px-3 py-1 rounded-full">
-                            <Clock className="w-4 h-4 text-blue-400" />
-                            {post.readTime}
-                          </span>
-                          <span className="flex items-center gap-2 bg-gray-800/50 px-3 py-1 rounded-full">
-                            <Tag className="w-4 h-4 text-green-400" />
-                            {post.category}
-                          </span>
-                        </div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-purple-300 transition-colors duration-300">
-                          {post.title}
-                        </h3>
-                        <p className="text-gray-300 mb-6 text-lg">
-                          {post.description}
-                        </p>
-                      </div>
-                      <div className="mt-auto">
-                        <a href={`/blog/${post.slug}`}>
-                          <Button
-                            variant="outline"
-                            className="group bg-gradient-to-r from-purple-600/20 to-blue-600/20 hover:from-purple-600/30 hover:to-blue-600/30 border-purple-500/30"
-                          >
-                            <span className="mr-2">Read Article</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90 z-10"></div>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0"
+                />
+                <div className="relative z-20 p-8 h-full flex flex-col">
+                  <div className="flex flex-wrap items-center gap-2 text-sm text-gray-300 mb-4">
+                    <span className="flex items-center gap-1 bg-gray-800/70 px-2 py-1 rounded-full">
+                      <Calendar className="w-3 h-3 text-purple-400" />
+                      {post.date}
+                    </span>
+                    <span className="flex items-center gap-1 bg-gray-800/70 px-2 py-1 rounded-full">
+                      <Clock className="w-3 h-3 text-blue-400" />
+                      {post.readTime}
+                    </span>
+                    <span className="flex items-center gap-1 bg-gray-800/70 px-2 py-1 rounded-full">
+                      <Tag className="w-3 h-3 text-green-400" />
+                      {post.category}
+                    </span>
                   </div>
-                </Card>
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-300 mb-6 flex-grow">
+                    {post.description}
+                  </p>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors mt-auto"
+                  >
+                    Read Article
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>

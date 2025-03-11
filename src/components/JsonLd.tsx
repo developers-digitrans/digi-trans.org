@@ -18,12 +18,13 @@ interface OrganizationSchemaProps {
     email?: string;
     availableLanguage?: string[];
   };
+  keywords?: string[];
 }
 
 export function OrganizationSchema({
   name = "Digitrans",
-  url = "https://digitrans.ai",
-  logo = "https://digitrans.ai/logo.png",
+  url = "https://digi-trans.org",
+  logo = "https://digi-trans.org/logo.png",
   sameAs = [
     "https://www.linkedin.com/company/digitranslab",
     "https://twitter.com/digitranslab",
@@ -42,6 +43,19 @@ export function OrganizationSchema({
     email: "info@digitrans.ai",
     availableLanguage: ["English", "Arabic", "French"],
   },
+  keywords = [
+    "IT consultancy",
+    "big data analytics",
+    "business intelligence",
+    "business applications development",
+    "SaaS products",
+    "AI platform",
+    "AI agents orchestration",
+    "machine learning",
+    "ML development",
+    "ML inference",
+    "LLM RAGs development",
+  ],
 }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -58,6 +72,9 @@ export function OrganizationSchema({
       "@type": "ContactPoint",
       ...contactPoint,
     },
+    keywords: keywords.join(", "),
+    description:
+      "Enterprise IT consultancy specializing in big data analytics, AI solutions, ML development, and business intelligence for digital transformation.",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -69,14 +86,28 @@ interface ServiceSchemaProps {
   provider?: string;
   serviceType?: string;
   areaServed?: string | string[];
+  keywords?: string[];
 }
 
 export function ServiceSchema({
-  name = "Digitrans",
-  description = "Enterprise-grade data analytics, cloud computing, and artificial intelligence solutions",
+  name = "Digitrans IT Consultancy Services",
+  description = "Enterprise-grade data analytics, cloud computing, artificial intelligence solutions, and business intelligence services",
   provider = "Digitrans",
   serviceType = "IT Consultancy",
   areaServed = "Global",
+  keywords = [
+    "IT consultancy",
+    "big data analytics",
+    "business intelligence",
+    "business applications development",
+    "SaaS products",
+    "AI platform",
+    "AI agents orchestration",
+    "machine learning",
+    "ML development",
+    "ML inference",
+    "LLM RAGs development",
+  ],
 }: ServiceSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -86,6 +117,7 @@ export function ServiceSchema({
     provider: {
       "@type": "Organization",
       name: provider,
+      url: "https://digi-trans.org",
     },
     serviceType,
     areaServed:
@@ -95,6 +127,12 @@ export function ServiceSchema({
             "@type": "Country",
             name: area,
           })),
+    keywords: keywords.join(", "),
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: "https://digi-trans.org/services",
+    },
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -109,6 +147,7 @@ interface ArticleSchemaProps {
   publisher?: string;
   publisherLogo?: string;
   description?: string;
+  keywords?: string[];
 }
 
 export function ArticleSchema({
@@ -118,8 +157,14 @@ export function ArticleSchema({
   dateModified = datePublished,
   author = "Digitrans Team",
   publisher = "Digitrans",
-  publisherLogo = "https://digitrans.ai/logo.png",
+  publisherLogo = "https://digi-trans.org/logo.png",
   description,
+  keywords = [
+    "IT consultancy",
+    "big data analytics",
+    "business intelligence",
+    "AI solutions",
+  ],
 }: ArticleSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -141,6 +186,92 @@ export function ArticleSchema({
       },
     },
     description,
+    keywords: keywords.join(", "),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://digi-trans.org/blog",
+    },
+  };
+
+  return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
+}
+
+// New schema for FAQs
+export function FAQSchema({
+  questions,
+}: {
+  questions: { question: string; answer: string }[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((q) => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.answer,
+      },
+    })),
+  };
+
+  return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
+}
+
+// New schema for software applications (for SaaS products)
+export function SoftwareApplicationSchema({
+  name,
+  description,
+  image,
+  applicationCategory = "BusinessApplication",
+  operatingSystem = "Web browser",
+  offers,
+}: {
+  name: string;
+  description: string;
+  image: string;
+  applicationCategory?: string;
+  operatingSystem?: string;
+  offers?: {
+    price: string;
+    priceCurrency: string;
+    priceValidUntil?: string;
+  };
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    image,
+    applicationCategory,
+    operatingSystem,
+    offers: offers
+      ? {
+          "@type": "Offer",
+          ...offers,
+        }
+      : undefined,
+  };
+
+  return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
+}
+
+// New schema for breadcrumbs
+export function BreadcrumbSchema({
+  items,
+}: {
+  items: { name: string; url: string }[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `https://digi-trans.org${item.url}`,
+    })),
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;

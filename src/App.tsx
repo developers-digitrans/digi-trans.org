@@ -44,6 +44,12 @@ import BigBytes from "./components/pages/products/BigBytes";
 import KozmoAI from "./components/pages/products/KozmoAI";
 import CalendarPage from "./components/pages/CalendarPage";
 import SimpleCalendarTest from "./components/pages/SimpleCalendarTest";
+import SeniorDataEngineer from "./components/pages/careers/SeniorDataEngineer";
+import MachineLearningEngineer from "./components/pages/careers/MachineLearningEngineer";
+import CloudSolutionsArchitect from "./components/pages/careers/CloudSolutionsArchitect";
+import FullStackDeveloper from "./components/pages/careers/FullStackDeveloper";
+import DevOpsEngineer from "./components/pages/careers/DevOpsEngineer";
+import DataScientist from "./components/pages/careers/DataScientist";
 
 function App() {
   return (
@@ -122,6 +128,24 @@ function App() {
         <Route path="/products/kozmo-ai" element={<KozmoAI />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/simple-calendar" element={<SimpleCalendarTest />} />
+        <Route
+          path="/careers/senior-data-engineer"
+          element={<SeniorDataEngineer />}
+        />
+        <Route
+          path="/careers/machine-learning-engineer"
+          element={<MachineLearningEngineer />}
+        />
+        <Route
+          path="/careers/cloud-solutions-architect"
+          element={<CloudSolutionsArchitect />}
+        />
+        <Route
+          path="/careers/full-stack-developer"
+          element={<FullStackDeveloper />}
+        />
+        <Route path="/careers/devops-engineer" element={<DevOpsEngineer />} />
+        <Route path="/careers/data-scientist" element={<DataScientist />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />
