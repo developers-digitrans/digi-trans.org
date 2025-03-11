@@ -9,8 +9,41 @@ import { ArrowRight, Clock, Calendar, Tag, User, BookOpen } from "lucide-react";
 import SEO from "../SEO";
 import LazyImage from "../LazyImage";
 
-function Blog() {
+export default function Blog() {
   const blogPosts = [
+    {
+      title: "Digital Transformation in Banking: A $250M Success Story",
+      description:
+        "Learn how we helped a global banking leader transform their legacy systems, resulting in $250M in operational savings and a 35% increase in customer satisfaction.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+      date: "February 25, 2025",
+      readTime: "7 min read",
+      slug: "digital-transformation-banking-success-story",
+      category: "Case Study",
+    },
+    {
+      title: "Cloud Migration for Healthcare: Improving Patient Care",
+      description:
+        "Learn how we helped a major healthcare provider migrate to the cloud, resulting in 40% cost savings and improved patient care through real-time data access.",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+      date: "February 18, 2025",
+      readTime: "6 min read",
+      slug: "cloud-migration-healthcare-case-study",
+      category: "Case Study",
+    },
+    {
+      title: "AI-Powered Retail Personalization: 70% Revenue Growth",
+      description:
+        "Learn how we helped a global retailer implement AI-powered personalization that increased online revenue by 70% and customer lifetime value by 45%.",
+      image:
+        "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80",
+      date: "February 10, 2025",
+      readTime: "8 min read",
+      slug: "ai-retail-personalization-case-study",
+      category: "Case Study",
+    },
     {
       title:
         "How We Helped a $3.5B Retailer Transform Their IT into a Strategic Asset",
@@ -18,7 +51,7 @@ function Blog() {
         "Learn how our strategic IT assessment unlocked $16M+ in value and created a technology roadmap that became a competitive advantage for a global retail leader.",
       image:
         "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-      date: "March 20, 2024",
+      date: "February 3, 2025",
       readTime: "5 min read",
       slug: "enabling-our-client-to-maximise-the-business-value-from-it",
       category: "Case Study",
@@ -29,7 +62,7 @@ function Blog() {
         "Learn how to design and implement scalable data lakes that process petabytes of data with real-time analytics capabilities.",
       image:
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
-      date: "March 15, 2024",
+      date: "January 28, 2025",
       readTime: "15 min read",
       slug: "building-enterprise-data-lakes",
       category: "Data Engineering",
@@ -39,7 +72,7 @@ function Blog() {
       description:
         "A comprehensive guide to implementing MLOps in enterprise environments, from model training to production deployment.",
       image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
-      date: "March 10, 2024",
+      date: "January 21, 2025",
       readTime: "12 min read",
       slug: "mlops-best-practices",
       category: "AI/ML",
@@ -50,7 +83,7 @@ function Blog() {
         "Explore modern architecture patterns for building scalable, resilient cloud-native applications.",
       image:
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
-      date: "March 5, 2024",
+      date: "January 14, 2025",
       readTime: "10 min read",
       slug: "cloud-native-architecture-patterns",
       category: "Cloud Computing",
@@ -61,7 +94,7 @@ function Blog() {
         "Building real-time analytics pipelines processing millions of events per second using Apache Kafka and modern streaming technologies.",
       image:
         "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800",
-      date: "March 1, 2024",
+      date: "January 7, 2025",
       readTime: "8 min read",
       slug: "real-time-analytics-kafka",
       category: "Big Data",
@@ -155,5 +188,3 @@ function Blog() {
     </div>
   );
 }
-
-export default Blog;

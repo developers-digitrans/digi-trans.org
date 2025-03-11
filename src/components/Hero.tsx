@@ -281,6 +281,8 @@ const Hero = ({
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Product Spotlight removed */}
     </div>
   );
 };

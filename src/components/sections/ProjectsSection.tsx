@@ -11,6 +11,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=60",
     tags: ["Snowflake", "Apache Spark", "Kubernetes", "ML Ops"],
+    blogUrl: "/blog/digital-transformation-banking-success-story",
   },
   {
     title: "Healthcare AI Diagnostic System",
@@ -19,6 +20,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=60",
     tags: ["TensorFlow", "AWS", "HIPAA Compliant", "MLflow"],
+    blogUrl: "/blog/cloud-migration-healthcare-case-study",
   },
   {
     title: "Enterprise E-commerce Analytics",
@@ -27,6 +29,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
     tags: ["Apache Kafka", "Elasticsearch", "Grafana", "AWS"],
+    blogUrl: "/blog/ai-retail-personalization-case-study",
   },
 ];
 
@@ -70,26 +73,15 @@ export default function ProjectsSection() {
                     {project.title}
                   </h3>
                   <p className="text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-sm px-3 py-1 bg-slate-100 text-slate-600 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href="https://app.get-ledger.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  {/* Technology tags removed */}
+                  <Button
+                    variant="outline"
+                    className="w-full group"
+                    onClick={() => (window.location.href = project.blogUrl)}
                   >
-                    <Button variant="outline" className="w-full group">
-                      Learn more
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </a>
+                    Learn more
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
               </Card>
             </motion.div>

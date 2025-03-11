@@ -15,6 +15,9 @@ import BuildingEnterpriseDataLakes from "./components/pages/blog/BuildingEnterpr
 import MLOpsBestPractices from "./components/pages/blog/MLOpsBestPractices";
 import CloudNativeArchitecturePatterns from "./components/pages/blog/CloudNativeArchitecturePatterns";
 import RealTimeAnalyticsKafka from "./components/pages/blog/RealTimeAnalyticsKafka";
+import DigitalTransformationBanking from "./components/pages/blog/DigitalTransformationBanking";
+import CloudMigrationHealthcare from "./components/pages/blog/CloudMigrationHealthcare";
+import AIRetailPersonalization from "./components/pages/blog/AIRetailPersonalization";
 import Locations from "./components/pages/Locations";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
@@ -76,6 +79,18 @@ function App() {
         <Route
           path="/blog/real-time-analytics-kafka"
           element={<RealTimeAnalyticsKafka />}
+        />
+        <Route
+          path="/blog/digital-transformation-banking-success-story"
+          element={<DigitalTransformationBanking />}
+        />
+        <Route
+          path="/blog/cloud-migration-healthcare-case-study"
+          element={<CloudMigrationHealthcare />}
+        />
+        <Route
+          path="/blog/ai-retail-personalization-case-study"
+          element={<AIRetailPersonalization />}
         />
         {/* Removed Locations route */}
         <Route path="/contact" element={<Contact />} />

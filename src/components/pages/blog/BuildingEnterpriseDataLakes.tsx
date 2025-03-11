@@ -268,8 +268,8 @@ export default function BuildingEnterpriseDataLakes() {
 
                 <div className="mb-8 relative rounded-xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
-                    alt="Enterprise Data Lakes visualization"
+                    src="/images/datalake.png"
+                    alt="Enterprise Data Lake visualization"
                     className="w-full h-auto object-cover rounded-xl"
                     style={{ maxHeight: "500px" }}
                   />

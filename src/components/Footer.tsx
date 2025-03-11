@@ -19,28 +19,28 @@ interface FooterProps {
 
 const defaultTestimonials = [
   {
-    author: "Sarah Johnson",
-    company: "TechCorp Global",
+    author: "Olivier Chung",
+    company: "Data Tech Lead at Orange Belgium",
     text: "Digitrans delivered a data infrastructure that increased our analytical capabilities by 300% and reduced decision-making time from weeks to hours.",
   },
   {
-    author: "Mohammed Al-Rashid",
-    company: "Future Ventures",
+    author: "Ayoub TARMOUNIA",
+    company: "Tech lead Data at RATPDev",
     text: "Their AI solutions increased our customer retention by 40% and provided predictive insights that transformed our product roadmap.",
   },
   {
-    author: "Emily Chen",
-    company: "InnovateTech",
+    author: "Dominique Debruyne",
+    company: "Data Product Manager & Safe System Architect at Bpifrance",
     text: "Our cloud migration with Digitrans resulted in 99.99% uptime, 60% cost reduction, and a 5x improvement in deployment speed.",
   },
   {
-    author: "David Miller",
-    company: "FinanceFirst",
+    author: "Dave Marsland",
+    company: "VP Engineering at Clear.Bank",
     text: "Digitrans built a financial platform that processes $2B in transactions monthly with zero downtime and full regulatory compliance.",
   },
   {
-    author: "Sophia Rodriguez",
-    company: "HealthTech Solutions",
+    author: "Dmytro Avramov",
+    company: "Director of AI at EMIS Group",
     text: "Their HIPAA-compliant healthcare solution reduced patient wait times by 45% while improving diagnostic accuracy by 30%.",
   },
   {

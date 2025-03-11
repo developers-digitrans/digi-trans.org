@@ -87,7 +87,6 @@ export default function Home() {
       <ServicesSection />
       <ProcessSection />
       <ProjectsSection />
-      <RelatedContent items={relatedContent} />
       <Footer />
 
       <StickyCTA

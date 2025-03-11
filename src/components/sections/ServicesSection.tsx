@@ -1,5 +1,5 @@
 import { Card } from "../ui/card";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Code2, Cloud, Smartphone, Blocks } from "lucide-react";
 import {
   Dialog,
@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "../ui/dialog";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -48,6 +48,21 @@ const services = [
 
 export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState(null);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    // Start the animation sequence immediately and repeat indefinitely
+    const startAnimation = async () => {
+      await controls.start("visible");
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Pause at the end
+      await controls.start("hidden");
+      await new Promise((resolve) => setTimeout(resolve, 500)); // Brief pause before restarting
+      startAnimation(); // Restart the animation
+    };
+
+    startAnimation();
+  }, [controls]);
+
   return (
     <section className="py-24 bg-black text-white">
       <div className="container mx-auto px-4">
@@ -65,36 +80,54 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card
-                className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900 border-gray-800 cursor-pointer transform hover:scale-[1.02] transition-all duration-200"
+            <div key={service.title} className="relative w-full">
+              {/* Arrows between cards removed */}
+
+              {/* Card with continuous animation */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0.7, y: 10, scale: 0.98 },
+                  visible: { opacity: 1, y: 0, scale: 1 },
+                }}
+                initial="hidden"
+                animate={controls}
+                transition={{
+                  duration: 1.5,
+                  delay: index * 0.3,
+                  ease: "easeInOut",
+                }}
+                className="w-full"
                 onClick={() => setSelectedService(service)}
               >
-                <div className="text-blue-600 mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 text-white">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 mb-4">{service.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {service.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
+                <Card className="w-full h-[400px] p-8 bg-purple-900/20 backdrop-blur border-purple-500/50 hover:border-purple-400 relative shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_25px_rgba(168,85,247,0.3)] transition-all duration-300 flex flex-col cursor-pointer">
+                  {/* Service Number removed */}
+
+                  {/* Icon with continuous pulse */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      opacity: [0.8, 1, 0.8],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="text-purple-400 mb-6"
+                  >
+                    {service.icon}
+                  </motion.div>
+
+                  <h3 className="text-xl font-semibold mb-3 text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 mb-4">{service.description}</p>
+                  {/* Technology tags removed */}
+                </Card>
+              </motion.div>
+            </div>
           ))}
         </div>
 
@@ -103,10 +136,22 @@ export default function ServicesSection() {
           onOpenChange={() => setSelectedService(null)}
         >
           {selectedService && (
-            <DialogContent className="sm:max-w-[600px] bg-gray-900 text-white border-gray-800">
+            <DialogContent className="sm:max-w-[600px] bg-gray-900 text-white border-purple-500/30 backdrop-blur-sm">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold flex items-center gap-4">
-                  {selectedService.icon}
+                <DialogTitle className="text-2xl font-bold flex items-center gap-4 text-purple-300">
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      opacity: [0.8, 1, 0.8],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {selectedService.icon}
+                  </motion.div>
                   {selectedService.title}
                 </DialogTitle>
                 <DialogDescription className="text-gray-400">
@@ -115,12 +160,14 @@ export default function ServicesSection() {
               </DialogHeader>
               <div className="mt-6 space-y-6">
                 <div>
-                  <h4 className="text-lg font-semibold mb-3">Technologies</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-purple-300">
+                    Technologies
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedService.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-sm px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full"
+                        className="text-sm px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full border border-purple-500/30"
                       >
                         {tech}
                       </span>
@@ -128,8 +175,10 @@ export default function ServicesSection() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold mb-3">Key Features</h4>
-                  <ul className="space-y-2 text-gray-400">
+                  <h4 className="text-lg font-semibold mb-3 text-purple-300">
+                    Key Features
+                  </h4>
+                  <ul className="space-y-2 text-gray-300">
                     {selectedService.title ===
                       "Enterprise Software Development" &&
                       [
@@ -139,7 +188,7 @@ export default function ServicesSection() {
                         "Event-driven systems",
                       ].map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
                           {feature}
                         </li>
                       ))}
@@ -151,7 +200,7 @@ export default function ServicesSection() {
                         "Business intelligence dashboards",
                       ].map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
                           {feature}
                         </li>
                       ))}
@@ -163,7 +212,7 @@ export default function ServicesSection() {
                         "Kubernetes orchestration",
                       ].map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
                           {feature}
                         </li>
                       ))}
@@ -175,7 +224,7 @@ export default function ServicesSection() {
                         "Natural language processing",
                       ].map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
                           {feature}
                         </li>
                       ))}
