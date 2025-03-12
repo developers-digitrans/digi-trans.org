@@ -57,7 +57,7 @@ const defaultSolutions = [
 
 const defaultProducts = [
   {
-    title: "Ledger",
+    title: "Ledgerly",
     description: "Enterprise-grade financial management platform",
     href: "/products/ledger",
   },
@@ -66,16 +66,17 @@ const defaultProducts = [
     description: "Agile project management for high-performing teams",
     href: "/products/utrack",
   },
-  {
-    title: "Ember",
-    description: "Modern development workflow platform for engineering teams",
-    href: "/products/ember",
-  },
-  {
-    title: "GoDash",
-    description: "Real-time business intelligence platform",
-    href: "/products/godash",
-  },
+  // Temporarily hidden
+  // {
+  //   title: "Ember",
+  //   description: "Modern development workflow platform for engineering teams",
+  //   href: "/products/ember",
+  // },
+  // {
+  //   title: "GoDash",
+  //   description: "Real-time business intelligence platform",
+  //   href: "/products/godash",
+  // },
   {
     title: "BigBytes",
     description: "Scalable data processing and analytics engine",

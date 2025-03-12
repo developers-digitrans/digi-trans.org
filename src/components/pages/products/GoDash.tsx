@@ -57,49 +57,27 @@ export default function GoDash() {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <div className="relative w-full h-[800px] bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+      <div className="container mx-auto px-4 pt-32 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <source src="/videos/godash.mp4" type="video/mp4" />
-        </video>
-        <UniverseLights />
-
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             The Open Source Business Intelligence Platform
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Built for dbt
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Create and share beautiful dashboards powered by dbt metrics.
             Version controlled in Git.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
@@ -108,9 +86,116 @@ export default function GoDash() {
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
+
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="prose prose-lg prose-invert max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              Analytics for the Modern Data Stack
+            </h2>
+
+            <p>
+              GoDash is a powerful business intelligence platform built natively
+              for dbt (data build tool). It bridges the gap between data
+              transformation and visualization, allowing data teams to create
+              and share insights directly from their dbt projects without
+              switching contexts or duplicating metric definitions.
+            </p>
+
+            <p>
+              Unlike traditional BI tools that exist in isolation from your data
+              transformation layer, GoDash integrates seamlessly with your dbt
+              workflow. This means your metrics are version-controlled alongside
+              your models, ensuring consistency and eliminating the common
+              problem of metric definition drift between teams.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              The dbt-Native Advantage
+            </h3>
+
+            <p>
+              GoDash leverages the power of dbt's metrics layer to provide a
+              unified approach to analytics:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Version-Controlled Metrics:</strong> Define metrics once
+                in dbt and use them consistently across all dashboards and
+                reports.
+              </li>
+              <li>
+                <strong>Git Integration:</strong> Track changes to dashboards
+                and metrics alongside your dbt models, with full version history
+                and collaboration features.
+              </li>
+              <li>
+                <strong>Self-Service Analytics:</strong> Empower business users
+                to explore data and create visualizations without writing SQL,
+                while maintaining governance through the dbt metrics layer.
+              </li>
+              <li>
+                <strong>Seamless Deployment:</strong> Deploy changes to both
+                your data models and dashboards in a single workflow, ensuring
+                they stay in sync.
+              </li>
+              <li>
+                <strong>Metadata Inheritance:</strong> Automatically inherit
+                descriptions, ownership information, and lineage from your dbt
+                project.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Built for Data Teams
+            </h3>
+
+            <p>
+              GoDash is designed with the modern data team workflow in mind,
+              addressing the common pain points in the analytics development
+              lifecycle:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Collaborative Development:</strong> Work together on
+                dashboards with Git-based version control, pull requests, and
+                review processes.
+              </li>
+              <li>
+                <strong>Testing and Validation:</strong> Test dashboard changes
+                in development environments before deploying to production.
+              </li>
+              <li>
+                <strong>Comprehensive Documentation:</strong> Automatically
+                generate and maintain documentation for metrics and dashboards.
+              </li>
+              <li>
+                <strong>Governance and Security:</strong> Implement role-based
+                access controls and audit logs to maintain data governance
+                standards.
+              </li>
+              <li>
+                <strong>Performance Monitoring:</strong> Track query performance
+                and optimize slow-running dashboards with built-in monitoring
+                tools.
+              </li>
+            </ul>
+
+            <p>
+              Whether you're a data engineer maintaining the transformation
+              layer, an analyst creating insights, or a business stakeholder
+              consuming reports, GoDash provides a unified platform that
+              respects the principles of the modern data stack while delivering
+              powerful visualization capabilities.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Video Demo Section */}
       <section className="pt-4 pb-24 bg-black text-white">

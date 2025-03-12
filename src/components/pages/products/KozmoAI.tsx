@@ -60,85 +60,142 @@ export default function KozmoAI() {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <div className="relative w-full h-[800px] bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+      <div className="container mx-auto px-4 pt-32 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <source src="/videos/kozmoai.mp4" type="video/mp4" />
-        </video>
-        <UniverseLights />
-
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Build LLM Apps Visually
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               No Code Required
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Create, visualize, and deploy LangChain applications with a powerful
             flow editor.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
-              onClick={() =>
-                window.open("https://app.getkozmoai.com", "_blank")
-              }
+              onClick={() => window.open("https://kozmoai.cloud", "_blank")}
             >
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Video Demo Section */}
-      <section className="pt-4 pb-24 bg-black text-white">
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative w-full max-w-4xl mx-auto"
-          >
-            <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur border border-gray-800/50 shadow-[0_0_15px_rgba(0,0,0,0.1)]">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/ijTuzK2m37o"
-                title="Product Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </motion.div>
+          <div className="prose prose-lg prose-invert max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              Democratizing LLM Application Development
+            </h2>
+
+            <p>
+              KozmoAI is revolutionizing how organizations build and deploy AI
+              applications by making LLM development accessible to everyone. Our
+              visual flow editor eliminates the complexity of coding while
+              preserving the power and flexibility that advanced AI applications
+              require.
+            </p>
+
+            <p>
+              Built with LangChain at its core, KozmoAI provides a seamless
+              interface for creating sophisticated AI workflows through an
+              intuitive drag-and-drop experience. From simple chatbots to
+              complex multi-agent systems, KozmoAI enables teams to build
+              production-ready AI applications in hours instead of weeks.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Bridging the Gap Between Vision and Implementation
+            </h3>
+
+            <p>
+              The promise of large language models is transformative, but the
+              technical barriers to implementation have been substantial.
+              KozmoAI bridges this gap by providing:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Visual Flow Building:</strong> Create complex LLM chains
+                and agents with an intuitive drag-and-drop interface that
+                visualizes the entire application flow.
+              </li>
+              <li>
+                <strong>LangChain Integration:</strong> Leverage the full power
+                of LangChain components including prompts, memory, agents, and
+                tools without writing code.
+              </li>
+              <li>
+                <strong>Instant Testing:</strong> Test your flows in real-time
+                as you build them, with a built-in chat interface that shows
+                exactly how your application will respond.
+              </li>
+              <li>
+                <strong>One-Click Deployment:</strong> Deploy your LLM
+                applications with a single click, generating production-ready
+                APIs that can be integrated into any application.
+              </li>
+              <li>
+                <strong>Version Control:</strong> Track changes, collaborate
+                with team members, and maintain a history of your LLM
+                application development.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Enterprise-Ready AI Development
+            </h3>
+
+            <p>
+              KozmoAI isn't just for prototyping—it's built for production. Our
+              platform includes enterprise-grade features such as:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Role-Based Access Control:</strong> Manage who can view,
+                edit, and deploy different parts of your AI applications.
+              </li>
+              <li>
+                <strong>Monitoring and Analytics:</strong> Track usage,
+                performance, and costs of your LLM applications in real-time.
+              </li>
+              <li>
+                <strong>Custom Model Integration:</strong> Connect to your own
+                fine-tuned models or use any of the popular LLM providers.
+              </li>
+              <li>
+                <strong>Scalable Infrastructure:</strong> Our cloud
+                infrastructure automatically scales to handle any volume of
+                requests.
+              </li>
+              <li>
+                <strong>Security and Compliance:</strong> Enterprise-grade
+                security with data encryption, audit logs, and compliance
+                controls.
+              </li>
+            </ul>
+
+            <p>
+              Whether you're a product manager exploring AI capabilities, a
+              developer looking to streamline LLM implementation, or an
+              enterprise AI team scaling your operations, KozmoAI provides the
+              tools you need to build the next generation of intelligent
+              applications.
+            </p>
+          </div>
         </div>
       </section>
 

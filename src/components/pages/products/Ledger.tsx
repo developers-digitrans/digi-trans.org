@@ -58,49 +58,27 @@ export default function Ledger() {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <div className="relative w-full h-[800px] bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+      <div className="container mx-auto px-4 pt-32 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <source src="/videos/ledgerly.mp4" type="video/mp4" />
-        </video>
-        <UniverseLights />
-
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Modern Accounting Software
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Built for Growth
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Streamline your financial operations with powerful accounting
             software designed for modern businesses.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
@@ -109,32 +87,81 @@ export default function Ledger() {
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Video Demo Section */}
-      <section className="pt-4 pb-24 bg-black text-white">
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative w-full max-w-4xl mx-auto"
-          >
-            <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur border border-gray-800/50 shadow-[0_0_15px_rgba(0,0,0,0.1)]">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/4mXBPRLhaQ4"
-                title="Product Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </motion.div>
+          <div className="prose prose-lg prose-invert max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              Transforming Financial Management for Modern Businesses
+            </h2>
+
+            <p>
+              Ledgerly is a comprehensive financial management platform designed
+              to meet the complex needs of today's growing businesses. Unlike
+              traditional accounting software, Ledgerly combines powerful
+              financial tools with intuitive design to create a seamless
+              experience for finance teams of all sizes.
+            </p>
+
+            <p>
+              With real-time financial insights, automated reconciliation, and
+              advanced reporting capabilities, Ledgerly empowers businesses to
+              make data-driven decisions faster and with greater confidence. Our
+              platform integrates seamlessly with your existing systems while
+              maintaining bank-grade security and compliance standards.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Why Businesses Choose Ledgerly
+            </h3>
+
+            <ul>
+              <li>
+                <strong>Streamlined Workflows:</strong> Automate repetitive
+                tasks and reduce manual data entry with intelligent automation
+                features.
+              </li>
+              <li>
+                <strong>Real-time Visibility:</strong> Access up-to-the-minute
+                financial data across your entire organization from anywhere.
+              </li>
+              <li>
+                <strong>Multi-entity Support:</strong> Manage multiple business
+                entities within a single platform with consolidated reporting.
+              </li>
+              <li>
+                <strong>Advanced Security:</strong> Enterprise-grade security
+                features protect your sensitive financial data.
+              </li>
+              <li>
+                <strong>Seamless Integrations:</strong> Connect with your
+                banking, payroll, and other business systems for a unified
+                financial ecosystem.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Built for Financial Teams
+            </h3>
+
+            <p>
+              Ledgerly is designed with the needs of modern finance
+              professionals in mind. From CFOs seeking strategic insights to
+              accountants managing day-to-day transactions, our platform
+              provides the tools needed to excel in today's fast-paced business
+              environment.
+            </p>
+
+            <p>
+              With customizable dashboards, role-based access controls, and
+              collaborative features, Ledgerly adapts to your team's unique
+              workflows and processes. Whether you're a small business or a
+              large enterprise, Ledgerly scales with your organization's growth.
+            </p>
+          </div>
         </div>
       </section>
 

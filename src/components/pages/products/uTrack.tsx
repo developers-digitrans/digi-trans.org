@@ -63,49 +63,27 @@ export default function UTrack() {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <div className="relative w-full h-[800px] bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+      <div className="container mx-auto px-4 pt-32 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <source src="/videos/utrack.mp4" type="video/mp4" />
-        </video>
-        <UniverseLights />
-
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Project Management,
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Reimagined
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             The open source alternative to Jira. Plan, track, and deliver
             projects with a modern, intuitive interface.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
@@ -114,32 +92,91 @@ export default function UTrack() {
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Video Demo Section */}
-      <section className="pt-8 pb-24 bg-black text-white">
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative w-full max-w-4xl mx-auto"
-          >
-            <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur border border-gray-800">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/CCJJl66t4Ak"
-                title="Product Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </motion.div>
+          <div className="prose prose-lg prose-invert max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              A Better Way to Manage Projects
+            </h2>
+
+            <p>
+              uTrack is a modern project management platform designed for teams
+              that demand flexibility and power. Born out of frustration with
+              rigid, complex tools, uTrack provides a refreshing alternative
+              that adapts to how your team actually works.
+            </p>
+
+            <p>
+              Unlike traditional project management software, uTrack combines
+              powerful features with an intuitive interface that teams actually
+              enjoy using. With multiple views including Kanban, List, Calendar,
+              and Gantt, teams can visualize their work in ways that make sense
+              for their specific workflows and preferences.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Designed for Modern Teams
+            </h3>
+
+            <p>
+              Today's teams work differently. They need tools that support
+              asynchronous collaboration, provide real-time updates, and
+              integrate seamlessly with their existing tech stack. uTrack
+              delivers on all fronts with features built specifically for
+              contemporary work environments:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Flexible Workflows:</strong> Customize your process with
+                drag-and-drop simplicity. Create the perfect workflow for your
+                team's unique needs.
+              </li>
+              <li>
+                <strong>Real-time Collaboration:</strong> See changes as they
+                happen. Comment, assign, and update without refresh delays or
+                version conflicts.
+              </li>
+              <li>
+                <strong>Custom Fields:</strong> Track exactly what matters to
+                your team with customizable properties for any type of
+                information.
+              </li>
+              <li>
+                <strong>Powerful Integrations:</strong> Connect seamlessly with
+                GitHub, Slack, Google Drive, and dozens of other tools your team
+                already uses.
+              </li>
+              <li>
+                <strong>Automation:</strong> Eliminate repetitive tasks with
+                rule-based automations that keep your projects moving forward.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Open Source Advantage
+            </h3>
+
+            <p>
+              As an open source platform, uTrack offers unparalleled
+              transparency, customization options, and community support.
+              Organizations can self-host for complete data control or use our
+              cloud offering for convenience. Our active community continuously
+              contributes improvements, integrations, and extensions that
+              benefit all users.
+            </p>
+
+            <p>
+              Whether you're a software development team tracking sprints, a
+              marketing team managing campaigns, or a product team organizing
+              your roadmap, uTrack provides the flexibility and power you need
+              to succeed without the complexity that slows you down.
+            </p>
+          </div>
         </div>
       </section>
 

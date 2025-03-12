@@ -85,49 +85,27 @@ export default function Ember() {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <div className="relative w-full h-[800px] bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+      <div className="container mx-auto px-4 pt-32 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <source src="/videos/utrack.mp4" type="video/mp4" />
-        </video>
-        <UniverseLights />
-
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Work Management,
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Reimagined
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             The all-in-one workspace for modern teams. Plan, track, and deliver
             projects with a flexible, intuitive platform.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
@@ -146,9 +124,153 @@ export default function Ember() {
             >
               View Documentation
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
+
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="prose prose-lg prose-invert max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              The Future of Collaborative Work
+            </h2>
+
+            <p>
+              Ember is a powerful work management platform designed for modern
+              teams that need flexibility, efficiency, and seamless
+              collaboration. Unlike traditional project management tools that
+              force teams into rigid workflows, Ember adapts to how your team
+              naturally works, bringing together tasks, documents,
+              communication, and automation in one unified workspace.
+            </p>
+
+            <p>
+              In today's fragmented software landscape, teams waste countless
+              hours switching between specialized tools, leading to information
+              silos, context switching, and lost productivity. Ember solves this
+              problem by providing a comprehensive platform where all work can
+              be managed, tracked, and completed in one place.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              A Unified Workspace for Modern Teams
+            </h3>
+
+            <p>
+              Ember combines the best elements of project management, document
+              collaboration, communication, and workflow automation into a
+              single, intuitive platform:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Flexible Work Views:</strong> Visualize work in the way
+                that makes sense for your team—Kanban boards, lists, calendars,
+                Gantt charts, and custom dashboards provide multiple
+                perspectives on your projects.
+              </li>
+              <li>
+                <strong>Rich Document Collaboration:</strong> Create and edit
+                documents, wikis, and knowledge bases directly within your
+                workspace, with real-time collaboration and version history.
+              </li>
+              <li>
+                <strong>Integrated Communication:</strong> Chat, comments, and
+                video meetings are built into the platform, eliminating the need
+                to switch between tools for discussion.
+              </li>
+              <li>
+                <strong>Powerful Automation:</strong> Automate routine tasks and
+                workflows with a visual automation builder that requires no
+                coding knowledge.
+              </li>
+              <li>
+                <strong>Custom Workflows:</strong> Design workflows that match
+                your team's unique processes, with customizable stages, fields,
+                and approval flows.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Designed for Every Team
+            </h3>
+
+            <p>
+              Ember is built to support diverse teams across your organization,
+              with specialized features for different functions:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Product Teams:</strong> Plan roadmaps, track feature
+                development, collect user feedback, and manage releases in a
+                unified workflow.
+              </li>
+              <li>
+                <strong>Marketing Teams:</strong> Coordinate campaigns, manage
+                content calendars, track assets, and measure performance across
+                all marketing activities.
+              </li>
+              <li>
+                <strong>Engineering Teams:</strong> Manage sprints, track bugs,
+                document technical specifications, and integrate with
+                development tools.
+              </li>
+              <li>
+                <strong>HR Teams:</strong> Streamline hiring processes, onboard
+                new employees, manage performance reviews, and organize company
+                policies.
+              </li>
+              <li>
+                <strong>Executive Teams:</strong> Get high-level visibility into
+                company initiatives, track OKRs, and monitor progress across
+                departments.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Enterprise-Ready
+            </h3>
+
+            <p>
+              Ember is built to meet the needs of growing organizations with
+              enterprise-grade features:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Advanced Security:</strong> SOC 2 compliance, SSO
+                integration, and granular permission controls to keep your data
+                secure.
+              </li>
+              <li>
+                <strong>Scalable Architecture:</strong> Performance that
+                maintains speed and reliability as your organization grows.
+              </li>
+              <li>
+                <strong>Deep Integrations:</strong> Connect with the tools your
+                team already uses, from email and calendar to specialized
+                software.
+              </li>
+              <li>
+                <strong>Customization:</strong> Tailor the platform to match
+                your organization's terminology, processes, and branding.
+              </li>
+              <li>
+                <strong>Analytics and Reporting:</strong> Gain insights into
+                team productivity, project progress, and resource allocation
+                with customizable reports and dashboards.
+              </li>
+            </ul>
+
+            <p>
+              Whether you're a growing startup or an established enterprise,
+              Ember provides the flexibility, power, and ease of use needed to
+              transform how your teams work together.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Video Demo Section */}
       <section className="pt-8 pb-24 bg-black text-white">

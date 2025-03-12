@@ -55,49 +55,27 @@ export default function BigBytes() {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <div className="relative w-full h-[800px] bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+      <div className="container mx-auto px-4 pt-32 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <source src="/videos/bigbytes.mp4" type="video/mp4" />
-        </video>
-        <UniverseLights />
-
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             The Modern Data Pipeline Platform
             <br />
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Built for Scale
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-          >
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Build, run, and scale data pipelines for ETL, ML, and real-time
             analytics.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-500 via-blue-600 to-purple-600 hover:from-blue-600 hover:via-blue-700 hover:to-purple-700 text-white font-medium px-8 py-6 text-lg rounded-lg transition-all duration-200 ease-in-out transform hover:scale-[1.02]"
@@ -108,32 +86,142 @@ export default function BigBytes() {
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Video Demo Section */}
-      <section className="pt-4 pb-24 bg-black text-white">
+      <section className="py-12 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative w-full max-w-4xl mx-auto"
-          >
-            <div className="aspect-video rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur border border-gray-800/50 shadow-[0_0_15px_rgba(0,0,0,0.1)]">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/3gXsFEC3aYA"
-                title="Product Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </motion.div>
+          <div className="prose prose-lg prose-invert max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              Data Pipeline Orchestration Reimagined
+            </h2>
+
+            <p>
+              BigBytes is a modern data pipeline platform that simplifies ETL
+              and data processing at scale. Designed for data engineers and
+              analytics teams, BigBytes combines the power of distributed
+              computing with an intuitive user interface to make building and
+              maintaining data pipelines accessible to everyone.
+            </p>
+
+            <p>
+              Unlike traditional ETL tools that struggle with modern data
+              volumes and complexity, BigBytes was built from the ground up to
+              handle petabyte-scale data processing, real-time streaming, and
+              complex transformation workflows. Our platform empowers teams to
+              build reliable, scalable data pipelines without getting bogged
+              down in infrastructure management.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              End-to-End Data Pipeline Management
+            </h3>
+
+            <p>
+              BigBytes provides a comprehensive solution for the entire data
+              pipeline lifecycle:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Data Integration:</strong> Connect to over 100 data
+                sources and destinations with pre-built connectors for
+                databases, APIs, file systems, and cloud services.
+              </li>
+              <li>
+                <strong>Data Transformation:</strong> Transform data using SQL,
+                Python, or our visual transformation builder with support for
+                complex operations and custom functions.
+              </li>
+              <li>
+                <strong>Workflow Orchestration:</strong> Design and schedule
+                complex workflows with dependencies, conditional execution, and
+                error handling.
+              </li>
+              <li>
+                <strong>Real-time Processing:</strong> Process streaming data
+                with low-latency transformations using our integrated streaming
+                engine.
+              </li>
+              <li>
+                <strong>Monitoring and Observability:</strong> Track pipeline
+                health, performance metrics, and data quality with comprehensive
+                monitoring tools.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Built for Enterprise Scale
+            </h3>
+
+            <p>
+              BigBytes is designed to meet the demands of enterprise data
+              environments with features that ensure reliability, security, and
+              governance:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Horizontal Scaling:</strong> Automatically scale
+                processing resources based on workload demands, from gigabytes
+                to petabytes.
+              </li>
+              <li>
+                <strong>High Availability:</strong> Built-in redundancy and
+                failover mechanisms ensure your data pipelines keep running even
+                during infrastructure failures.
+              </li>
+              <li>
+                <strong>Data Quality:</strong> Integrated data quality checks
+                and validation rules to ensure the integrity of your data
+                throughout the pipeline.
+              </li>
+              <li>
+                <strong>Version Control:</strong> Track changes to pipeline
+                definitions with Git integration and rollback capabilities.
+              </li>
+              <li>
+                <strong>Security and Compliance:</strong> Role-based access
+                control, audit logging, and encryption features to meet
+                enterprise security requirements.
+              </li>
+              <li>
+                <strong>Metadata Management:</strong> Automatically track data
+                lineage, schema changes, and pipeline dependencies.
+              </li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Deployment Flexibility
+            </h3>
+
+            <p>
+              BigBytes offers flexible deployment options to suit your
+              organization's needs:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Cloud-Native:</strong> Deploy on AWS, Azure, or GCP with
+                optimized configurations for each cloud provider.
+              </li>
+              <li>
+                <strong>Self-Hosted:</strong> Run BigBytes in your own
+                infrastructure with our enterprise distribution.
+              </li>
+              <li>
+                <strong>Hybrid:</strong> Combine cloud and on-premises resources
+                in a unified data platform.
+              </li>
+            </ul>
+
+            <p>
+              Whether you're building data lakes, data warehouses, or real-time
+              analytics systems, BigBytes provides the foundation for reliable,
+              scalable data pipelines that grow with your organization's needs.
+            </p>
+          </div>
         </div>
       </section>
 
