@@ -3,7 +3,11 @@ import BookingModal from "./BookingModal";
 
 export default function PromoBanner() {
   const [showBookingModal, setShowBookingModal] = useState(false);
-
+  
+  // Don't display the banner at all
+  return null;
+  
+  /* Original code commented out
   return (
     <>
       <div className="fixed top-0 left-0 right-0 w-full bg-gradient-to-r from-purple-600 via-sky-500 to-blue-600 animate-gradient-x z-50 bg-[length:200%_200%]">
@@ -27,4 +31,5 @@ export default function PromoBanner() {
       />
     </>
   );
+  */
 }

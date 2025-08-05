@@ -6,7 +6,6 @@ import {
   Twitter,
   Facebook,
   Github,
-  MessageSquare,
   MapPin,
   Mail,
   Phone,
@@ -19,54 +18,54 @@ interface FooterProps {
 
 const defaultTestimonials = [
   {
-    author: "Olivier Chung",
-    company: "Data Tech Lead at Orange Belgium",
-    text: "Digitrans delivered a data infrastructure that increased our analytical capabilities by 300% and reduced decision-making time from weeks to hours.",
+    author: "Marcus Weber",
+    company: "CEO & Founder at TechFlow SaaS",
+    text: "Digitrans transformed our MVP idea into a market-ready SaaS platform in just 10 weeks. We've already secured €2M in funding and onboarded 500+ customers.",
   },
   {
-    author: "Ayoub TARMOUNIA",
-    company: "Tech lead Data at RATPDev",
-    text: "Their AI solutions increased our customer retention by 40% and provided predictive insights that transformed our product roadmap.",
+    author: "Sophie Laurent",
+    company: "Co-founder at DataSync Pro",
+    text: "Their product strategy expertise helped us pivot early and find our product-market fit. Revenue grew 400% in our first year thanks to their guidance.",
   },
   {
-    author: "Dominique Debruyne",
-    company: "Data Product Manager & Safe System Architect at Bpifrance",
-    text: "Our cloud migration with Digitrans resulted in 99.99% uptime, 60% cost reduction, and a 5x improvement in deployment speed.",
+    author: "James Mitchell",
+    company: "CTO at CloudOps Solutions",
+    text: "Working with Digitrans was like having a world-class engineering team from day one. They built our infrastructure to scale from 100 to 100,000 users seamlessly.",
   },
   {
-    author: "Dave Marsland",
-    company: "VP Engineering at Clear.Bank",
-    text: "Digitrans built a financial platform that processes $2B in transactions monthly with zero downtime and full regulatory compliance.",
+    author: "Lisa Chen",
+    company: "Founder at MedCare Connect",
+    text: "From concept to production in 12 weeks. Their full-stack development team delivered a HIPAA-compliant platform that now serves 50+ healthcare providers.",
   },
   {
-    author: "Dmytro Avramov",
-    company: "Director of AI at EMIS Group",
-    text: "Their HIPAA-compliant healthcare solution reduced patient wait times by 45% while improving diagnostic accuracy by 30%.",
+    author: "Roberto Silva",
+    company: "CEO at FinanceFlow",
+    text: "Digitrans didn't just build our product - they became our technology partner. Their ongoing support helped us scale to €5M ARR in 18 months.",
   },
   {
-    author: "James Wilson",
-    company: "RetailPro",
-    text: "The e-commerce platform Digitrans built handles 10M+ daily users and increased our conversion rates by 35% through AI-powered personalization.",
+    author: "Ahmed Hassan",
+    company: "Founder at EduFlow",
+    text: "As a non-technical founder, I was worried about building a SaaS platform. Digitrans made the entire process transparent and stress-free.",
   },
   {
-    author: "Aisha Patel",
-    company: "EduTech Global",
-    text: "Digitrans' learning platform scaled to support 500,000+ simultaneous users with a 99.8% satisfaction rate among educators and students.",
+    author: "Maria Rodriguez",
+    company: "Co-founder at RetailFlow",
+    text: "Our e-commerce SaaS platform handles 1M+ transactions daily with zero downtime. Digitrans built it to enterprise standards from day one.",
   },
   {
-    author: "Michael Chang",
-    company: "LogisticsPro",
-    text: "Their supply chain optimization reduced our operational costs by 32% and improved delivery accuracy to 99.7% even during peak seasons.",
+    author: "David Kumar",
+    company: "CEO at AnalyticsHub",
+    text: "The data visualization SaaS they built scaled to 10,000+ daily users. Their DevOps expertise ensured perfect performance throughout our growth.",
   },
   {
-    author: "Laura Martinez",
-    company: "MediaStream",
-    text: "Our streaming platform handles 5M+ concurrent users with sub-second latency and 99.99% uptime across 40+ global regions.",
+    author: "Elena Petrov",
+    company: "Founder at LogiTrack",
+    text: "Digitrans helped us launch our logistics SaaS in 11 weeks. We're now processing 50K+ shipments monthly with 99.9% accuracy.",
   },
   {
-    author: "Alex Thompson",
-    company: "GreenEnergy",
-    text: "Digitrans' IoT solution processes 10TB of sensor data daily, reducing our energy consumption by 28% and maintenance costs by 45%.",
+    author: "Thomas Wright",
+    company: "CTO at SecureVault",
+    text: "Their cybersecurity SaaS platform achieved SOC 2 Type II certification on first audit. Enterprise clients trust us because of Digitrans' security expertise.",
   },
 ];
 
@@ -110,7 +109,7 @@ const Footer = ({
 }: FooterProps) => {
   return (
     <footer
-      className="relative bg-black/50 backdrop-blur-sm text-white py-16 border-t border-gray-800"
+      className="relative bg-black/50 backdrop-blur-sm text-white py-16 border-t border-purple-500/20"
       style={{ zIndex: 1 }}
     >
       <div className="container mx-auto px-4">
@@ -118,7 +117,7 @@ const Footer = ({
         <div>
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-8">
-              Trusted by Industry Leaders
+              Trusted by SaaS Founders Across EMEA
             </h2>
             <div className="relative max-w-5xl mx-auto overflow-hidden mb-12 h-32">
               <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10" />
@@ -138,7 +137,7 @@ const Footer = ({
                 {[...Array(11)].map((_, index) => (
                   <div
                     key={index}
-                    className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-sm rounded-lg border border-purple-500/20 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                    className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-sm rounded-lg border border-blue-800/30 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
                   >
                     <img
                       src={`/images/${index + 1}.svg`}
@@ -150,7 +149,7 @@ const Footer = ({
                 {[...Array(11)].map((_, index) => (
                   <div
                     key={`repeat-${index}`}
-                    className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-sm rounded-lg border border-purple-500/20 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                    className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-sm rounded-lg border border-blue-800/30 shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
                   >
                     <img
                       src={`/images/${index + 1}.svg`}
@@ -202,7 +201,7 @@ const Footer = ({
         </div>
 
         {/* Footer Links */}
-        <div className="border-t border-gray-800 pt-16 mt-16">
+        <div className="border-t border-purple-500/20 pt-16 mt-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
               <h3 className="text-white font-semibold mb-4">Company</h3>
@@ -249,7 +248,7 @@ const Footer = ({
                     href="/services"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Big Data Analytics
+                    MVP Development
                   </a>
                 </li>
                 <li>
@@ -257,7 +256,7 @@ const Footer = ({
                     href="/services"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Cloud Computing
+                    Product Strategy & Design
                   </a>
                 </li>
                 <li>
@@ -265,7 +264,15 @@ const Footer = ({
                     href="/services"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    AI Solutions
+                    Full-Stack Development
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/services"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    DevOps & Scaling
                   </a>
                 </li>
               </ul>
@@ -350,28 +357,19 @@ const Footer = ({
                     <Github className="h-4 w-4" /> GitHub
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="https://discord.gg/digitranslab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                  >
-                    <MessageSquare className="h-4 w-4" /> Discord
-                  </a>
-                </li>
+
               </ul>
             </div>
           </div>
 
           {/* Bottom Footer */}
-          <div className="border-t border-gray-800 pt-8">
+          <div className="border-t border-purple-500/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
                 © 2025 Digitrans, Inc. All rights reserved.
               </p>
               <div className="text-gray-400 text-sm">
-                <span>Made with ❤️ by Digitrans</span>
+                <span>Empowering SaaS founders across EMEA 🚀</span>
               </div>
             </div>
           </div>

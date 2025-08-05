@@ -1,13 +1,14 @@
 import React from "react";
-import { Button } from "./button";
 
 interface StickyCTAProps {
-  onTryEfficio?: () => void;
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  dismissible?: boolean;
 }
 
-export function StickyCTA({
-  onTryEfficio = () => window.open("https://app.getefficio.com", "_blank"),
-}: StickyCTAProps) {
-  // No popup functionality
+export const StickyCTA: React.FC<StickyCTAProps> = () => {
+  // Completely disabled - won't show any popups
   return null;
-}
+};

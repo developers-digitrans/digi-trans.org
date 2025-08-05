@@ -182,7 +182,7 @@ export default function CeoProfile() {
               {experiences.map((exp, index) => (
                 <Card
                   key={index}
-                  className="p-6 bg-gray-900/50 backdrop-blur border-gray-800 cursor-pointer hover:bg-gray-800/50 transition-colors"
+                  className="p-6 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 cursor-pointer hover:bg-gray-800/50 transition-colors"
                   onClick={() => setSelectedExperience(exp)}
                 >
                   <h3 className="text-xl font-semibold mb-2 text-white">
@@ -222,7 +222,7 @@ export default function CeoProfile() {
               {education.map((edu, index) => (
                 <Card
                   key={index}
-                  className="p-6 bg-gray-900/50 backdrop-blur border-gray-800"
+                  className="p-6 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20"
                 >
                   <h3 className="text-xl font-semibold mb-2 text-white">
                     {edu.degree}
@@ -245,7 +245,7 @@ export default function CeoProfile() {
               <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
                 <GraduationCap className="w-6 h-6 text-blue-500" /> Skills
               </h2>
-              <Card className="p-6 bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <span
@@ -267,7 +267,7 @@ export default function CeoProfile() {
               <h2 className="text-2xl font-bold mb-8 flex items-center gap-2">
                 <Award className="w-6 h-6 text-blue-500" /> Certifications
               </h2>
-              <Card className="p-6 bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <ul className="space-y-3">
                   {certifications.map((cert) => (
                     <li

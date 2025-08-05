@@ -140,33 +140,26 @@ export function ServiceSchema({
 
 interface ArticleSchemaProps {
   headline: string;
-  image: string;
   datePublished: string;
-  dateModified?: string;
-  author?: string;
-  publisher?: string;
+  dateModified: string;
+  image: string;
+  authorName?: string;
+  authorUrl?: string;
+  publisherName?: string;
   publisherLogo?: string;
-  description?: string;
-  keywords?: string[];
 }
 
-export function ArticleSchema({
+export const ArticleSchema: React.FC<ArticleSchemaProps> = ({
   headline,
-  image,
   datePublished,
-  dateModified = datePublished,
-  author = "Digitrans Team",
-  publisher = "Digitrans",
-  publisherLogo = "https://digi-trans.org/logo.png",
-  description,
-  keywords = [
-    "IT consultancy",
-    "big data analytics",
-    "business intelligence",
-    "AI solutions",
-  ],
-}: ArticleSchemaProps) {
-  const schema = {
+  dateModified,
+  image,
+  authorName = "DigiTrans.org",
+  authorUrl = "https://digitrans.org",
+  publisherName = "DigiTrans.org",
+  publisherLogo = "https://digitrans.org/logo.png",
+}) => {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline,
@@ -175,26 +168,28 @@ export function ArticleSchema({
     dateModified,
     author: {
       "@type": "Person",
-      name: author,
+      name: authorName,
+      url: authorUrl,
     },
     publisher: {
       "@type": "Organization",
-      name: publisher,
+      name: publisherName,
       logo: {
         "@type": "ImageObject",
         url: publisherLogo,
       },
     },
-    description,
-    keywords: keywords.join(", "),
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://digi-trans.org/blog",
-    },
   };
 
-  return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
-}
+  return (
+    <script 
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(jsonLd),
+      }}
+    />
+  );
+};
 
 // New schema for FAQs
 export function FAQSchema({

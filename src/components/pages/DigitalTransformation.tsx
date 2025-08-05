@@ -191,7 +191,7 @@ export default function DigitalTransformation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
                   <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
@@ -341,7 +341,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -370,7 +370,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -399,7 +399,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -428,7 +428,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-cyan-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -457,7 +457,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-green-900/30 rounded-2xl flex items-center justify-center text-green-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -486,7 +486,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -542,7 +542,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-pink-900/30 rounded-2xl flex items-center justify-center text-pink-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -579,7 +579,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-orange-900/30 rounded-2xl flex items-center justify-center text-orange-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -615,7 +615,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -651,7 +651,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-green-900/30 rounded-2xl flex items-center justify-center text-green-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -687,7 +687,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -723,7 +723,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-cyan-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -785,7 +785,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -843,7 +843,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -901,7 +901,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -956,7 +956,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -1038,7 +1038,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -1053,7 +1053,7 @@ export default function DigitalTransformation() {
                       vision articulates how digital technologies will create
                       value for customers, employees, and shareholders.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-800">
+                    <div className="mt-6 pt-6 border-t border-purple-500/20">
                       <div className="flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 text-indigo-400" />
                         <span className="text-gray-300">
@@ -1085,7 +1085,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -1100,7 +1100,7 @@ export default function DigitalTransformation() {
                       Leaders must provide resources, remove obstacles, and
                       model the behaviors needed for successful transformation.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-800">
+                    <div className="mt-6 pt-6 border-t border-purple-500/20">
                       <div className="flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 text-blue-400" />
                         <span className="text-gray-300">
@@ -1132,7 +1132,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-pink-900/30 rounded-2xl flex items-center justify-center text-pink-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -1147,7 +1147,7 @@ export default function DigitalTransformation() {
                       customer journeys, pain points, and unmet needs, and
                       designing solutions that address these effectively.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-800">
+                    <div className="mt-6 pt-6 border-t border-purple-500/20">
                       <div className="flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 text-pink-400" />
                         <span className="text-gray-300">Journey mapping</span>
@@ -1177,7 +1177,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-green-900/30 rounded-2xl flex items-center justify-center text-green-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -1192,7 +1192,7 @@ export default function DigitalTransformation() {
                       frequent delivery of value. This helps manage risk through
                       early feedback and course corrections.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-800">
+                    <div className="mt-6 pt-6 border-t border-purple-500/20">
                       <div className="flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 text-green-400" />
                         <span className="text-gray-300">
@@ -1222,7 +1222,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-amber-900/30 rounded-2xl flex items-center justify-center text-amber-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -1237,7 +1237,7 @@ export default function DigitalTransformation() {
                       capabilities and fostering a culture that enables change
                       and innovation.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-800">
+                    <div className="mt-6 pt-6 border-t border-purple-500/20">
                       <div className="flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 text-amber-400" />
                         <span className="text-gray-300">
@@ -1269,7 +1269,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-cyan-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 transform transition-transform group-hover:rotate-6">
@@ -1284,7 +1284,7 @@ export default function DigitalTransformation() {
                       infrastructure, data platforms, and development practices
                       that enable rapid innovation.
                     </p>
-                    <div className="mt-6 pt-6 border-t border-gray-800">
+                    <div className="mt-6 pt-6 border-t border-purple-500/20">
                       <div className="flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 text-cyan-400" />
                         <span className="text-gray-300">
@@ -1343,7 +1343,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -1394,7 +1394,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -1447,7 +1447,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -1498,7 +1498,7 @@ export default function DigitalTransformation() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur border-gray-800 overflow-hidden relative">
+                <Card className="p-8 h-full hover:shadow-xl transition-all duration-300 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full -mr-16 -mt-16 z-0"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">

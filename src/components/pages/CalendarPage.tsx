@@ -79,7 +79,7 @@ export default function CalendarPage() {
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
+          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
             <div className="aspect-video w-full h-[600px] relative">
               {error ? (
                 <div className="absolute inset-0 flex items-center justify-center text-red-400">

@@ -260,7 +260,7 @@ export default function DataScientist() {
                         Key Responsibilities
                       </h2>
                       <div className="space-y-4">
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-blue-900/50 flex-shrink-0 flex items-center justify-center text-blue-400 mt-1">
                             <BarChart className="w-4 h-4" />
                           </div>
@@ -281,7 +281,7 @@ export default function DataScientist() {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-purple-900/50 flex-shrink-0 flex items-center justify-center text-purple-400 mt-1">
                             <Brain className="w-4 h-4" />
                           </div>
@@ -302,7 +302,7 @@ export default function DataScientist() {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-green-900/50 flex-shrink-0 flex items-center justify-center text-green-400 mt-1">
                             <Database className="w-4 h-4" />
                           </div>
@@ -323,7 +323,7 @@ export default function DataScientist() {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-orange-900/50 flex-shrink-0 flex items-center justify-center text-orange-400 mt-1">
                             <Cloud className="w-4 h-4" />
                           </div>
@@ -362,7 +362,7 @@ export default function DataScientist() {
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-blue-400">
                             Technical Skills
                           </h3>
@@ -390,7 +390,7 @@ export default function DataScientist() {
                           </ul>
                         </div>
 
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-purple-400">
                             Education & Experience
                           </h3>
@@ -495,7 +495,7 @@ export default function DataScientist() {
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-blue-400">
                             Compensation & Benefits
                           </h3>
@@ -525,7 +525,7 @@ export default function DataScientist() {
                           </ul>
                         </div>
 
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-purple-400">
                             Growth & Development
                           </h3>

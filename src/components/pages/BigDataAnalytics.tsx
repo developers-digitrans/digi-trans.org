@@ -24,6 +24,7 @@ import {
   FileText,
   Users,
   TrendingUp,
+  Bot,
 } from "lucide-react";
 
 const features = [
@@ -50,6 +51,12 @@ const features = [
     title: "Predictive Analysis",
     description:
       "Forecast trends and make data-driven decisions with predictive models that leverage time series analysis, regression, and deep learning techniques.",
+  },
+  {
+    icon: <Bot className="w-8 h-8" />,
+    title: "LLM-Powered Analytics",
+    description:
+      "Leverage large language models to analyze complex business data using RAG frameworks, unlocking insights from unstructured data and enabling natural language querying of your data.",
   },
 ];
 
@@ -94,15 +101,15 @@ const technologies = [
     ],
   },
   {
-    category: "Machine Learning",
+    category: "Machine Learning & AI",
     tools: [
       "TensorFlow",
       "PyTorch",
-      "scikit-learn",
+      "LangChain",
+      "LlamaIndex",
+      "Pinecone",
+      "CrewAI",
       "MLflow",
-      "Kubeflow",
-      "H2O.ai",
-      "DataRobot",
       "Amazon SageMaker",
     ],
   },
@@ -370,7 +377,7 @@ export default function BigDataAnalytics() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
                   <h3 className="text-2xl font-semibold mb-4 text-white">
                     {feature.title}
@@ -411,7 +418,7 @@ export default function BigDataAnalytics() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {benefit.icon}
                   </div>
@@ -454,7 +461,7 @@ export default function BigDataAnalytics() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{study.icon}</div>
                   <div className="text-sm font-semibold text-blue-400 mb-2">
                     {study.industry}
@@ -506,8 +513,8 @@ export default function BigDataAnalytics() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
-                  <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-800 pb-3">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
+                  <h3 className="text-xl font-semibold mb-4 text-white border-b border-purple-500/20 pb-3">
                     {tech.category}
                   </h3>
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -555,7 +562,7 @@ export default function BigDataAnalytics() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <h3 className="text-xl font-semibold mb-4 text-white">
                     {index + 1}. {method.title}
                   </h3>
@@ -603,7 +610,7 @@ export default function BigDataAnalytics() {
               transition={{ duration: 0.6 }}
               className="col-span-1 md:col-span-3"
             >
-              <Card className="p-8 bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-8 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-2xl font-semibold mb-6 text-white">
                   Key Trends Shaping the Future of Big Data Analytics
                 </h3>
@@ -636,15 +643,15 @@ export default function BigDataAnalytics() {
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold mb-4 text-blue-400">
-                      AI-Augmented Analytics
+                      LLM-Augmented Analytics
                     </h4>
                     <p className="text-gray-300 mb-4">
-                      The integration of artificial intelligence into analytics
-                      workflows is democratizing data science, allowing business
-                      users to leverage advanced analytics capabilities without
-                      deep technical expertise. AI-augmented analytics platforms
-                      can automatically identify patterns, anomalies, and
-                      insights that might otherwise go unnoticed.
+                      The integration of large language models into analytics workflows 
+                      is democratizing data science, allowing business users to query and 
+                      analyze data using natural language. RAG-powered analytics systems 
+                      combine the reasoning capabilities of LLMs with your enterprise data, 
+                      uncovering hidden patterns and generating insights that might 
+                      otherwise require teams of data scientists.
                     </p>
                   </div>
                 </div>
@@ -657,7 +664,42 @@ export default function BigDataAnalytics() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
+                <h3 className="text-xl font-semibold mb-4 text-white">
+                  Multi-Agent Analytics Systems
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Multi-agent AI systems are transforming big data analytics by breaking down complex 
+                  analytical tasks into specialized roles. These orchestrated systems use specialized 
+                  agents for data cleaning, exploration, visualization, and insight generation, working 
+                  together to process and analyze data at unprecedented scale and speed. This approach 
+                  enables organizations to handle increasingly complex analytical challenges with greater 
+                  automation and intelligence.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
+                    Agent Orchestration
+                  </span>
+                  <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
+                    CrewAI
+                  </span>
+                  <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
+                    LangGraph
+                  </span>
+                  <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
+                    AutoGPT
+                  </span>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   Data Governance & Privacy
                 </h3>
@@ -690,9 +732,9 @@ export default function BigDataAnalytics() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   Cloud-Native Analytics
                 </h3>
@@ -725,9 +767,9 @@ export default function BigDataAnalytics() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   DataOps & MLOps
                 </h3>
@@ -784,7 +826,7 @@ export default function BigDataAnalytics() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How long does it typically take to implement a big data
                   analytics solution?
@@ -806,7 +848,7 @@ export default function BigDataAnalytics() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   What kind of ROI can we expect from investing in big data
                   analytics?
@@ -829,7 +871,7 @@ export default function BigDataAnalytics() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you handle data security and compliance requirements?
                 </h3>
@@ -852,7 +894,7 @@ export default function BigDataAnalytics() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   Do we need to replace our existing systems to implement big
                   data analytics?

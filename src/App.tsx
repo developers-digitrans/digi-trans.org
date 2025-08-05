@@ -18,6 +18,7 @@ import RealTimeAnalyticsKafka from "./components/pages/blog/RealTimeAnalyticsKaf
 import DigitalTransformationBanking from "./components/pages/blog/DigitalTransformationBanking";
 import CloudMigrationHealthcare from "./components/pages/blog/CloudMigrationHealthcare";
 import AIRetailPersonalization from "./components/pages/blog/AIRetailPersonalization";
+import MultiAgentOrchestration from "./components/pages/blog/MultiAgentOrchestration";
 import Locations from "./components/pages/Locations";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
@@ -50,6 +51,29 @@ import CloudSolutionsArchitect from "./components/pages/careers/CloudSolutionsAr
 import FullStackDeveloper from "./components/pages/careers/FullStackDeveloper";
 import DevOpsEngineer from "./components/pages/careers/DevOpsEngineer";
 import DataScientist from "./components/pages/careers/DataScientist";
+import Applications from "./components/pages/Applications";
+
+// Solutions Hub Pages
+import SolutionsHub from "./components/pages/SolutionsHub";
+import IoTAccelerator from "./components/pages/solutions-hub/IoTAccelerator";
+import AIAssistant from "./components/pages/solutions-hub/AIAssistant";
+import ContainerOptimizer from "./components/pages/solutions-hub/ContainerOptimizer";
+import DevOpsAccelerator from "./components/pages/solutions-hub/DevOpsAccelerator";
+
+// Service Pages
+import MvpDevelopment from "./components/pages/services/MvpDevelopment";
+import ProductStrategy from "./components/pages/services/ProductStrategy";
+import FullStackDevelopment from "./components/pages/services/FullStackDevelopment";
+import DevOpsScaling from "./components/pages/services/DevOpsScaling";
+
+// New AI Service Pages
+import AIConsultancy from "./components/pages/services/AIConsultancy";
+import AIAccounting from "./components/pages/services/AIAccounting";
+
+// Solution Pages
+import TechnicalCofounder from "./components/pages/solutions/TechnicalCofounder";
+import SaaSConsulting from "./components/pages/solutions/SaaSConsulting";
+import LegacyModernization from "./components/pages/solutions/LegacyModernization";
 
 function App() {
   return (
@@ -98,7 +122,11 @@ function App() {
           path="/blog/ai-retail-personalization-case-study"
           element={<AIRetailPersonalization />}
         />
-        {/* Removed Locations route */}
+        <Route
+          path="/blog/multi-agent-orchestration-big-data-analytics"
+          element={<MultiAgentOrchestration />}
+        />
+        <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/ceo-profile" element={<CeoProfile />} />
@@ -108,6 +136,14 @@ function App() {
         />
         <Route path="/services/ai-solutions" element={<AiSolutions />} />
         <Route path="/services/cloud-computing" element={<CloudComputing />} />
+        <Route path="/services/mvp-development" element={<MvpDevelopment />} />
+        <Route path="/services/product-strategy" element={<ProductStrategy />} />
+        <Route path="/services/full-stack-development" element={<FullStackDevelopment />} />
+        <Route path="/services/devops-scaling" element={<DevOpsScaling />} />
+        
+        {/* New AI Service Routes */}
+        <Route path="/services/ai-consultancy" element={<AIConsultancy />} />
+        <Route path="/services/ai-accounting" element={<AIAccounting />} />
         <Route
           path="/solutions/digital-transformation"
           element={<DigitalTransformation />}
@@ -117,6 +153,9 @@ function App() {
           path="/solutions/enterprise-solutions"
           element={<EnterpriseSolutions />}
         />
+        <Route path="/solutions/technical-cofounder" element={<TechnicalCofounder />} />
+        <Route path="/solutions/saas-consulting" element={<SaaSConsulting />} />
+        <Route path="/solutions/legacy-modernization" element={<LegacyModernization />} />
         <Route path="/clients/fortune-500-companies" element={<Fortune500 />} />
         <Route path="/clients/gov-agencies" element={<GovAgencies />} />
         <Route path="/clients/tech-startups" element={<TechStartups />} />
@@ -150,6 +189,15 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/security" element={<Security />} />
+        <Route path="/applications" element={<Applications />} />
+        
+        {/* Solutions Hub Routes */}
+        <Route path="/solutions-hub" element={<SolutionsHub />} />
+        <Route path="/solutions-hub/iot-accelerator" element={<IoTAccelerator />} />
+        <Route path="/solutions-hub/ai-assistant" element={<AIAssistant />} />
+        <Route path="/solutions-hub/container-optimizer" element={<ContainerOptimizer />} />
+        <Route path="/solutions-hub/devops-accelerator" element={<DevOpsAccelerator />} />
+        
         {import.meta.env.VITE_TEMPO === "true" && <Route path="/tempobook/*" />}
       </Routes>
     </Suspense>

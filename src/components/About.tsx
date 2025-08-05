@@ -404,7 +404,7 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800 text-center">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 text-center">
                   <div className="w-16 h-16 mx-auto bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {value.icon}
                   </div>
@@ -453,7 +453,7 @@ function About() {
                   <div
                     className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"}`}
                   >
-                    <div className="p-6 bg-gray-900/50 backdrop-blur rounded-lg border border-gray-800">
+                    <div className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-blue-800/30">
                       <div className="text-blue-500 font-bold text-xl mb-2">
                         {milestone.year}
                       </div>
@@ -498,7 +498,7 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500">
                       {project.icon}
@@ -553,7 +553,7 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-4">
                     {project.icon}
                   </div>
@@ -621,7 +621,7 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800 text-center">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 text-center">
                   <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-6 border-2 border-blue-500">
                     <img
                       src={member.image}

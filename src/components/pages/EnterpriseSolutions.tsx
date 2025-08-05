@@ -362,7 +362,7 @@ export default function EnterpriseSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
                   <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
@@ -404,7 +404,7 @@ export default function EnterpriseSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {benefit.icon}
                   </div>
@@ -449,7 +449,7 @@ export default function EnterpriseSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{study.icon}</div>
                   <div className="text-sm font-semibold text-blue-400 mb-2">
                     {study.industry}
@@ -500,8 +500,8 @@ export default function EnterpriseSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
-                  <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-800 pb-3">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
+                  <h3 className="text-xl font-semibold mb-4 text-white border-b border-purple-500/20 pb-3">
                     {tech.category}
                   </h3>
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -548,7 +548,7 @@ export default function EnterpriseSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <h3 className="text-xl font-semibold mb-4 text-white">
                     {index + 1}. {method.title}
                   </h3>
@@ -595,7 +595,7 @@ export default function EnterpriseSolutions() {
               transition={{ duration: 0.6 }}
               className="col-span-1 md:col-span-3"
             >
-              <Card className="p-8 bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-8 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-2xl font-semibold mb-6 text-white">
                   Key Principles of Our Enterprise Architecture
                 </h3>
@@ -649,7 +649,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <Server className="w-5 h-5 text-blue-500" /> Cloud-Native
                   Architecture
@@ -685,7 +685,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <Database className="w-5 h-5 text-blue-500" /> Data
                   Architecture
@@ -721,7 +721,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <Network className="w-5 h-5 text-blue-500" /> API Strategy
                 </h3>
@@ -778,7 +778,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you approach change management during enterprise
                   implementations?
@@ -803,7 +803,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you handle data migration during enterprise system
                   implementations?
@@ -829,7 +829,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you ensure security and compliance in enterprise
                   solutions?
@@ -856,7 +856,7 @@ export default function EnterpriseSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   What is your approach to customization vs. configuration in
                   enterprise systems?

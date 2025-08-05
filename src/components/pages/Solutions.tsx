@@ -110,7 +110,7 @@ export default function Solutions() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800 flex flex-col">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20 flex flex-col">
                   <div className="mb-6">{solution.icon}</div>
                   <h3 className="text-2xl font-bold mb-4 text-white text-left">
                     {solution.title}

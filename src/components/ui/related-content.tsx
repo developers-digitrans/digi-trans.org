@@ -1,70 +1,87 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Card } from "./card";
 import { ArrowRight } from "lucide-react";
+import { LazyImage } from "./lazy-image";
+import { motion } from "framer-motion";
 
-interface ContentItem {
+// Define the ContentItem type for the component
+export type ContentItemType = "blog" | "service" | "product";
+
+export interface ContentItem {
   title: string;
   description: string;
   image: string;
   url: string;
-  type: "blog" | "service" | "product";
+  type: ContentItemType;
 }
 
 interface RelatedContentProps {
   items: ContentItem[];
   title?: string;
+  description?: string;
 }
 
-export function RelatedContent({
+export const RelatedContent: React.FC<RelatedContentProps> = ({
   items,
-  title = "You might also be interested in",
-}: RelatedContentProps) {
+  title = "Related Content",
+  description = "You might also be interested in these related topics and services.",
+}) => {
   return (
-    <div className="py-12 bg-gray-900/50 backdrop-blur-sm">
+    <div className="py-16 bg-gray-950">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-white mb-8 text-center">
-          {title}
-        </h2>
+        <div className="text-center mb-12">
+          <motion.h2 
+            className="text-3xl font-bold mb-4 text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {title}
+          </motion.h2>
+          <motion.p
+            className="text-gray-400 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {description}
+          </motion.p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (
-            <motion.div
-              key={item.title}
+            <motion.div 
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
             >
-              <a href={item.url} className="block h-full">
-                <Card className="overflow-hidden h-full hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] bg-gray-900/70 border-gray-800">
-                  <div className="aspect-video relative overflow-hidden">
-                    <img
+              <a href={item.url}>
+                <div className="bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 h-full flex flex-col hover:shadow-[0_5px_30px_rgba(124,58,237,0.15)] hover:translate-y-[-5px]">
+                  <div className="relative h-48 overflow-hidden">
+                    <LazyImage
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-2 right-2 px-2 py-1 text-xs font-medium rounded-full bg-blue-600 text-white">
-                      {item.type === "blog" && "Blog"}
-                      {item.type === "service" && "Service"}
-                      {item.type === "product" && "Product"}
+                    <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">
+                      {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
                     </div>
                   </div>
-
-                  <div className="p-4">
-                    <h3 className="font-semibold text-white mb-2 line-clamp-2">
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                      {item.description}
-                    </p>
-
-                    <div className="flex items-center text-blue-400 text-sm font-medium group">
-                      <span>Learn more</span>
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <p className="text-gray-400 mb-4 flex-grow">{item.description}</p>
+                    <div className="flex items-center text-purple-500 font-medium mt-auto">
+                      <span>Read more</span>
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </div>
-                </Card>
+                </div>
               </a>
             </motion.div>
           ))}
@@ -72,4 +89,4 @@ export function RelatedContent({
       </div>
     </div>
   );
-}
+};

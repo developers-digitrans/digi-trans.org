@@ -133,3 +133,12 @@ li {
   stroke-dasharray: 1000;
   animation: drawPath 3s ease-in-out forwards;
 }
+
+/* Custom scrollbar hiding while maintaining functionality */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

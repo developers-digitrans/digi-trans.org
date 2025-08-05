@@ -11,27 +11,28 @@ import { OrganizationSchema, ServiceSchema } from "../JsonLd";
 export default function Home() {
   // Define keywords specific to the home page
   const homeKeywords = [
-    "IT consultancy",
-    "big data analytics",
-    "business intelligence",
-    "business applications development",
-    "SaaS products",
-    "AI platform",
-    "AI agents orchestration",
-    "machine learning",
-    "ML development",
-    "ML inference",
-    "LLM RAGs development",
-    "enterprise IT solutions",
-    "digital transformation",
-    "data-driven business",
+    "AI development company",
+    "big data consultancy",
+    "AI-assisted accounting software",
+    "AI project management platform",
+    "enterprise AI solutions",
+    "machine learning consulting",
+    "intelligent automation platform",
+    "AI platform integration",
+    "data analytics consulting",
+    "AI business transformation",
+    "custom AI development",
+    "artificial intelligence consulting",
+    "AI workflow automation",
+    "intelligent business solutions",
+    "AI data platform development",
   ];
 
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO
-        title="Digitrans | Enterprise IT Consultancy for Big Data, AI & Cloud Solutions"
-        description="Transform your business with enterprise-grade data analytics, cloud computing, and artificial intelligence solutions from Digitrans. Specialists in big data, ML development, and AI agents orchestration."
+        title="Digitrans | Enterprise AI & Data Intelligence Solutions"
+        description="Transform your business with cutting-edge AI platforms, intelligent automation, and data-driven insights. We specialize in AI-assisted accounting, project management SaaS, and custom AI platform integration. Trusted by enterprise clients across EMEA."
         canonicalUrl="/"
         keywords={homeKeywords}
         schema={

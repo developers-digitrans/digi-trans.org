@@ -1,54 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import ServicesSection from "./sections/ServicesSection";
 import ProcessSection from "./sections/ProcessSection";
+import TestimonialsSection from "./sections/TestimonialsSection";
+import ValuePropositionSection from "./sections/ValuePropositionSection";
+import SaaSTestimonialsSection from "./sections/SaaSTestimonialsSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import Footer from "./Footer";
 
 import { StickyCTA } from "./ui/sticky-cta";
 import { ProgressBar } from "./ui/progress-bar";
 import { BackToTop } from "./ui/back-to-top";
-import { ProductSpotlight } from "./ui/product-spotlight";
 import { RelatedContent } from "./ui/related-content";
 
 export default function Home() {
-  const [showProductSpotlight, setShowProductSpotlight] = useState(false);
-
-  // Show product spotlight after 30 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowProductSpotlight(true);
-    }, 30000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const products = [
-    {
-      title: "Efficio - AI-Powered HR Platform",
-      description:
-        "Streamline your HR operations with our AI-powered talent management solution.",
-      image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-      url: "/products/efficio",
-    },
-    {
-      title: "Ledger - Financial Management",
-      description: "Enterprise-grade financial platform for modern businesses.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      url: "/products/ledger",
-    },
-    {
-      title: "KozmoAI - Enterprise AI Platform",
-      description:
-        "Build and deploy AI solutions with our enterprise orchestration platform.",
-      image:
-        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
-      url: "/products/kozmo-ai",
-    },
-  ];
+  // Product spotlight removed
 
   const relatedContent = [
     {
@@ -86,14 +53,15 @@ export default function Home() {
       <Hero videoUrl="/videos/home-page.mp4" />
       <ServicesSection />
       <ProcessSection />
+      <TestimonialsSection />
+      <ValuePropositionSection />
+      <SaaSTestimonialsSection />
       <ProjectsSection />
       <Footer />
 
-      <StickyCTA
-        onTryEfficio={() => window.open("https://app.getefficio.com", "_blank")}
-      />
+      <StickyCTA />
       <BackToTop />
-      {showProductSpotlight && <ProductSpotlight products={products} />}
+      {/* Product spotlight removed */}
     </div>
   );
 }

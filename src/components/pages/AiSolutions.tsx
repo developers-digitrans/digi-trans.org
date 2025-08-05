@@ -29,6 +29,7 @@ import {
   Code,
   Database,
   LineChart,
+  GitMerge,
 } from "lucide-react";
 
 const features = [
@@ -55,6 +56,12 @@ const features = [
     title: "Generative AI",
     description:
       "Leverage the power of large language models (LLMs) and generative AI for content creation, summarization, code generation, and intelligent automation.",
+  },
+  {
+    icon: <GitMerge className="w-8 h-8" />,
+    title: "Multi-Agent Orchestration",
+    description:
+      "Create sophisticated AI systems with multiple specialized agents working together to solve complex problems, communicate seamlessly, and handle multi-step tasks autonomously.",
   },
 ];
 
@@ -108,7 +115,7 @@ const technologies = [
       "Weights & Biases",
       "DVC",
       "Seldon Core",
-      "BentoML",
+      "CrewAI",
     ],
   },
 ];
@@ -416,7 +423,7 @@ export default function AiSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{feature.icon}</div>
                   <h3 className="text-2xl font-semibold mb-4 text-white text-left">
                     {feature.title}
@@ -458,7 +465,7 @@ export default function AiSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 mb-6">
                     {benefit.icon}
                   </div>
@@ -503,7 +510,7 @@ export default function AiSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-8 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <div className="text-blue-500 mb-6">{study.icon}</div>
                   <div className="text-sm font-semibold text-blue-400 mb-2">
                     {study.industry}
@@ -554,8 +561,8 @@ export default function AiSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
-                  <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-800 pb-3">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
+                  <h3 className="text-xl font-semibold mb-4 text-white border-b border-purple-500/20 pb-3">
                     {tech.category}
                   </h3>
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -602,7 +609,7 @@ export default function AiSolutions() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                   <h3 className="text-xl font-semibold mb-4 text-white">
                     {index + 1}. {method.title}
                   </h3>
@@ -649,7 +656,7 @@ export default function AiSolutions() {
               transition={{ duration: 0.6 }}
               className="col-span-1 md:col-span-3"
             >
-              <Card className="p-8 bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-8 bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-2xl font-semibold mb-6 text-white">
                   Key Trends Shaping the Future of AI
                 </h3>
@@ -707,7 +714,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   Multimodal AI
                 </h3>
@@ -744,18 +751,19 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
-                  Enterprise RAG & Agents
+                  Enterprise RAG & Multi-Agent Systems
                 </h3>
                 <p className="text-gray-300 mb-4">
                   Retrieval-Augmented Generation (RAG) is becoming a cornerstone
                   of enterprise AI strategies, allowing organizations to
                   leverage their proprietary data with large language models
-                  while maintaining accuracy and security. Autonomous AI agents
-                  that can perform complex tasks with minimal human intervention
-                  are also gaining traction, enabling new levels of automation
-                  and efficiency in business processes.
+                  while maintaining accuracy and security. Multi-agent AI systems
+                  that coordinate specialized agents for complex tasks are transforming
+                  business processes with unprecedented levels of automation and
+                  intelligence. These systems can reason, plan, and execute multi-step
+                  workflows with minimal human intervention.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
@@ -770,6 +778,12 @@ export default function AiSolutions() {
                   <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
                     Orchestration
                   </span>
+                  <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
+                    CrewAI
+                  </span>
+                  <span className="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm">
+                    LangGraph
+                  </span>
                 </div>
               </Card>
             </motion.div>
@@ -780,7 +794,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   Edge AI & Federated Learning
                 </h3>
@@ -839,7 +853,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <BarChart className="w-5 h-5 text-blue-500" /> Financial
                   Services
@@ -893,7 +907,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <Bot className="w-5 h-5 text-blue-500" /> Healthcare
                 </h3>
@@ -945,7 +959,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <Database className="w-5 h-5 text-blue-500" /> Manufacturing
                 </h3>
@@ -998,7 +1012,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
                   <Code className="w-5 h-5 text-blue-500" /> Retail & E-commerce
                 </h3>
@@ -1072,7 +1086,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you ensure the ethical use of AI in your solutions?
                 </h3>
@@ -1095,7 +1109,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   What kind of data do we need to implement AI solutions?
                 </h3>
@@ -1119,7 +1133,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you measure the success of AI implementations?
                 </h3>
@@ -1143,7 +1157,7 @@ export default function AiSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur border-gray-800">
+              <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-gray-900/50 backdrop-blur-sm border border-blue-800/30 hover:border-blue-400/20">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   How do you handle the integration of AI with existing systems?
                 </h3>

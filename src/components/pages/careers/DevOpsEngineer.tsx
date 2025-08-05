@@ -73,7 +73,7 @@ export default function DevOpsEngineer() {
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sticky Table of Contents */}
             <div className="lg:w-1/4">
-              <div className="sticky top-32 bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
+              <div className="sticky top-32 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                 <h3 className="font-bold text-lg mb-4 text-white">Contents</h3>
                 <ul className="space-y-2">
                   <li>
@@ -135,7 +135,7 @@ export default function DevOpsEngineer() {
                 </ul>
               </div>
 
-              <div className="mt-8 sticky top-96 bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg border border-gray-800">
+              <div className="mt-8 sticky top-96 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                 <h3 className="font-bold text-lg mb-4 text-white">Share</h3>
                 <div className="flex flex-col space-y-3">
                   <Button
@@ -260,7 +260,7 @@ export default function DevOpsEngineer() {
                         Key Responsibilities
                       </h2>
                       <div className="space-y-4">
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-blue-900/50 flex-shrink-0 flex items-center justify-center text-blue-400 mt-1">
                             <GitBranch className="w-4 h-4" />
                           </div>
@@ -280,7 +280,7 @@ export default function DevOpsEngineer() {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-purple-900/50 flex-shrink-0 flex items-center justify-center text-purple-400 mt-1">
                             <Server className="w-4 h-4" />
                           </div>
@@ -300,7 +300,7 @@ export default function DevOpsEngineer() {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-green-900/50 flex-shrink-0 flex items-center justify-center text-green-400 mt-1">
                             <Terminal className="w-4 h-4" />
                           </div>
@@ -320,7 +320,7 @@ export default function DevOpsEngineer() {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-3 bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <div className="flex items-start gap-3 bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-blue-800/30">
                           <div className="w-8 h-8 rounded-full bg-orange-900/50 flex-shrink-0 flex items-center justify-center text-orange-400 mt-1">
                             <Cloud className="w-4 h-4" />
                           </div>
@@ -359,7 +359,7 @@ export default function DevOpsEngineer() {
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-blue-400">
                             Technical Skills
                           </h3>
@@ -388,7 +388,7 @@ export default function DevOpsEngineer() {
                           </ul>
                         </div>
 
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-purple-400">
                             Soft Skills & Qualifications
                           </h3>
@@ -491,7 +491,7 @@ export default function DevOpsEngineer() {
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-blue-400">
                             Compensation & Benefits
                           </h3>
@@ -517,7 +517,7 @@ export default function DevOpsEngineer() {
                           </ul>
                         </div>
 
-                        <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800">
+                        <div className="bg-gray-900/50 backdrop-blur-sm p-5 rounded-lg border border-blue-800/30">
                           <h3 className="text-xl font-semibold mb-3 text-purple-400">
                             Growth & Development
                           </h3>

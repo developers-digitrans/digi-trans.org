@@ -19,7 +19,7 @@ export default function SimpleCalendarTest() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800">
+          <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-blue-800/30">
             <SimpleCalEmbed />
           </div>
         </div>

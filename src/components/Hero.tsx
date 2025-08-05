@@ -11,6 +11,7 @@ import {
   DialogDescription,
 } from "./ui/dialog";
 import { BarChart, Cloud, Bot, AppWindow, ArrowRight } from "lucide-react";
+import BookingModal from "./BookingModal";
 
 interface ServiceCardStory {
   title: string;
@@ -37,69 +38,73 @@ interface HeroProps {
 
 const defaultServiceCards: ServiceCard[] = [
   {
-    title: "Enterprise Data Platform",
-    description: "Modern data architecture with real-time analytics",
+    title: "Big Data & AI Consultancy",
+    description: "Transform your business with intelligent data strategies and AI-powered insights",
     icon: <BarChart className="w-12 h-12 text-white" />,
     story: {
-      title: "Data Platform Success Story",
+      title: "Enterprise AI & Data Transformation",
       description:
-        "Built a cloud-native data platform for a Fortune 100 financial institution, processing 50TB+ daily data with real-time analytics. Reduced data processing time by 80% and enabled ML-driven fraud detection saving $100M annually.",
+        "We help businesses unlock the power of their data through advanced analytics, machine learning, and AI solutions. Our consultants design and implement data architectures that drive actionable insights and competitive advantage.",
       metrics: [
-        "50TB+ Daily Data",
-        "80% Faster Processing",
-        "$100M Annual Savings",
+        "300% ROI Improvement",
+        "85% Faster Insights",
+        "200+ AI Models Deployed",
       ],
     },
   },
   {
-    title: "Cloud Transformation",
-    description: "Secure and scalable cloud infrastructure",
-    icon: <Cloud className="w-12 h-12 text-white" />,
-    story: {
-      title: "Cloud Migration Success",
-      description:
-        "Led cloud transformation for a global healthcare provider, migrating 1000+ applications to AWS with zero downtime. Implemented automated CI/CD pipelines reducing deployment time by 90% while ensuring HIPAA compliance.",
-      metrics: [
-        "1000+ Apps Migrated",
-        "90% Faster Deployments",
-        "Zero Downtime",
-      ],
-    },
-  },
-  {
-    title: "AI/ML Solutions",
-    description: "Production-grade machine learning systems",
+    title: "AI-Assisted Accounting SaaS",
+    description: "Intelligent accounting software that automates bookkeeping and financial insights",
     icon: <Bot className="w-12 h-12 text-white" />,
     story: {
-      title: "AI Implementation Success",
+      title: "Smart Financial Management",
       description:
-        "Developed an enterprise-wide ML platform for a retail giant, enabling automated demand forecasting and inventory optimization. Achieved 40% reduction in stockouts and 25% increase in inventory turnover.",
+        "Our AI-powered accounting platform automatically categorizes transactions, detects anomalies, and provides real-time financial insights. Perfect for businesses that want to eliminate manual bookkeeping and gain predictive financial analytics.",
       metrics: [
-        "40% Less Stockouts",
-        "25% Better Turnover",
-        "99.9% Model Accuracy",
+        "95% Automation Rate",
+        "60% Time Savings",
+        "99.9% Accuracy",
       ],
     },
   },
   {
-    title: "Data Analytics & BI",
-    description: "Advanced analytics and visualization platforms",
+    title: "AI Project Management SaaS",
+    description: "Intelligent collaboration platform that predicts project outcomes and optimizes workflows",
+    icon: <Cloud className="w-12 h-12 text-white" />,
+    story: {
+      title: "Predictive Project Intelligence",
+      description:
+        "Our AI-enhanced project management platform learns from your team's patterns to predict delays, suggest optimal resource allocation, and automate routine tasks. Built for teams that want to work smarter, not harder.",
+      metrics: [
+        "40% Faster Delivery",
+        "85% Risk Reduction",
+        "200% Productivity Gain",
+      ],
+    },
+  },
+  {
+    title: "AI Platform Integration",
+    description: "Connect your apps, docs, and team with intelligent automation (like Onyx.app)",
     icon: <AppWindow className="w-12 h-12 text-white" />,
     story: {
-      title: "Analytics Platform Success",
+      title: "Unified AI Ecosystem",
       description:
-        "Created a real-time analytics platform for a telecom leader processing 5M+ events per second. Enabled instant insights across 100M+ customers, reducing churn by 30% through predictive analytics.",
-      metrics: ["5M+ Events/Sec", "30% Churn Reduction", "100M+ Customers"],
+        "We build custom AI platforms that integrate with your existing tools and documents, creating a unified intelligence layer for your business. Our solutions connect teams, automate workflows, and provide insights across all your business systems.",
+      metrics: [
+        "100+ App Integrations",
+        "50% Workflow Efficiency",
+        "Real-time Intelligence",
+      ],
     },
   },
 ];
 
 const Hero = ({
   headline:
-    initialHeadline = "Transforming Businesses Through Enterprise Technology",
-  subheadline = "We build scalable, future-proof solutions that drive innovation and growth for forward-thinking organizations. From data analytics to cloud architecture, we're your partner in digital excellence.",
+    initialHeadline = "Enterprise AI & Data Intelligence Solutions",
+  subheadline = "Transform your business with cutting-edge AI platforms, intelligent automation, and data-driven insights. We build custom AI solutions that connect your team, apps, and data into one intelligent ecosystem.",
   serviceCards = defaultServiceCards,
-  videoUrl = "https://example.com/video.mp4",
+  videoUrl = "/videos/financial-ai.mp4",
   onRegisterInterest = () => {},
   showCards = true,
   showBookCallButton = false,
@@ -110,6 +115,7 @@ const Hero = ({
   const [selectedCard, setSelectedCard] = React.useState<ServiceCard | null>(
     null,
   );
+  const [showCalPopup, setShowCalPopup] = React.useState(false);
 
   React.useEffect(() => {
     // Only run the headline animation on the home page
@@ -173,58 +179,129 @@ const Hero = ({
       </video>
       <UniverseLights />
 
-      <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 min-h-[180px] flex items-center justify-center"
-        >
-          <motion.span
-            key={typeof headline === "string" ? headline : "jsx-headline"}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            {headline}
-          </motion.span>
-        </motion.h1>
+      {/* Add subtle particle effects */}
+      <div className="absolute inset-0 z-5 opacity-40 pointer-events-none">
+        <div className="absolute h-3 w-3 rounded-full bg-purple-500 animate-float-slow left-[10%] top-[20%]"></div>
+        <div className="absolute h-4 w-4 rounded-full bg-blue-500 animate-float-medium left-[20%] top-[50%]"></div>
+        <div className="absolute h-2 w-2 rounded-full bg-indigo-500 animate-float-fast left-[30%] top-[70%]"></div>
+        <div className="absolute h-5 w-5 rounded-full bg-purple-500/50 animate-float-slow left-[70%] top-[15%]"></div>
+        <div className="absolute h-2 w-2 rounded-full bg-blue-500/50 animate-float-medium left-[80%] top-[35%]"></div>
+        <div className="absolute h-3 w-3 rounded-full bg-indigo-500/50 animate-float-fast left-[90%] top-[60%]"></div>
+      </div>
 
+      {/* Financial AI tagline - repositioned and enlarged */}
+      <div className="relative z-20 w-full text-center pt-12 pb-0">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="text-3xl md:text-5xl lg:text-6xl tracking-wider text-violet-300 font-bold uppercase leading-tight mb-2"
+        >
+Building Tomorrow's<br />
+          AI Intelligence Today
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-start items-center text-center pt-3">
+        {/* Remove headline and divider - directly show paragraph */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl"
+          className="text-xl md:text-2xl text-gray-200 mb-6 max-w-3xl leading-relaxed"
         >
           {subheadline}
         </motion.p>
+
+        {/* Trust signals */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-wrap justify-center items-center gap-6 mb-8 text-sm text-gray-300"
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span>ISO 27001 Certified</span>
+          </div>
+          <div className="w-px h-4 bg-gray-600"></div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span>SOC 2 Compliant</span>
+          </div>
+          <div className="w-px h-4 bg-gray-600"></div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span>GDPR Ready</span>
+          </div>
+          <div className="w-px h-4 bg-gray-600"></div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span>AWS Partner</span>
+          </div>
+        </motion.div>
+
+        {/* CTA buttons with improved styling */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+        >
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 ease-in-out transform hover:scale-[1.02] relative group"
+            onClick={() => window.open("/contact", "_self")}
+          >
+            <span className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></span>
+            <span className="relative flex items-center">
+              Start Your Project
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </Button>
+          
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 ease-in-out transform hover:scale-[1.02] relative group"
+            onClick={() => setShowCalPopup(true)}
+          >
+            <span className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></span>
+            <span className="relative flex items-center">
+              Schedule a Demo
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </Button>
+        </motion.div>
 
         {showCards && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-8 mt-8"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 w-full max-w-7xl"
           >
             {serviceCards.map((card, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-full sm:w-[300px]"
+                className="w-full"
               >
                 <Card
-                  className="p-6 bg-blue-950/30 backdrop-blur-lg border-blue-800/30 hover:bg-blue-900/40 transition-all duration-300 ease-in-out cursor-pointer transform hover:translate-y-[-10px] hover:shadow-[0_10px_25px_-5px_rgba(59,130,246,0.3)]"
+                  className="py-3 px-4 bg-gradient-to-br from-purple-900/40 to-indigo-950/30 backdrop-blur-md border border-purple-500/25 hover:border-purple-400/40 transition-all duration-300 ease-in-out cursor-pointer transform hover:shadow-[0_5px_15px_-5px_rgba(167,139,250,0.3)] group"
                   onClick={() => setSelectedCard(card)}
                 >
-                  <div className="flex justify-center items-center mb-4">
-                    {card.icon}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="bg-gradient-to-br from-purple-700/30 to-violet-800/30 p-2.5 rounded-lg">
+                        {card.icon}
+                      </div>
+                      <h3 className="text-base font-medium text-white ml-3">
+                        {card.title}
+                      </h3>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-purple-300/80 group-hover:text-purple-300 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-gray-300">{card.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -235,7 +312,7 @@ const Hero = ({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -10, scale: 1.02 }}
+            whileHover={{ y: -5 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12"
           >
@@ -255,15 +332,16 @@ const Hero = ({
         )}
       </div>
 
+      {/* Enhanced dialog styling */}
       <Dialog open={!!selectedCard} onOpenChange={() => setSelectedCard(null)}>
-        <DialogContent className="sm:max-w-[600px] bg-slate-900 text-white border-slate-800">
+        <DialogContent className="sm:max-w-[600px] bg-gradient-to-br from-gray-900 to-gray-950 text-white border border-blue-800/30 shadow-[0_0_30px_rgba(139,92,246,0.2)]">
           {selectedCard?.story && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold">
+                <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
                   {selectedCard.story.title}
                 </DialogTitle>
-                <DialogDescription className="text-slate-300 mt-4">
+                <DialogDescription className="text-gray-300 mt-4 text-base">
                   {selectedCard.story.description}
                 </DialogDescription>
               </DialogHeader>
@@ -271,18 +349,36 @@ const Hero = ({
                 {selectedCard.story.metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className="text-center p-4 bg-slate-800 rounded-lg"
+                    className="text-center p-4 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-lg border border-blue-800/30"
                   >
-                    <p className="text-blue-400 font-bold">{metric}</p>
+                    <p className="text-purple-300 font-bold">{metric}</p>
                   </div>
                 ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-purple-500/20">
+                <Button
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white"
+                  onClick={() => {
+                    setSelectedCard(null);
+                    window.open("/contact", "_self");
+                  }}
+                >
+                  Learn More About This Solution
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
             </>
           )}
         </DialogContent>
       </Dialog>
 
-      {/* Product Spotlight removed */}
+      {/* Booking Modal for Schedule a Demo */}
+      <BookingModal
+        open={showCalPopup}
+        onOpenChange={setShowCalPopup}
+        title="Schedule a Demo"
+        description="Book a free 30-minute consultation to discuss your SaaS idea. We'll provide expert feedback on product strategy, technical requirements, and development timeline."
+      />
     </div>
   );
 };
